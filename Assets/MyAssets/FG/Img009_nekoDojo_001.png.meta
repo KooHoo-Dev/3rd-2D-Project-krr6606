@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: aea32c1e0c7a34249b524c8b9a4e5409
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8196431575017728366
+    second: Img009_nekoDojo_001_0
+  - first:
+      213: -2182069289261612418
+    second: Img009_nekoDojo_001_1
+  - first:
+      213: -4922401010157121870
+    second: Img009_nekoDojo_001_2
+  - first:
+      213: -3284030131357628948
+    second: Img009_nekoDojo_001_3
+  - first:
+      213: 4647332930564584713
+    second: Img009_nekoDojo_001_4
+  - first:
+      213: 2655500130224373689
+    second: Img009_nekoDojo_001_5
+  - first:
+      213: 3196376386709343391
+    second: Img009_nekoDojo_001_6
+  - first:
+      213: 4176625241910797438
+    second: Img009_nekoDojo_001_7
+  - first:
+      213: -3469476282726369331
+    second: Img009_nekoDojo_001_8
+  - first:
+      213: 4375012078966610853
+    second: Img009_nekoDojo_001_9
+  - first:
+      213: 8347369142742570714
+    second: Img009_nekoDojo_001_10
+  - first:
+      213: -4599716329671773540
+    second: Img009_nekoDojo_001_11
+  - first:
+      213: 686337198634219570
+    second: Img009_nekoDojo_001_12
+  - first:
+      213: 2934110046594217151
+    second: Img009_nekoDojo_001_13
+  - first:
+      213: -1353963323413080860
+    second: Img009_nekoDojo_001_14
+  - first:
+      213: -8933481582261840675
+    second: Img009_nekoDojo_001_15
+  - first:
+      213: -5492483812262964682
+    second: Img009_nekoDojo_001_16
+  - first:
+      213: 2373613650550167558
+    second: Img009_nekoDojo_001_17
+  - first:
+      213: 7821693097690361110
+    second: Img009_nekoDojo_001_18
+  - first:
+      213: -6596434176137519184
+    second: Img009_nekoDojo_001_19
+  - first:
+      213: -7618971177528014475
+    second: Img009_nekoDojo_001_20
+  - first:
+      213: 8593168616410760428
+    second: Img009_nekoDojo_001_21
+  - first:
+      213: 2795392878369506923
+    second: Img009_nekoDojo_001_22
+  - first:
+      213: 7956182250228744622
+    second: Img009_nekoDojo_001_23
+  - first:
+      213: -7026495127310074437
+    second: Img009_nekoDojo_001_24
+  - first:
+      213: 4208239636962139204
+    second: Img009_nekoDojo_001_25
+  - first:
+      213: 2150271475171039486
+    second: Img009_nekoDojo_001_26
+  - first:
+      213: -946087549210632943
+    second: Img009_nekoDojo_001_27
+  - first:
+      213: 5421475781633233237
+    second: Img009_nekoDojo_001_28
+  - first:
+      213: 8451886606939732417
+    second: Img009_nekoDojo_001_29
+  - first:
+      213: -4208886595224989871
+    second: Img009_nekoDojo_001_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 283
+        width: 287
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e692ab647139fb170800000000000000
+      internalID: 8196431575017728366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_1
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 458
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72c542ea8bb7b1e0800000000000000
+      internalID: -2182069289261612418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 407
+        width: 105
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be8f8b7c5e10bbb0800000000000000
+      internalID: -4922401010157121870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_3
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 479
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5cfbcbef7cc62d0800000000000000
+      internalID: -3284030131357628948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 433
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905f64f7da4ae7040800000000000000
+      internalID: 4647332930564584713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_5
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 396
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bff60b8c4b3ad420800000000000000
+      internalID: 2655500130224373689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_6
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 355
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cc14a736fcb5c20800000000000000
+      internalID: 3196376386709343391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 356
+        width: 59
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e74e500678a56f930800000000000000
+      internalID: 4176625241910797438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_8
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 324
+        width: 105
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7b373f3b1f9dfc0800000000000000
+      internalID: -3469476282726369331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_9
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 292
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab19d65e4a27bc30800000000000000
+      internalID: 4375012078966610853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273
+        width: 240
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad65a325200d7d370800000000000000
+      internalID: 8347369142742570714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_11
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 260
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92b9565e568a20c0800000000000000
+      internalID: -4599716329671773540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_12
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 260
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238bab8bb0c568900800000000000000
+      internalID: 686337198634219570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_13
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 238
+        width: 138
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb43723ba8d08b820800000000000000
+      internalID: 2934110046594217151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_14
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 236
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e45e0de781c53de0800000000000000
+      internalID: -1353963323413080860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_15
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 236
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4d9c125d5e50480800000000000000
+      internalID: -8933481582261840675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_16
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 236
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6329b7bb217c6c3b0800000000000000
+      internalID: -5492483812262964682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 344
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6089f0b0a05c0f020800000000000000
+      internalID: 2373613650550167558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_18
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 113
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d65f56e6c3c8c60800000000000000
+      internalID: 7821693097690361110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_19
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 149
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf9313f012c474a0800000000000000
+      internalID: -6596434176137519184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_20
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 149
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579c081c41af34690800000000000000
+      internalID: -7618971177528014475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_21
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 113
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4c23cf351114770800000000000000
+      internalID: 8593168616410760428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 336
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b660fd2230b3bc620800000000000000
+      internalID: 2795392878369506923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_23
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 77
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea107295a990a6e60800000000000000
+      internalID: 7956182250228744622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_24
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 41
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd7ba0e8efdc7e90800000000000000
+      internalID: -7026495127310074437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_25
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 77
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44cd8d257aba66a30800000000000000
+      internalID: 4208239636962139204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_26
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 41
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef89938938c47dd10800000000000000
+      internalID: 2150271475171039486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_27
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 77
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d51e6f262ded2f0800000000000000
+      internalID: -946087549210632943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_28
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 41
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 551d1aacf73fc3b40800000000000000
+      internalID: 5421475781633233237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_29
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 0
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c93688c6122b4570800000000000000
+      internalID: 8451886606939732417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Img009_nekoDojo_001_30
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 144
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f06b7f0f70795c0800000000000000
+      internalID: -4208886595224989871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Img009_nekoDojo_001_0: 8196431575017728366
+      Img009_nekoDojo_001_1: -2182069289261612418
+      Img009_nekoDojo_001_10: 8347369142742570714
+      Img009_nekoDojo_001_11: -4599716329671773540
+      Img009_nekoDojo_001_12: 686337198634219570
+      Img009_nekoDojo_001_13: 2934110046594217151
+      Img009_nekoDojo_001_14: -1353963323413080860
+      Img009_nekoDojo_001_15: -8933481582261840675
+      Img009_nekoDojo_001_16: -5492483812262964682
+      Img009_nekoDojo_001_17: 2373613650550167558
+      Img009_nekoDojo_001_18: 7821693097690361110
+      Img009_nekoDojo_001_19: -6596434176137519184
+      Img009_nekoDojo_001_2: -4922401010157121870
+      Img009_nekoDojo_001_20: -7618971177528014475
+      Img009_nekoDojo_001_21: 8593168616410760428
+      Img009_nekoDojo_001_22: 2795392878369506923
+      Img009_nekoDojo_001_23: 7956182250228744622
+      Img009_nekoDojo_001_24: -7026495127310074437
+      Img009_nekoDojo_001_25: 4208239636962139204
+      Img009_nekoDojo_001_26: 2150271475171039486
+      Img009_nekoDojo_001_27: -946087549210632943
+      Img009_nekoDojo_001_28: 5421475781633233237
+      Img009_nekoDojo_001_29: 8451886606939732417
+      Img009_nekoDojo_001_3: -3284030131357628948
+      Img009_nekoDojo_001_30: -4208886595224989871
+      Img009_nekoDojo_001_4: 4647332930564584713
+      Img009_nekoDojo_001_5: 2655500130224373689
+      Img009_nekoDojo_001_6: 3196376386709343391
+      Img009_nekoDojo_001_7: 4176625241910797438
+      Img009_nekoDojo_001_8: -3469476282726369331
+      Img009_nekoDojo_001_9: 4375012078966610853
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

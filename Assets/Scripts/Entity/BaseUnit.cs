@@ -1,0 +1,142 @@
+using UnityEngine;
+
+public class BaseUnit : MonoBehaviour , IDamagable
+{
+
+    public EntitySO entitySOData;
+
+    public Unitdata useData;
+
+    protected StateMachin stateMachine;
+
+    protected int Level = 1;
+    public float CurrentHealth { get; protected set; }
+    protected int HitBackCount;
+    public bool IsInvincibility { get; set; }
+    public LayerMask TargetLayer;
+
+    public float originYPosition;
+
+    protected SpriteRenderer spriteRenderer;
+
+    public Animator animator;
+
+    public Animator animatorHit;
+
+    public bool isAttacking;
+
+    public Collider2D collider2d { get; protected set; }
+
+    virtual protected void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        stateMachine = new StateMachin();
+        collider2d = GetComponent<Collider2D>();
+    }
+    protected virtual void Start()
+    {
+        InitData();
+        originYPosition = transform.position.y;
+        CurrentHealth = useData.DefaultHealth;
+        //stateMachine.Initialize(WalkState);
+
+    }
+    protected virtual void Update()
+    {
+        stateMachine.UpdateActiveState();
+        Debug.Log($"현재 상태: {stateMachine.currentState.GetType().Name}, 체력: {CurrentHealth}, 공격력: {useData.DefaultDamage}");
+    }
+    public virtual void InitData()
+    {
+        float levelMultiplier = 0.2f; 
+        if(Level > 5)
+        {
+            levelMultiplier = 0.1f;
+        }
+        HitBackCount = 1;
+        
+        useData.DefaultHealth = entitySOData.unitdata.DefaultHealth + (Level - 1) * entitySOData.unitdata.DefaultHealth * levelMultiplier;
+        useData.DefaultDamage = entitySOData.unitdata.DefaultDamage + (Level - 1) * entitySOData.unitdata.DefaultDamage * levelMultiplier;
+        useData.HitBackMaxCount = entitySOData.unitdata.HitBackMaxCount;
+        useData.isCat = entitySOData.unitdata.isCat;
+        useData.speed = entitySOData.unitdata.speed;
+        useData.Range = entitySOData.unitdata.Range;
+        useData.AttackRangeStart = entitySOData.unitdata.AttackRangeStart;
+        useData.AttackRangeEnd = entitySOData.unitdata.AttackRangeEnd;
+        useData.Cost = entitySOData.unitdata.Cost;
+        useData.InitColdDown = entitySOData.unitdata.InitColdDown;
+        useData.FrontDelay = entitySOData.unitdata.FrontDelay;
+        useData.BackDelay = entitySOData.unitdata.BackDelay;
+        useData.IsOneTarget = entitySOData.unitdata.IsOneTarget;
+        useData.Money = entitySOData.unitdata.Money;
+    }
+
+    public virtual void TakeDamage(float damage)
+    {
+        CurrentHealth -= damage;
+        
+        if (CurrentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    
+    protected virtual void Attack()
+    {
+        
+        float dir = useData.isCat ? -1f : 1f;
+        if(useData.IsOneTarget)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.right * dir * useData.AttackRangeStart, Vector2.right * dir, useData.AttackRangeEnd, TargetLayer);
+            if (hit.collider == null) return;
+            IDamagable damagable = hit.collider.GetComponent<IDamagable>();
+            if (damagable == null) return;
+            Debug.Log("공격 대상: " + hit.collider.name + ", 현재 타겟레이어: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
+            damagable.TakeDamage(useData.DefaultDamage, DamageType.normal, transform);
+        }
+        else
+        {
+            RaycastHit2D[] hitList = Physics2D.RaycastAll(transform.position + Vector3.right * dir * useData.AttackRangeStart, Vector2.right * dir, useData.AttackRangeEnd, TargetLayer);
+            if(hitList.Length == 0) return;
+            foreach (RaycastHit2D hit in hitList)
+            {
+                IDamagable damagable = hit.collider.GetComponent<IDamagable>();
+                if (damagable == null) continue;
+                damagable.TakeDamage(useData.DefaultDamage, DamageType.normal, transform);
+            }
+        }
+        animatorHit.gameObject.SetActive(true);
+    }
+
+    // 에니메이션 이벤트에서 호출되는 함수
+    public virtual void OnEndHitAnimation()
+    {
+        animatorHit.gameObject.SetActive(false);
+    }
+    protected virtual void Die()
+    {
+
+        Destroy(gameObject);
+    }
+
+    public virtual void TakeDamage(float damage, DamageType damageType, Transform attacker)
+    {
+
+    }
+    public virtual void OnAttack()
+    {
+        Attack();
+    }
+    public virtual void OnEndAttack()
+    {
+        isAttacking = false;
+    }
+    private void OnDrawGizmos()
+    {
+
+            float dir = entitySOData.unitdata.isCat ? -1f : 1f;
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.right * dir * entitySOData.unitdata.Range * 0.01f);
+
+    }
+}

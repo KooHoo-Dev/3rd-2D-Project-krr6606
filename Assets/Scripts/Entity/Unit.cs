@@ -38,7 +38,7 @@ public class Unit : BaseUnit
             IDamagable damagable = hit.collider.GetComponent<IDamagable>();
             if (damagable == null) return;
             Debug.Log("공격 대상: " + hit.collider.name + ", 현재 타겟레이어: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
-            damagable.TakeDamage(useData.DefaultDamage, DamageType.normal, transform);
+            damagable.TakeDamage(useData.DefaultDamage, ElementalType.normal, transform);
         }
         else
         {
@@ -48,12 +48,12 @@ public class Unit : BaseUnit
             {
                 IDamagable damagable = hit.collider.GetComponent<IDamagable>();
                 if (damagable == null) continue;
-                damagable.TakeDamage(useData.DefaultDamage, DamageType.normal, transform);
+                damagable.TakeDamage(useData.DefaultDamage, ElementalType.normal, transform);
             }
         }
         animatorHit.gameObject.SetActive(true);
     }
-    public override void TakeDamage(float damage, DamageType damageType, Transform attacker)
+    public override void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
         if (IsInvincibility) return;
         CurrentHealth -= damage;

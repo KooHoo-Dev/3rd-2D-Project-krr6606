@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 341cfce0107fe7542aa2b6fa2c7307bf, type: 3}
-  m_Name: Cat
+  m_Name: Cat04
   m_EditorClassIdentifier: Assembly-CSharp::EntitySO
   unitdata:
-    Name: "\uB0E5\uCF54"
+    Name: "\uD669\uC18C \uACE0\uC591\uC774"
     Level: 1
     isCat: 1
-    DefaultHealth: 250
-    DefaultDamage: 20
-    HitBackMaxCount: 3
-    speed: 10
+    type: 0
+    DefaultHealth: 1250
+    DefaultDamage: 32
+    HitBackMaxCount: 5
+    speed: 30
     Range: 140
     AttackRangeStart: 0
     AttackRangeEnd: 140
-    Cost: 50
-    InitColdDown: 6
-    FrontDelay: 1.23
-    BackDelay: 0.27
+    Cost: 500
+    InitColdDown: 14
+    FrontDelay: 0.33
+    BackDelay: 0.2
     IsOneTarget: 1
     Money: 0

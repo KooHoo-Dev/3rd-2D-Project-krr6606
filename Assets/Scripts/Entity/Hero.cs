@@ -25,7 +25,7 @@ public class Hero : BaseUnit
         stateMachine.Initialize(IdleState);
         healthText.text = $"{CurrentHealth}/{useData.DefaultHealth}";
     }
-    public override void TakeDamage(float damage, DamageType damageType, Transform attacker)
+    public override void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
         CurrentHealth -= damage;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, useData.DefaultHealth);

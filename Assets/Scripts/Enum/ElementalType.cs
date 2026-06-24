@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public enum DamageType 
+public enum ElementalType
+    
 {
     normal,
     rad,

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341cfce0107fe7542aa2b6fa2c7307bf, type: 3}
+  m_Name: Cat01
+  m_EditorClassIdentifier: Assembly-CSharp::EntitySO
+  unitdata:
+    Name: "\uD0F1\uD06C \uACE0\uC591\uC774"
+    Level: 1
+    isCat: 1
+    type: 0
+    DefaultHealth: 1000
+    DefaultDamage: 5
+    HitBackMaxCount: 1
+    speed: 8
+    Range: 110
+    AttackRangeStart: 0
+    AttackRangeEnd: 110
+    Cost: 100
+    InitColdDown: 8
+    FrontDelay: 2.23
+    BackDelay: 0.27
+    IsOneTarget: 0
+    Money: 0

@@ -6,6 +6,7 @@ public class Unitdata
     public string Name;
     public int Level;
     public bool isCat;
+    public ElementalType type;
     public float DefaultHealth;
 
     public float DefaultDamage;

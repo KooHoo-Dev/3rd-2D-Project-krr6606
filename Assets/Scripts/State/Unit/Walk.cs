@@ -16,7 +16,7 @@ public class Walk : Unit_State
     {
         base.Update();
 
-        RaycastHit2D hit = Physics2D.Raycast(entity.transform.position, Vector3.right * dir , entity.useData.Range * 0.005f, entity.TargetLayer);
+        RaycastHit2D hit = Physics2D.Raycast(entity.transform.position, Vector3.right * dir , entity.useData.Range * entity.multiplier, entity.TargetLayer);
         if (hit.collider != null)
         {
             stateMachine.ChangeState(entity.AttackState);

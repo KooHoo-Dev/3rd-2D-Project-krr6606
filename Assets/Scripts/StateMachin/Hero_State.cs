@@ -10,10 +10,6 @@ public class Hero_State : EntityState
         this.animator = hero.animator;
 
     }
-    public override void Update()
-    {
-        base.Update();
 
-    }
 
 }

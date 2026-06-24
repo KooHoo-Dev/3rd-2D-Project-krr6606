@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Unit : BaseUnit
 {
+
     public Walk WalkState { get; private set; }
     public Idle IdleState { get; private set; }
     public Attack AttackState { get; private set; }
@@ -32,7 +33,7 @@ public class Unit : BaseUnit
         float dir = useData.isCat ? -1f : 1f;
         if (useData.IsOneTarget)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.right * dir * useData.AttackRangeStart, Vector2.right * dir, useData.AttackRangeEnd, TargetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.right * dir * (useData.AttackRangeStart* multiplier), Vector2.right * dir, useData.AttackRangeEnd * multiplier, TargetLayer);
             if (hit.collider == null) return;
             IDamagable damagable = hit.collider.GetComponent<IDamagable>();
             if (damagable == null) return;
@@ -41,7 +42,7 @@ public class Unit : BaseUnit
         }
         else
         {
-            RaycastHit2D[] hitList = Physics2D.RaycastAll(transform.position + Vector3.right * dir * useData.AttackRangeStart, Vector2.right * dir, useData.AttackRangeEnd, TargetLayer);
+            RaycastHit2D[] hitList = Physics2D.RaycastAll(transform.position + Vector3.right * dir * (useData.AttackRangeStart * multiplier), Vector2.right * dir, useData.AttackRangeEnd * multiplier, TargetLayer);
             if (hitList.Length == 0) return;
             foreach (RaycastHit2D hit in hitList)
             {

@@ -12,11 +12,12 @@ public class HeroMove : Hero_State
         base.Update();
         if(Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
         {
-            hero.transform.Translate(Vector2.left * Time.deltaTime * hero.useData.speed);
+            Debug.Log("Left Key Pressed");
+            hero.transform.Translate(Vector2.left * Time.deltaTime * hero.useData.speed * hero.multiplier);
         }
         else if(Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
         {
-            hero.transform.Translate(Vector2.right * Time.deltaTime * hero.useData.speed);
+            hero.transform.Translate(Vector2.right * Time.deltaTime * hero.useData.speed * hero.multiplier);
         }
         else
         {

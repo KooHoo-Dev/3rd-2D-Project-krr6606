@@ -1,16 +1,6 @@
 using UnityEngine;
 
-public class CombatManager : MonoBehaviour
+public class CombatManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -8,7 +8,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
     public Unitdata useData;
 
     protected StateMachin stateMachine;
-
+    protected CombatManager combatManager;
     protected int Level = 1;
     public float CurrentHealth { get; protected set; }
     protected int HitBackCount;
@@ -24,7 +24,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
     public Animator animatorHit;
 
     public bool isAttacking;
-
+    public float multiplier = 0.005f;
     public Collider2D collider2d { get; protected set; }
 
     virtual protected void Awake()
@@ -32,6 +32,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
         spriteRenderer = GetComponent<SpriteRenderer>();
         stateMachine = new StateMachin();
         collider2d = GetComponent<Collider2D>();
+        combatManager = new CombatManager();
     }
     protected virtual void Start()
     {
@@ -108,11 +109,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
         animatorHit.gameObject.SetActive(true);
     }
 
-    // 에니메이션 이벤트에서 호출되는 함수
-    public virtual void OnEndHitAnimation()
-    {
-        animatorHit.gameObject.SetActive(false);
-    }
+
     protected virtual void Die()
     {
 
@@ -136,7 +133,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
 
             float dir = entitySOData.unitdata.isCat ? -1f : 1f;
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.right * dir * entitySOData.unitdata.Range * 0.01f);
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.right * dir * entitySOData.unitdata.Range * multiplier);
 
     }
 }

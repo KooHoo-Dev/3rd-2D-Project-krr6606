@@ -3744,7 +3744,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.75, y: 0.796875}
+    oldSize: {x: 0.703125, y: 0.90625}
     newSize: {x: 0.75, y: 0.796875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3845,6 +3845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
+  entity: {fileID: 733723546}
 --- !u!114 &733723546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3882,6 +3883,7 @@ MonoBehaviour:
   animator: {fileID: 733723543}
   animatorHit: {fileID: 1838890948}
   isAttacking: 0
+  multiplier: 0.005
 --- !u!1 &813431261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4873,6 +4875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
+  entity: {fileID: 0}
 --- !u!1 &894530800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5399,6 +5402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
+  entity: {fileID: 1005860453}
 --- !u!114 &1005860453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5436,6 +5440,7 @@ MonoBehaviour:
   animator: {fileID: 1005860449}
   animatorHit: {fileID: 879284301}
   isAttacking: 0
+  multiplier: 0.005
 --- !u!1 &1021097778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,6 +6180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
+  entity: {fileID: 0}
 --- !u!212 &1138985688
 SpriteRenderer:
   serializedVersion: 2
@@ -6985,6 +6991,7 @@ GameObject:
   - component: {fileID: 1374168856}
   - component: {fileID: 1374168855}
   - component: {fileID: 1374168857}
+  - component: {fileID: 1374168858}
   m_Layer: 3
   m_Name: PlayerCat
   m_TagString: Untagged
@@ -7106,7 +7113,8 @@ MonoBehaviour:
   animator: {fileID: 1374168856}
   animatorHit: {fileID: 1138985686}
   isAttacking: 0
-  healthText: {fileID: 0}
+  multiplier: 0.005
+  healthText: {fileID: 873202409}
 --- !u!95 &1374168856
 Animator:
   serializedVersion: 7
@@ -7175,6 +7183,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 0.796875}
   m_EdgeRadius: 0
+--- !u!114 &1374168858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374168852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
+  entity: {fileID: 1374168855}
 --- !u!1 &1378654019
 GameObject:
   m_ObjectHideFlags: 0
@@ -9308,6 +9329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
+  entity: {fileID: 0}
 --- !u!1 &1840999519
 GameObject:
   m_ObjectHideFlags: 0

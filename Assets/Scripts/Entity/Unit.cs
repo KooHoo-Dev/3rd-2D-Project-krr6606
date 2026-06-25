@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Unit : BaseUnit
 {
+    public CatName catName;
+    public EnemyName enemyName;
 
     public Walk WalkState { get; private set; }
     public Idle IdleState { get; private set; }
@@ -65,6 +67,7 @@ public class Unit : BaseUnit
         if (HitBackCount == useData.HitBackMaxCount) return;
 
         float hitBackPoint = useData.DefaultHealth * ((useData.HitBackMaxCount - HitBackCount) / (float)useData.HitBackMaxCount);
+        hitBackPoint = Mathf.RoundToInt(hitBackPoint);
         Debug.Log($"체력: {CurrentHealth}, 히트백 포인트: {hitBackPoint}, 히트백 카운트: {HitBackCount}, 히트백 최대 카운트: {useData.HitBackMaxCount}");
         if (CurrentHealth <= hitBackPoint)
         {

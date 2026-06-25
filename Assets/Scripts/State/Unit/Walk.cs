@@ -10,7 +10,7 @@ public class Walk : Unit_State
     {
         base.Enter();
         dir = entity.useData.isCat ? -1f : 1f;
-        Debug.Log("Enter Walk State : " + entity.name);
+
     }
     public override void Update()
     {
@@ -20,7 +20,7 @@ public class Walk : Unit_State
         if (hit.collider != null)
         {
             stateMachine.ChangeState(entity.AttackState);
-            Debug.Log("Change to Attack State :" + hit.collider.name);
+
         }
         entity.transform.Translate(Vector3.right * dir * entity.useData.speed * 0.05f * Time.deltaTime);
     }

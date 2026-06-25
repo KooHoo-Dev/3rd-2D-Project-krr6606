@@ -16,10 +16,11 @@ MonoBehaviour:
     Name: "\uACE0\uC591\uC774 \uC601\uC6C5"
     Level: 1
     isCat: 1
+    type: 0
     DefaultHealth: 1000
     DefaultDamage: 20
     HitBackMaxCount: 1
-    speed: 30
+    speed: 60
     Range: 200
     AttackRangeStart: 0
     AttackRangeEnd: 200

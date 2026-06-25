@@ -23,9 +23,7 @@ public class Unit : BaseUnit
     }
     protected override void Start()
     {
-        InitData();
-        originYPosition = transform.position.y;
-        CurrentHealth = useData.DefaultHealth;
+        base.Start();
         stateMachine.Initialize(WalkState);
 
     }

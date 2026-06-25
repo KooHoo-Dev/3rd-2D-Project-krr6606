@@ -12,7 +12,7 @@ public class HitBack : Unit_State
         base.Enter();
         dir = entity.useData.isCat ? 1 : -1;
         entity.IsInvincibility = true;
-        Debug.Log("Enter HitBack State : " + entity.name);
+
 
         entity.transform.rotation = Quaternion.Euler(0, 0, -dir * 20);
         entity.transform.DOJump(entity.transform.position + Vector3.right * dir * 1.2f, 0.6f, 1, 0.6F).SetEase(Ease.Linear).OnComplete(() =>

@@ -27,6 +27,7 @@ public class Hero : BaseUnit
     }
     public override void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
+        damage = Mathf.RoundToInt(damage);
         CurrentHealth -= damage;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, useData.DefaultHealth);
         healthText.text = $"{CurrentHealth}/{useData.DefaultHealth}";

@@ -20,9 +20,9 @@ public class _Stage : ScriptableObject
 public class StageWaveData
 {
     [field: SerializeField] public EnemyName EnemyName {  get; private set; }
-    [field: SerializeField] public float MinNextSpawnInterval { get; private set; }
+    [field: SerializeField] public float MinSpawnInterval { get; private set; }
     [field: SerializeField] public bool IsRandomTime { get; private set; }
-    [field: SerializeField] public float MaxNextSpawnInterval { get; private set; }
+    [field: SerializeField] public float MaxSpawnInterval { get; private set; }
     [field: SerializeField] public int SpawnCount { get; private set; }
     [field: SerializeField] public int MaxLoopCount { get; private set; }
     [field: SerializeField] public int NextWaveIndex {  get; private set; }

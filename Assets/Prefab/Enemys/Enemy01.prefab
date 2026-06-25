@@ -198,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 1404608656550867488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.92, y: -2.245, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -290,6 +290,8 @@ MonoBehaviour:
   animatorHit: {fileID: 8835112692894204119}
   isAttacking: 0
   multiplier: 0.005
+  catName: 0
+  enemyName: 1
 --- !u!212 &5204949958168392497
 SpriteRenderer:
   serializedVersion: 2

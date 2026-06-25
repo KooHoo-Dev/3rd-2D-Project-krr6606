@@ -9,7 +9,6 @@ public class BaseUnit : MonoBehaviour , IDamagable
 
     protected StateMachin stateMachine;
     protected CombatManager combatManager;
-    protected int Level = 1;
     public float CurrentHealth { get; protected set; }
     protected int HitBackCount;
     public bool IsInvincibility { get; set; }
@@ -39,25 +38,24 @@ public class BaseUnit : MonoBehaviour , IDamagable
         InitData();
         originYPosition = transform.position.y;
         CurrentHealth = useData.DefaultHealth;
-        //stateMachine.Initialize(WalkState);
 
     }
     protected virtual void Update()
     {
         stateMachine.UpdateActiveState();
-        Debug.Log($"현재 상태: {stateMachine.currentState.GetType().Name}, 체력: {CurrentHealth}, 공격력: {useData.DefaultDamage}");
     }
     public virtual void InitData()
     {
         float levelMultiplier = 0.2f; 
-        if(Level > 5)
+        if(useData.Level > 5)
         {
             levelMultiplier = 0.1f;
         }
         HitBackCount = 1;
-        
-        useData.DefaultHealth = entitySOData.unitdata.DefaultHealth + (Level - 1) * entitySOData.unitdata.DefaultHealth * levelMultiplier;
-        useData.DefaultDamage = entitySOData.unitdata.DefaultDamage + (Level - 1) * entitySOData.unitdata.DefaultDamage * levelMultiplier;
+        useData.Level = Mathf.Clamp(useData.Level, 1, 10);
+        useData.DefaultHealth = entitySOData.unitdata.DefaultHealth + (useData.Level - 1) * entitySOData.unitdata.DefaultHealth * levelMultiplier;
+        Debug.Log($"기본 체력 : {useData.DefaultHealth}");
+        useData.DefaultDamage = entitySOData.unitdata.DefaultDamage + (useData.Level - 1) * entitySOData.unitdata.DefaultDamage * levelMultiplier;
         useData.HitBackMaxCount = entitySOData.unitdata.HitBackMaxCount;
         useData.isCat = entitySOData.unitdata.isCat;
         useData.speed = entitySOData.unitdata.speed;

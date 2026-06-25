@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7376406012887779780}
   - component: {fileID: 2108902135162540412}
   - component: {fileID: 2068970151512664671}
+  - component: {fileID: 6244071206813592060}
   m_Layer: 6
   m_Name: HitVFX
   m_TagString: Untagged
@@ -128,6 +129,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
   entity: {fileID: 0}
+--- !u!114 &6244071206813592060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2533619850100169201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0931819200527f743b3931128f90bd64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseUnit
+  entitySOData: {fileID: 0}
+  useData:
+    Name: 
+    Level: 0
+    isCat: 0
+    type: 0
+    DefaultHealth: 0
+    DefaultDamage: 0
+    HitBackMaxCount: 1
+    speed: 0
+    Range: 0
+    AttackRangeStart: 0
+    AttackRangeEnd: 0
+    Cost: 0
+    InitColdDown: 0
+    FrontDelay: 0
+    BackDelay: 0
+    IsOneTarget: 0
+    Money: 0
+  TargetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  originYPosition: 0
+  animator: {fileID: 0}
+  animatorHit: {fileID: 0}
+  isAttacking: 0
+  multiplier: 0.005
 --- !u!1 &7491315395792864362
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 7491315395792864362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.13, y: -2.245, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -250,6 +290,8 @@ MonoBehaviour:
   animatorHit: {fileID: 7376406012887779780}
   isAttacking: 0
   multiplier: 0.005
+  catName: 0
+  enemyName: 0
 --- !u!95 &5559828595673091995
 Animator:
   serializedVersion: 7

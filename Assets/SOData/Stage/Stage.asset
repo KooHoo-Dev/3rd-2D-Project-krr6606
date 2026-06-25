@@ -17,24 +17,24 @@ MonoBehaviour:
   DefaultEXPReward: 0
   BossTriggerHealthPercentage: 0
   waves:
-  - EnemyName: 0
-    MinNextSpawnInterval: 20
-    IsRandomTime: 0
-    MaxNextSpawnInterval: 0
-    SpawnCount: 1
-    MaxLoopCount: 0
-    NextWaveIndex: 1
-  - EnemyName: 0
-    MinNextSpawnInterval: 6
-    IsRandomTime: 1
-    MaxNextSpawnInterval: 10
-    SpawnCount: 1
-    MaxLoopCount: 0
-    NextWaveIndex: 2
-  - EnemyName: 0
-    MinNextSpawnInterval: 6
-    IsRandomTime: 1
-    MaxNextSpawnInterval: 10
-    SpawnCount: 1
-    MaxLoopCount: 100000
-    NextWaveIndex: 1
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 0
+    <IsRandomTime>k__BackingField: 0
+    <MaxSpawnInterval>k__BackingField: 0
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 1
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 20
+    <IsRandomTime>k__BackingField: 0
+    <MaxSpawnInterval>k__BackingField: 0
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 2
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 10000
+    <NextWaveIndex>k__BackingField: 2

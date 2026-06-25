@@ -1,10 +1,11 @@
 ﻿
-    public enum EnemyName
-    {
-        dog,
-        snake,
-        Those_Guys,
-        Hippoe,
-        Pigge
+public enum EnemyName
+{
+    None,
+    Dog,
+    Snake,
+    Those_Guys,
+    Hippoe,
+    Pigge
 }
 

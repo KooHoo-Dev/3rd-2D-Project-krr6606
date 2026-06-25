@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2560202295716971309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62, y: -2.245, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -181,6 +181,8 @@ MonoBehaviour:
   animatorHit: {fileID: 589262051377964351}
   isAttacking: 0
   multiplier: 0.005
+  catName: 0
+  enemyName: 0
 --- !u!95 &2200241907967931792
 Animator:
   serializedVersion: 7

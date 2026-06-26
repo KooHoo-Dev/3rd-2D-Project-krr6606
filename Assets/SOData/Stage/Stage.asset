@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Stage
   Stage: 0
   IsCleared: 0
-  DefaultEXPReward: 0
+  DefaultEXPReward: 1000
   BossTriggerHealthPercentage: 0
   waves:
   - <EnemyName>k__BackingField: 1

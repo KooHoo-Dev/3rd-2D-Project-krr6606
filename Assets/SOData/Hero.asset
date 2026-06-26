@@ -20,13 +20,13 @@ MonoBehaviour:
     DefaultHealth: 1000
     DefaultDamage: 20
     HitBackMaxCount: 1
-    speed: 60
+    speed: 120
     Range: 200
     AttackRangeStart: 0
     AttackRangeEnd: 200
     Cost: 0
     InitColdDown: 0
     FrontDelay: 0
-    BackDelay: 0
+    BackDelay: 0.35
     IsOneTarget: 0
     Money: 0

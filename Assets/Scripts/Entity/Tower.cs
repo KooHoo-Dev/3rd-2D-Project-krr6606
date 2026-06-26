@@ -20,9 +20,10 @@ public class Tower : MonoBehaviour, IDamagable
     }
     public void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
+        Debug.Log($"타워가 {damage}만큼 피해를 입었습니다. 현재 체력: {CurrentHealth}");
         int damageInt = Mathf.RoundToInt(damage);
         CurrentHealth -= damageInt;
-
+        animator.SetTrigger("IsHurt");
         CurrentHealth = Mathf.Max(CurrentHealth, 0);
 
         UpdateHealthText();

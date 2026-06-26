@@ -15,7 +15,7 @@ public class Die : Unit_State
         sequence.Join(entity.transform.DOMoveY(entity.transform.position.y + 25f, 5).SetEase(Ease.Linear));
         sequence.OnComplete(() =>
         {
-            GameObject.Destroy(entity.gameObject);
+            entity.gameObject.SetActive(false);
         });
     }
 

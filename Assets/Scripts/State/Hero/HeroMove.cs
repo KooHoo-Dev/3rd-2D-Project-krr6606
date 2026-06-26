@@ -19,6 +19,10 @@ public class HeroMove : Hero_State
         {
             hero.transform.Translate(Vector2.right * Time.deltaTime * hero.useData.speed * hero.multiplier);
         }
+        else if(Keyboard.current.zKey.wasPressedThisFrame && stateTimer <= 0 )
+        {
+            stateMachine.ChangeState(hero.AttackState);
+        }
         else
         {
             stateMachine.ChangeState(hero.IdleState);

@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 27812916}
   - component: {fileID: 27812915}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GoldUpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,6 +319,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27812913}
   m_CullTransparentMesh: 1
+--- !u!1 &27929861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27929862}
+  m_Layer: 0
+  m_Name: EnemyUnitPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &27929862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27929861}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -2.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46698946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1617,7 @@ GameObject:
   - component: {fileID: 217353856}
   - component: {fileID: 217353858}
   - component: {fileID: 217353857}
+  - component: {fileID: 217353859}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1652,6 +1684,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217353855}
   m_CullTransparentMesh: 1
+--- !u!114 &217353859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217353855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 217353857}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &300006405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,7 +2221,7 @@ GameObject:
   - component: {fileID: 379148561}
   - component: {fileID: 379148560}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2220,7 +2296,7 @@ GameObject:
   - component: {fileID: 410885424}
   - component: {fileID: 410885426}
   - component: {fileID: 410885425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2538,7 +2614,9 @@ GameObject:
   - component: {fileID: 498234268}
   - component: {fileID: 498234267}
   - component: {fileID: 498234269}
-  m_Layer: 0
+  - component: {fileID: 498234270}
+  - component: {fileID: 498234271}
+  m_Layer: 7
   m_Name: EnemyTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2617,8 +2695,8 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 410885424}
   - {fileID: 625229916}
+  - {fileID: 410885424}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &498234269
@@ -2634,6 +2712,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   towerData: {fileID: 11400000, guid: 2bb0c3c2f41509947a3a223215f4fdbc, type: 2}
+--- !u!61 &498234270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498234266}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.975}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.17, y: 1.95}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.17, y: 3.9}
+  m_EdgeRadius: 0
+--- !u!95 &498234271
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498234266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a2e5830e279b7e478177c2a227db0e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &506655686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2792,7 @@ GameObject:
   - component: {fileID: 506655689}
   - component: {fileID: 506655688}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2933,7 +3079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625229916}
   - component: {fileID: 625229917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -2967,6 +3113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417e18975e8f71446ac43a90b5f5ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  PoolParnt: {fileID: 27929862}
   enemyList:
   - {fileID: 1185263507539198905, guid: a41a3413f507a8847ade52e4948944b1, type: 3}
   - {fileID: 4868956112381025358, guid: 2aa6b4b0003f35b4a8a6f670edf0e4d0, type: 3}
@@ -5693,7 +5840,6 @@ GameObject:
   - component: {fileID: 1138985686}
   - component: {fileID: 1138985688}
   - component: {fileID: 1138985687}
-  - component: {fileID: 1138985690}
   m_Layer: 6
   m_Name: HitVFX
   m_TagString: Untagged
@@ -5735,7 +5881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
-  entity: {fileID: 0}
+  entity: {fileID: 1374168855}
 --- !u!212 &1138985688
 SpriteRenderer:
   serializedVersion: 2
@@ -5810,45 +5956,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1374168854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1138985690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138985685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0931819200527f743b3931128f90bd64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseUnit
-  entitySOData: {fileID: 0}
-  useData:
-    Name: 
-    Level: 0
-    isCat: 0
-    type: 0
-    DefaultHealth: 0
-    DefaultDamage: 0
-    HitBackMaxCount: 1
-    speed: 0
-    Range: 0
-    AttackRangeStart: 0
-    AttackRangeEnd: 0
-    Cost: 0
-    InitColdDown: 0
-    FrontDelay: 0
-    BackDelay: 0
-    IsOneTarget: 0
-    Money: 0
-  TargetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  originYPosition: 0
-  animator: {fileID: 0}
-  animatorHit: {fileID: 0}
-  isAttacking: 0
-  multiplier: 0.005
 --- !u!1 &1170025485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,7 +5969,7 @@ GameObject:
   - component: {fileID: 1170025488}
   - component: {fileID: 1170025487}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: StrongAttackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6661,7 +6768,7 @@ Transform:
   m_GameObject: {fileID: 1374168852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -2.37, z: 0}
+  m_LocalPosition: {x: -3.49, y: -2.37, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6766,7 +6873,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.3984375}
+  m_Offset: {x: -0.18752651, y: 0.3984375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -6776,7 +6883,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.75, y: 0.796875}
+  m_Size: {x: 0.37494698, y: 0.796875}
   m_EdgeRadius: 0
 --- !u!114 &1374168858
 MonoBehaviour:
@@ -6937,6 +7044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1409516508}
+  - component: {fileID: 1409516509}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -6959,6 +7067,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 689157778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409516509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409516507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beea0c762af753b45a045a81c8c2edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CatSpawner
+  PoolParnt: {fileID: 1640773700}
+  catList:
+  - {fileID: 6985332800938263998, guid: 470ab7eb718180042ba6ce7a5c12dd83, type: 3}
+  - {fileID: 5789662800015426546, guid: 3a74fb44b55939f458522891cbcadf54, type: 3}
+  - {fileID: 1512056450304285884, guid: afea0a4a18c42f949b7c3e1802751057, type: 3}
+  catPoolList: []
+  isSpawnStopped: 0
+  SpawnFrameDelay: 0.2
 --- !u!1 &1444769452
 GameObject:
   m_ObjectHideFlags: 0
@@ -7752,6 +7880,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639911878}
   m_CullTransparentMesh: 1
+--- !u!1 &1640773699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640773700}
+  m_Layer: 0
+  m_Name: CatUnitPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1640773700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640773699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -2.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643065663
 GameObject:
   m_ObjectHideFlags: 0
@@ -7765,7 +7924,7 @@ GameObject:
   - component: {fileID: 1643065666}
   - component: {fileID: 1643065665}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9708,3 +9867,5 @@ SceneRoots:
   - {fileID: 1374168854}
   - {fileID: 1693909808}
   - {fileID: 159458381}
+  - {fileID: 27929862}
+  - {fileID: 1640773700}

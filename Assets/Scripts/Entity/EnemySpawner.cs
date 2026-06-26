@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+    public Transform PoolParnt;
 
     [field: SerializeField] public List<Unit> enemyList = new List<Unit>();
 
@@ -14,24 +14,20 @@ public class EnemySpawner : MonoBehaviour
     private float SpawnTime;
 
     private float CurrentSpawnTime;
-    private int currentSpawnCount;
+
     private int currentWaveIndex;
     public bool isSpawnStopped = false;
     public float SpawnFrameDelay = 0.2f;
-    private void Awake()
-    {
-    }
+
     private void Start()
     {
         stage = StageDataManager.Instance.GetStageData(StageName.Stage1);
 
         waveList = stage.waves;
-        currentSpawnCount = 0;
 
         for (int i = 0; i < enemyList.Count; i++)
         {
-            enemyPoolList.Add(new UnitPool(enemyList[i].gameObject, transform));
-            Debug.Log($"위치: {transform.position}");
+            enemyPoolList.Add(new UnitPool(enemyList[i].gameObject, PoolParnt));
         }
 
         StartCoroutine(WaveCo());
@@ -54,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
             if (CurrentSpawnTime > 0)
             {
                 CurrentSpawnTime -= Time.deltaTime;
-                Debug.Log($"현재 웨이브 인덱스: {currentWaveIndex}, 남은 스폰 시간: {CurrentSpawnTime}");
+
             }
             else
             {

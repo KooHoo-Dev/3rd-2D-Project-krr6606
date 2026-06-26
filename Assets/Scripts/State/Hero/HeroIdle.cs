@@ -14,9 +14,10 @@ public class HeroIdle : Hero_State
         {
             stateMachine.ChangeState(hero.MoveState);
         }
-        else if (Keyboard.current.zKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame)
+        else if (Keyboard.current.zKey.wasPressedThisFrame && stateTimer <= 0)
         {
             stateMachine.ChangeState(hero.AttackState);
         }
+        
     }
 }

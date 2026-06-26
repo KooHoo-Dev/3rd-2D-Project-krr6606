@@ -16,7 +16,7 @@ public class HeroDie : Hero_State
         sequence.Join(hero.transform.DOMoveY(hero.transform.position.y + 25f, 5).SetEase(Ease.Linear));
         sequence.OnComplete(() =>
         {
-            GameObject.Destroy(hero.gameObject);
+            hero.gameObject.SetActive(false);
         });
     }
 }

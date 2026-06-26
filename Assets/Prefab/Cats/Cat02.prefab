@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4959856618301357662}
   - component: {fileID: 2986046048268094897}
   - component: {fileID: 493069586208716967}
-  - component: {fileID: 3625937223145717327}
   m_Layer: 6
   m_Name: HitVFX
   m_TagString: Untagged
@@ -128,46 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0733cae78ef6c3347a9fd1368205bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
-  entity: {fileID: 0}
---- !u!114 &3625937223145717327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5026303144488459255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0931819200527f743b3931128f90bd64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseUnit
-  entitySOData: {fileID: 0}
-  useData:
-    Name: 
-    Level: 0
-    isCat: 0
-    type: 0
-    DefaultHealth: 0
-    DefaultDamage: 0
-    HitBackMaxCount: 1
-    speed: 0
-    Range: 0
-    AttackRangeStart: 0
-    AttackRangeEnd: 0
-    Cost: 0
-    InitColdDown: 0
-    FrontDelay: 0
-    BackDelay: 0
-    IsOneTarget: 0
-    Money: 0
-  TargetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  originYPosition: 0
-  animator: {fileID: 0}
-  animatorHit: {fileID: 0}
-  isAttacking: 0
-  multiplier: 0.005
+  entity: {fileID: 1512056450304285884}
 --- !u!1 &6162086645420666224
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +268,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1512056450304285884
 MonoBehaviour:

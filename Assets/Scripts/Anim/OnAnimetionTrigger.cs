@@ -1,5 +1,5 @@
 using UnityEngine;
-[RequireComponent(typeof(BaseUnit))]
+
 public class OnAnimetionTrigger : MonoBehaviour
 {
     public BaseUnit entity;
@@ -10,9 +10,10 @@ public class OnAnimetionTrigger : MonoBehaviour
     }
     public void OnAttackTrigger()
     { 
-        entity.OnAttack();
+        entity.OnHit();
         entity.OnEndAttack();
     }
+
     public void OnEndAnimationDust()
     {
         gameObject.SetActive(false);

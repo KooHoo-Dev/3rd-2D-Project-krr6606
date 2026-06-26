@@ -181,7 +181,7 @@ MonoBehaviour:
   animatorHit: {fileID: 589262051377964351}
   isAttacking: 0
   multiplier: 0.005
-  catName: 0
+  catName: 2
   enemyName: 0
 --- !u!95 &2200241907967931792
 Animator:

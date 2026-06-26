@@ -6,12 +6,7 @@ public class CatSpawner : MonoBehaviour
     [field: SerializeField] public List<Unit> catList;
 
     public List<UnitPool> catPoolList;
-    
-    private float SpawnTime;
 
-    private float CurrentSpawnTime;
-
-    private int currentWaveIndex;
     public bool isSpawnStopped = false;
     public float SpawnFrameDelay = 0.2f;
 
@@ -23,19 +18,19 @@ public class CatSpawner : MonoBehaviour
             catPoolList.Add(new UnitPool(catList[i].gameObject, PoolParnt));
         }
     }
-    void Spawn(EnemyName enemyName)
+    public void Spawn(CatName catName)
     {
-        switch (enemyName)
+        switch (catName)
         {
-            case EnemyName.None:
+            case CatName.None:
                 break;
-            case EnemyName.Dog:
+            case CatName.Cat1:
                 catPoolList[0].Get();
                 break;
-            case EnemyName.Snake:
+            case CatName.Cat2:
                 catPoolList[1].Get();
                 break;
-            case EnemyName.Those_Guys:
+            case CatName.Cat3:
                 catPoolList[2].Get();
                 break;
         }

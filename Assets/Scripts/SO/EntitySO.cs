@@ -3,5 +3,5 @@ using UnityEngine;
 public class EntitySO : ScriptableObject
 {
    public Unitdata unitdata;
-
+    public Sprite SlotSprite;
 }

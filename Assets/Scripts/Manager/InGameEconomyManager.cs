@@ -3,9 +3,9 @@ using TMPro;
 public class InGameEconomyManager : MonoBehaviour
 {
     public static InGameEconomyManager Instance { get; private set; }
-    private int gold = 0;
+    public int gold { get; private set; } = 0;
     private float goldBuffer = 0;
-    private int MaxGold = 100;
+    public int MaxGold { get; private set; } = 1000;
     private float goldPerSec = 2f;
     private int goldPerSecLevel = 1;
     private int maxGoldLevel = 1;
@@ -28,7 +28,7 @@ public class InGameEconomyManager : MonoBehaviour
     }
     private void Update()
     {
-        IncreaseGold(goldPerSec * Time.deltaTime + (goldPerSecLevel * 0.5f * goldPerSec));
+        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * 0.5f * goldPerSec * Time.deltaTime) + 1);
     }
     public void IncreaseGold(float amount)
     {

@@ -1,6 +1,7 @@
 ﻿
     public enum CatName
     {
+        None,
         Cat1,
         Cat2,
         Cat3,

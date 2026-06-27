@@ -6,9 +6,14 @@ public class InGameEconomyManager : MonoBehaviour
     public int gold { get; private set; } = 0;
     private float goldBuffer = 0;
     public int MaxGold { get; private set; } = 1000;
-    private float goldPerSec = 2f;
-    private int goldPerSecLevel = 1;
-    private int maxGoldLevel = 1;
+    public float goldPerSec { get; private set; } = 2f;
+    public int goldPerSecLevel { get; private set; } = 1;
+    public int maxGoldLevel { get; private set; } = 1;
+    public int maxLevel { get; private set; } = 10;
+    public int DefaultIncreaseAmountMaxGold { get; private set; } = 50;
+    public float DefaultIncreaseAmountGoldPerSec { get; private set; } = 1f;
+
+    public int DefaultEconomyUpgradeCost { get; private set; } = 40;
     public TMP_Text goldText;
     void Awake()
     {
@@ -28,7 +33,14 @@ public class InGameEconomyManager : MonoBehaviour
     }
     private void Update()
     {
-        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * 0.5f * goldPerSec * Time.deltaTime) + 1);
+        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime) + 1);
+        UpdateGoldUI();
+    }
+    public void UpgradeEconomy()
+    {
+        goldPerSecLevel++;
+        maxGoldLevel++;
+        MaxGold += DefaultIncreaseAmountMaxGold + (int)((maxGoldLevel - 1) * DefaultIncreaseAmountMaxGold * 0.5f);
     }
     public void IncreaseGold(float amount)
     {
@@ -45,7 +57,7 @@ public class InGameEconomyManager : MonoBehaviour
         {
             gold = MaxGold;
         }
-        UpdateGoldUI();
+ 
     }
     private void UpdateGoldUI()
     {

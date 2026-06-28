@@ -26,6 +26,12 @@ public class Unit : BaseUnit
         base.Start();
         stateMachine.Initialize(WalkState);
 
+
+    }
+    private void OnEnable()
+    {
+        stateMachine.Initialize(WalkState);
+
     }
     protected override void Attack()
     {

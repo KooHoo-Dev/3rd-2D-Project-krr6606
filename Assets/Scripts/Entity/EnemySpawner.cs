@@ -5,22 +5,30 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public Transform PoolParnt;
-
+    private GameObject[] isSpawned; // 각 y축 위치에 적이 이미 스폰되었는지 여부를 나타내는 배열
     [field: SerializeField] public List<Unit> enemyList = new List<Unit>();
 
     public List<UnitPool> enemyPoolList = new List<UnitPool>();
     _Stage stage;
     List<StageWaveData> waveList;
     private float SpawnTime;
-
+    StageManager stageManager;
     private float CurrentSpawnTime;
 
+    public int MaxSpawnCount = 50;
     private int currentWaveIndex;
     public bool isSpawnStopped = false;
     public float SpawnFrameDelay = 0.2f;
 
+    private WaitForSeconds WaitSpawnFrameDelay;
+    private void Awake()
+    {
+        WaitSpawnFrameDelay = new WaitForSeconds(SpawnFrameDelay);
+    }
     private void Start()
     {
+        isSpawned = new GameObject[MaxSpawnCount];
+
         stage = StageDataManager.Instance.GetStageData(StageName.Stage1);
 
         waveList = stage.waves;
@@ -29,7 +37,8 @@ public class EnemySpawner : MonoBehaviour
         {
             enemyPoolList.Add(new UnitPool(enemyList[i].gameObject, PoolParnt));
         }
-
+        stageManager = StageManager.Instance;
+ 
         StartCoroutine(WaveCo());
     }
 
@@ -41,6 +50,11 @@ public class EnemySpawner : MonoBehaviour
         CurrentSpawnTime = SpawnTime;
         while (true)
         {
+            if(stageManager.IsStageEnd())
+            {
+                yield break;
+            }
+            isSpawnStopped = PoolParnt.childCount >= MaxSpawnCount;
             // 웨이브 스폰이 중지되었는지 확인
             if (isSpawnStopped)
             {
@@ -60,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Spawn(waveList[currentWaveIndex].EnemyName);
                     Debug.Log($"웨이브 {currentWaveIndex} 스폰 중: {waveList[currentWaveIndex].EnemyName}, 스폰 수: {i + 1}/{waveList[currentWaveIndex].SpawnCount}");
-                    yield return new WaitForSeconds(SpawnFrameDelay);
+                    yield return WaitSpawnFrameDelay;
                 }
                 currentWaveIndex = waveList[currentWaveIndex].NextWaveIndex;
                 SpawnTime = waveList[currentWaveIndex].IsRandomTime
@@ -79,19 +93,38 @@ public class EnemySpawner : MonoBehaviour
 
     void Spawn(EnemyName enemyName)
     {
+        GameObject enemy = null;
         switch (enemyName)
         {
             case EnemyName.None:
                 break;
             case EnemyName.Dog:
-                enemyPoolList[0].Get();
+                enemy = enemyPoolList[0].Get();
                 break;
             case EnemyName.Snake:
-                enemyPoolList[1].Get();
+                enemy = enemyPoolList[1].Get();
                 break;
             case EnemyName.Those_Guys:
-                enemyPoolList[2].Get();
+                enemy = enemyPoolList[2].Get();
                 break;
+        }
+        if(enemy == null)
+        {
+            return;
+        }
+        SetPositionY(enemy);
+    }
+    private void SetPositionY(GameObject enemy)
+    {
+        for (int i = 0; i < isSpawned.Length; i++)
+        {
+            if (isSpawned[i] == null)
+            {
+                enemy.transform.position = new Vector3(transform.position.x,transform.position.y - i * 0.05f, transform.position.z);
+                isSpawned[i] = enemy;
+                enemy.GetComponent<SpriteRenderer>().sortingOrder = i;
+                break;
+            }
         }
     }
     private void OnDestroy()

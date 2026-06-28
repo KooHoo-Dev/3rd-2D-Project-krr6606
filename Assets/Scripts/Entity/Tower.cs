@@ -25,7 +25,11 @@ public class Tower : MonoBehaviour, IDamagable
         CurrentHealth -= damageInt;
         animator.SetTrigger("IsHurt");
         CurrentHealth = Mathf.Max(CurrentHealth, 0);
-
+        if(!StageManager.Instance.isStageEnd && CurrentHealth <= 0)
+        {
+            StageManager.Instance.GameWin();
+            StageManager.Instance.isStageEnd = true;
+        }
         UpdateHealthText();
     }
     public void UpdateHealthText()

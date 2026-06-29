@@ -11,9 +11,10 @@ public class HeroSkill01 : MonoBehaviour
 
     public Transform skillEffectPoint;
     public SpriteRenderer BeamEffectSR;
+
     public GameObject line;
     public GameObject boomEffectPrefab;
-
+    private UnitPool BoomEffectPool;
     GameDataManager gameDataManager;
 
     public float DefaultSkillCooldown = 60f;
@@ -23,13 +24,15 @@ public class HeroSkill01 : MonoBehaviour
     public int DefaultSkillDamage = 500;
 
     public float DefaultSkillRange = 10f;
-
+    public LayerMask targetLayer;
     private bool isSkillReady = false;
     public float Multiplier = 0.005f;
     private float buffer = 0f;
+
     void Start()
     {
         gameDataManager = GameDataManager.Instance;
+        BoomEffectPool = new UnitPool(boomEffectPrefab,transform);
         skillCooldown = Mathf.Max(DefaultSkillCooldown - DefaultSkillCooldown * (gameDataManager.userGameDataSO.skillCoolDownLevel - 1) * 0.08f, 15f);
         currentSkillCooldown = skillCooldown;
         skillIconMask.fillAmount = 1;
@@ -70,28 +73,86 @@ public class HeroSkill01 : MonoBehaviour
         OKIcon.SetActive(false);
         StartCoroutine(BeamAnimation());
     }
+    public int GetSkillDamage()
+    {
+        return DefaultSkillDamage + Mathf.RoundToInt(DefaultSkillDamage * (gameDataManager.userGameDataSO.skillDamageLevel - 1) * 0.08f);
+    }
     private IEnumerator BeamAnimation()
     {
         BeamEffectSR.gameObject.SetActive(true);
-        Vector2 BeamEndPoint = new Vector2(skillEffectPoint.position.x, line.transform.position.y);
+        BeamEffectSR.transform.SetParent(null);
+
+        float startX = skillEffectPoint.position.x;
+        float startY = skillEffectPoint.position.y;  // 포신 높이
+
+        // ▼ 땅의 Y좌표 (line 오브젝트의 Y를 땅으로 사용)
+        float groundY = line.transform.position.y;
+
+        float maxRange = startX + gameDataManager.userGameDataSO.skillRangeLevel
+                         * DefaultSkillRange * Multiplier;
+
+        float currentEndX = startX;
+        float sweepSpeed = 10f;
+        float dir = maxRange > startX ? 1f : -1f;
+        sweepSpeed *= dir;
+
+        BeamEffectSR.transform.position = skillEffectPoint.position;
+
         while (true)
         {
+            currentEndX += sweepSpeed * Time.deltaTime;
 
-            BeamEndPoint.x = Mathf.Lerp(BeamEndPoint.x, skillEffectPoint.position.x + gameDataManager.userGameDataSO.skillRangeLevel * DefaultSkillRange * Multiplier, Time.deltaTime * 10);
-            Vector2 direction = new Vector2(skillEffectPoint.position.x - BeamEndPoint.x, skillEffectPoint.position.y - BeamEndPoint.y).normalized;
-            BeamEffectSR.gameObject.transform.rotation = Quaternion.LookRotation(direction * -1);
-            BeamEffectSR.size = new Vector2(BeamEffectSR.size.x, Mathf.Abs(skillEffectPoint.position.x - BeamEndPoint.x));
+            bool reachedEnd = dir > 0f
+                ? currentEndX >= maxRange
+                : currentEndX <= maxRange;
 
-            Debug.Log($"X거리: {BeamEndPoint.x}, 최대 범위.x: {BeamEndPoint.x}, 스킬 효과 지점 위치.x: {skillEffectPoint.position.x}");
-            if (BeamEndPoint.x >= skillEffectPoint.position.x)
+            currentEndX = dir > 0f
+                ? Mathf.Min(currentEndX, maxRange)
+                : Mathf.Max(currentEndX, maxRange);
+
+            // ▼ 포신(높은 곳) → 땅(낮은 곳)으로 방향 계산
+            Vector2 beamStart = new Vector2(startX, startY);   // 포신 위치
+            Vector2 beamEnd = new Vector2(currentEndX, groundY); // 끝점은 항상 땅
+
+            Vector2 beamDir = beamEnd - beamStart;
+
+            float angle = Mathf.Atan2(beamDir.y, beamDir.x) * Mathf.Rad2Deg;
+            BeamEffectSR.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+
+            float beamLength = beamDir.magnitude;
+            BeamEffectSR.transform.localScale = new Vector3(
+                BeamEffectSR.transform.localScale.x,
+                beamLength,
+                1f
+            );
+
+            if (reachedEnd)
             {
                 Debug.Log("Boom");
                 break;
             }
+
             yield return null;
         }
+
         BeamEffectSR.gameObject.SetActive(false);
         line.gameObject.SetActive(false);
         isSkillReady = false;
+        StartCoroutine(BoomEffectCo(new Vector3(startX, groundY, 0f), new Vector3(maxRange, groundY, 0f)));
+    }
+    private IEnumerator BoomEffectCo(Vector3 StartPos, Vector3 EndPos)
+    {
+        GameObject temp =  BoomEffectPool.Get();
+        Bounds box = temp.GetComponent<Collider2D>().bounds;
+        int InitCount = Mathf.CeilToInt(Mathf.Abs(StartPos.x - EndPos.x) / box.size.x);
+        Debug.Log($"BoomEffectCo InitCount: {InitCount}, 박스 크기: {box.size.x}, StartPos.x: {StartPos.x}, EndPos.x: {EndPos.x}");
+        temp.SetActive(false);
+        for (int i = 0; i < InitCount; i++)
+        {
+            Vector3 spawnPos = new Vector3(StartPos.x + (EndPos.x - StartPos.x) * (i / (float)InitCount), StartPos.y, StartPos.z);
+            GameObject boomEffect = BoomEffectPool.Get();
+            boomEffect.transform.position = spawnPos;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

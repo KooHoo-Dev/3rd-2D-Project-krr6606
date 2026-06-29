@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54088044, g: 0.54088044, b: 0.54088044, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2527,12 +2527,15 @@ MonoBehaviour:
   skillEffectPoint: {fileID: 1886481066}
   BeamEffectSR: {fileID: 1367950585}
   line: {fileID: 540077689}
-  boomEffectPrefab: {fileID: 0}
+  boomEffectPrefab: {fileID: 6653212532380452935, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
   DefaultSkillCooldown: 60
   skillCooldown: 0
   currentSkillCooldown: 5
-  DefaultSkillDamage: 500
-  DefaultSkillRange: 30
+  DefaultSkillDamage: 250
+  DefaultSkillRange: 100
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
   Multiplier: -0.05
 --- !u!1 &342546969
 GameObject:
@@ -3082,7 +3085,7 @@ GameObject:
   - component: {fileID: 410885424}
   - component: {fileID: 410885426}
   - component: {fileID: 410885425}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3493,7 +3496,7 @@ GameObject:
   - component: {fileID: 498234269}
   - component: {fileID: 498234270}
   - component: {fileID: 498234271}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: EnemyTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4159,7 +4162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625229916}
   - component: {fileID: 625229917}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -6779,6 +6782,67 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1001 &963839074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4076034398117699776, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6592629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3990595
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923244244290982622, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653212532380452935, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
+      propertyPath: m_Name
+      value: BoomEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d17411740a1e91e4aa906416ddafe8ba, type: 3}
 --- !u!1 &978924701
 GameObject:
   m_ObjectHideFlags: 0
@@ -7024,8 +7088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8729fa63838afc74fa893e89e748d265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
-  timeScale: 2
-  speedUpTimeScale: 2
+  timeScale: 1
+  speedUpTimeScale: 3
   pausePanel: {fileID: 1519606624}
   speedUpButtonImage: {fileID: 214340804}
 --- !u!4 &1046631844
@@ -7704,6 +7768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
   entity: {fileID: 1374168855}
+  heroSkill01: {fileID: 0}
 --- !u!212 &1138985688
 SpriteRenderer:
   serializedVersion: 2
@@ -8941,12 +9006,12 @@ SpriteRenderer:
   m_Color: {r: 1, g: 0, b: 0.86914873, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &1367950586
 Transform:
   m_ObjectHideFlags: 0
@@ -8957,7 +9022,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 1, z: 1}
+  m_LocalScale: {x: 0.021000002, y: 0.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886481066}
@@ -9260,6 +9325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
   entity: {fileID: 1374168855}
+  heroSkill01: {fileID: 0}
 --- !u!1 &1378654019
 GameObject:
   m_ObjectHideFlags: 0
@@ -13369,3 +13435,4 @@ SceneRoots:
   - {fileID: 1866596985}
   - {fileID: 317811186}
   - {fileID: 1046631844}
+  - {fileID: 963839074}

@@ -10,7 +10,6 @@ public class Walk : Unit_State
     {
         base.Enter();
         dir = entity.useData.isCat ? -1f : 1f;
-        Debug.Log($"Walk Enter: dir = {dir}, isCat = {entity.useData.isCat}");
     }
     public override void Update()
     {

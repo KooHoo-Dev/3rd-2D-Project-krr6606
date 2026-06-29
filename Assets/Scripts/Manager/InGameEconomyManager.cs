@@ -26,21 +26,19 @@ public class InGameEconomyManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
-    {
-        goldPerSecLevel = GameDataManager.Instance.goldPerSecLevel;
-        maxGoldLevel = GameDataManager.Instance.maxGoldLevel;
-    }
+
     private void Update()
     {
-        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime) + 1);
+        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.goldPerSecLevel) + 1);
         UpdateGoldUI();
     }
     public void UpgradeEconomy()
     {
         goldPerSecLevel++;
         maxGoldLevel++;
-        MaxGold += DefaultIncreaseAmountMaxGold + (int)((maxGoldLevel - 1) * DefaultIncreaseAmountMaxGold * 0.5f);
+        MaxGold += DefaultIncreaseAmountMaxGold 
+            + (GameDataManager.Instance.userGameDataSO.goldPerSecLevel - 1)* DefaultIncreaseAmountMaxGold
+            + (int)((maxGoldLevel - 1) * DefaultIncreaseAmountMaxGold * 0.5f * GameDataManager.Instance.userGameDataSO.maxGoldLevel);
     }
     public void IncreaseGold(float amount)
     {

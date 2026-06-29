@@ -4,8 +4,11 @@ using UnityEngine;
 public class GameDataManager : MonoBehaviour
 {
     public static GameDataManager Instance { get; private set; }
+    public UserGameDataSO userGameDataSO;
     public int goldPerSecLevel = 1;
     public int maxGoldLevel = 1;
+    public int skillDamageLevel = 1;
+
     // CatName과 CatSO를 연결하는 배열, CatName을 인덱스로 사용하여 CatSO를 가져올 수 있음
     public EntitySO[] CatSOArray; 
 

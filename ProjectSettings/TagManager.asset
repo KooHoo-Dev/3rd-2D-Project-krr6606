@@ -47,5 +47,8 @@ TagManager:
   - name: Entity
     uniqueID: 3861854369
     locked: 0
+  - name: Skill
+    uniqueID: 1414849263
+    locked: 0
   m_RenderingLayers:
   - Default

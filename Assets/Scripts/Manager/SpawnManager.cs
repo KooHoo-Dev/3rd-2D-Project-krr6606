@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     }
     void Start()
     {
-        CatName[] catSlotArray = GameDataManager.Instance.CatSlotArraty;
+        CatName[] catSlotArray = GameDataManager.Instance.userGameDataSO.CatSlotArray;
         for(int i = 0; i < catSlotArray.Length; i++)
         {
             Debug.Log($"스폰 슬롯 초기화 {catSlotArray[i]}, {i}번째");

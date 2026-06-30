@@ -5,12 +5,22 @@ using UnityEngine.UI;
 public class Swipe_Slot : MonoBehaviour
 {
     public Scrollbar scrollbar;
-
+    public SlotData[] slotDataArray;
+    public int currentIndex = 0;
     float[] pos;
     float distance;
     bool isDragging = false;
-    int targetIndex = 0;
-
+    public int targetIndex{ get; private set; }
+    void Awake()
+    {
+        // 슬롯 데이터 배열 초기화
+        slotDataArray = new SlotData[transform.childCount];
+        Debug.Log("Child Count: " + transform.childCount);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            slotDataArray[i] = transform.GetChild(i).GetComponent<SlotData>();
+        }
+    }
     void Start()
     {
         pos = new float[transform.childCount];
@@ -27,9 +37,11 @@ public class Swipe_Slot : MonoBehaviour
         if (Mouse.current.leftButton.isPressed)
         {
             isDragging = true;
+
         }
         else
         {
+            
             // 드래그를 막 놓은 순간 → 가장 가까운 인덱스 1회 계산
             if (isDragging)
             {
@@ -51,6 +63,7 @@ public class Swipe_Slot : MonoBehaviour
             transform.GetChild(i).localScale =
                 Vector2.Lerp(transform.GetChild(i).localScale, targetScale, 0.1f);
         }
+        currentIndex = targetIndex;
     }
 
     // 현재 value에서 가장 가까운 pos 인덱스 반환

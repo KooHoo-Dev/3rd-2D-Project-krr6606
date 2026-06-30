@@ -360,13 +360,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca50a46c39a4d4a851d788d908f709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatSpriteDataManager
-  CatSlotSpriteArray:
-  - {fileID: -7247676394553336019, guid: e6c40ea87935c00428508f893f01e530, type: 3}
+  CatSlotIngameSpriteArray:
   - {fileID: -7247676394553336019, guid: e6c40ea87935c00428508f893f01e530, type: 3}
   - {fileID: 2385431815312559135, guid: a68b2cc9cc414f844877360b27b5f21d, type: 3}
   - {fileID: 2021280136645597755, guid: e9655633ebae0bf438ecebdaee7656dc, type: 3}
   - {fileID: -1901341522131240017, guid: b74199e742694284db5a537489a66edc, type: 3}
   - {fileID: 2658368493617619668, guid: 1d7fbef4cff9e234687ed3f70f60b14b, type: 3}
+  CatSlotImage:
+  - {fileID: 5434425776469787498, guid: e6f4c8a9358fc6a419f243cc2576d4a8, type: 3}
+  - {fileID: 560893750813285641, guid: 2e279004d4e529f468e79e003283e0c9, type: 3}
+  - {fileID: -4161754042802104828, guid: c6eafef5cfdbc42489c1465d5799f002, type: 3}
+  - {fileID: 6668741145597617838, guid: 94661da5f0ad8b74c9c12c3e633c5093, type: 3}
+  - {fileID: 6050950649689636810, guid: 0425e15a65b3ce04183f34e88df2c329, type: 3}
 --- !u!4 &205399126
 Transform:
   m_ObjectHideFlags: 0

@@ -10,12 +10,10 @@ public class GameDataManager : MonoBehaviour
     // CatName과 CatSO를 연결하는 배열, CatName을 인덱스로 사용하여 CatSO를 가져올 수 있음
     public EntitySO[] CatSOArray; 
 
-    public List<CatName> UnLockList;
-    public CatName[] CatSlotArraty;
+ 
     public Dictionary<CatName, int> CatLevelDic;
 
     public int MaxCatSlotCount = 10;
-    public int CatSlotCount = 0;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,16 +23,15 @@ public class GameDataManager : MonoBehaviour
         else
         {
             Instance = this;
-            CatSlotArraty = new CatName[MaxCatSlotCount];
-            for (int i = 0; i < MaxCatSlotCount; i++)
-            {
-                CatSlotArraty[i] = CatName.None;
-
-            }
             SetCatSlot(CatName.Cat1, 0);
-
+            CatLevelDic = new Dictionary<CatName, int>();
+            for (int i = 0; i < userGameDataSO.UnLockList.Count; i++)
+            {
+                CatLevelDic.Add(userGameDataSO.UnLockList[i], userGameDataSO.UnLockCatLevel[i]);
+            }
             DontDestroyOnLoad(gameObject);
         }
+
     }
 
     public void CatUpgreade(CatName catName)
@@ -50,9 +47,10 @@ public class GameDataManager : MonoBehaviour
     }
     public void UnlockCat(CatName catName)
     {
-        if (!UnLockList.Contains(catName))
+        if (!userGameDataSO.UnLockList.Contains(catName))
         {
-            UnLockList.Add(catName);
+            userGameDataSO.UnLockList.Add(catName);
+            userGameDataSO.UnLockCatLevel.Add(1);
             CatLevelDic.Add(catName, 1);
         }
     }
@@ -60,7 +58,7 @@ public class GameDataManager : MonoBehaviour
     {
         if (slotIndex >= 0 && slotIndex < MaxCatSlotCount)
         {
-            CatSlotArraty[slotIndex] = catName;
+            userGameDataSO.CatSlotArray[slotIndex] = catName;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "UserGameDataSO", menuName = "ScriptableObjects/UserGameDataSO", order = 1)]
 public class UserGameDataSO : ScriptableObject
@@ -14,5 +15,7 @@ public class UserGameDataSO : ScriptableObject
     public int HeroSpeedLevel = 1;
     public int HeroHealthLevel = 1;
     public int HeroDamageLevel = 1;
-
+    public List<CatName> UnLockList;
+    public CatName[] CatSlotArray;
+    public List<int> UnLockCatLevel;
 }

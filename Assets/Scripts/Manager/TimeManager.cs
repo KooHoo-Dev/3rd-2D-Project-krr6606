@@ -2,13 +2,25 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
-
+    public static TimeManager Instance { get; private set; }
     public float timeScale = 1f;
-    public static bool isPaused;
-    public static bool isSpeedUp;
+    public  bool isPaused;
+    public  bool isSpeedUp;
     public float speedUpTimeScale = 2f;
-    public GameObject pausePanel;
-    public Image speedUpButtonImage;
+
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -19,35 +31,25 @@ public class TimeManager : MonoBehaviour
     {
         timeScale = 0f;
                 isPaused = true;
-        pausePanel.SetActive(true);
+
     }
     public void ResumeGame()
     {
         timeScale = isSpeedUp ? speedUpTimeScale : 1f;
         isPaused = false;
-        pausePanel.SetActive(false);
+
     }
-    public void ToggleSpeedUpGame()
-    {
-        if (isSpeedUp)
-        {
-            NormalSpeedGame();
-        }
-        else
-        {
-            SpeedUpGame();
-        }
-    }
+
     public void SpeedUpGame()
     {
         isSpeedUp = true;
         timeScale = speedUpTimeScale;
-        speedUpButtonImage.color = Color.white;
+
     }
     public void NormalSpeedGame()
     {
         isSpeedUp = false;
         timeScale = 1f;
-        speedUpButtonImage.color = new Color(0.5f, 0.5f, 0.5f);
+
     }
 }

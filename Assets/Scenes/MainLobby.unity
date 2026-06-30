@@ -922,7 +922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC608\uC2DC \uD14D\uC2A4\uD2B8 \uC785\uB2C8\uB2E4."
+  m_text: "\uB0E5\uB0E5\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
   m_sharedMaterial: {fileID: 266022702890117651, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
@@ -1455,6 +1455,7 @@ GameObject:
   - component: {fileID: 1415838715}
   - component: {fileID: 1415838714}
   - component: {fileID: 1415838713}
+  - component: {fileID: 1415838716}
   m_Layer: 5
   m_Name: BattleStartButton
   m_TagString: Untagged
@@ -1525,7 +1526,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1415838714}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1415838716}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1415838714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,6 +1577,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415838711}
   m_CullTransparentMesh: 1
+--- !u!114 &1415838716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415838711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0865486583bfd4fadad8982761f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeButton
 --- !u!1 &1468726382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,6 +1864,7 @@ GameObject:
   - component: {fileID: 1768159124}
   - component: {fileID: 1768159123}
   - component: {fileID: 1768159122}
+  - component: {fileID: 1768159125}
   m_Layer: 5
   m_Name: PowerUpButton (1)
   m_TagString: Untagged
@@ -1909,7 +1935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1768159123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1768159125}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1768159123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1948,6 +1986,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768159120}
   m_CullTransparentMesh: 1
+--- !u!114 &1768159125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768159120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0865486583bfd4fadad8982761f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeButton
 --- !u!1 &1793861406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,6 +2147,7 @@ GameObject:
   - component: {fileID: 1869032138}
   - component: {fileID: 1869032137}
   - component: {fileID: 1869032136}
+  - component: {fileID: 1869032139}
   m_Layer: 5
   m_Name: ReTurnButton
   m_TagString: Untagged
@@ -2167,7 +2218,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1869032137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1869032139}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1869032137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,6 +2269,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869032134}
   m_CullTransparentMesh: 1
+--- !u!114 &1869032139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869032134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0865486583bfd4fadad8982761f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeButton
 --- !u!1 &1884073340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2507,7 @@ GameObject:
   - component: {fileID: 2087362066}
   - component: {fileID: 2087362065}
   - component: {fileID: 2087362064}
+  - component: {fileID: 2087362067}
   m_Layer: 5
   m_Name: BattleStartButton (2)
   m_TagString: Untagged
@@ -2502,7 +2578,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2087362065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087362067}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2087362065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2541,6 +2629,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087362062}
   m_CullTransparentMesh: 1
+--- !u!114 &2087362067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087362062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0865486583bfd4fadad8982761f189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeButton
 --- !u!1 &2094104717
 GameObject:
   m_ObjectHideFlags: 0

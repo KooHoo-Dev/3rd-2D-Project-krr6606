@@ -5,15 +5,15 @@ public class GameDataManager : MonoBehaviour
 {
     public static GameDataManager Instance { get; private set; }
     public UserGameDataSO userGameDataSO;
-    public int goldPerSecLevel = 1;
-    public int maxGoldLevel = 1;
-    public int skillDamageLevel = 1;
-
+    
+    
     // CatName과 CatSO를 연결하는 배열, CatName을 인덱스로 사용하여 CatSO를 가져올 수 있음
     public EntitySO[] CatSOArray; 
 
     public List<CatName> UnLockList;
     public CatName[] CatSlotArraty;
+    public Dictionary<CatName, int> CatLevelDic;
+
     public int MaxCatSlotCount = 10;
     public int CatSlotCount = 0;
     void Awake()
@@ -32,18 +32,28 @@ public class GameDataManager : MonoBehaviour
 
             }
             SetCatSlot(CatName.Cat1, 0);
-            SetCatSlot(CatName.Cat2, 1);
-            SetCatSlot(CatName.Cat3, 2);
+
             DontDestroyOnLoad(gameObject);
         }
     }
 
-
+    public void CatUpgreade(CatName catName)
+    {
+        if (CatLevelDic.ContainsKey(catName))
+        {
+            CatLevelDic[catName]++;
+        }
+        else
+        {
+            Debug.LogWarning($"Cat {catName} is not unlocked yet.");
+        }
+    }
     public void UnlockCat(CatName catName)
     {
         if (!UnLockList.Contains(catName))
         {
             UnLockList.Add(catName);
+            CatLevelDic.Add(catName, 1);
         }
     }
     public void SetCatSlot(CatName catName, int slotIndex)

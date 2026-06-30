@@ -9,23 +9,28 @@ public class HeroAttack : Hero_State
     public override void Enter()
     {
         base.Enter();
+        if(stateTimer <= 0)
+        {
+
         stateTimer = hero.useData.BackDelay;
+        }
         hero.isAttacking = true;
     }
     public override void Update()
     {
         base.Update();
-        if ((Keyboard.current.aKey.isPressed
-            || Keyboard.current.leftArrowKey.isPressed
-            || Keyboard.current.dKey.isPressed
-            || Keyboard.current.rightArrowKey.isPressed )&& stateTimer <= 0)
-        {
-            stateMachine.ChangeState(hero.MoveState);
-        }
         if (hero.isAttacking == false)
         {
             stateTimer -= Time.deltaTime;
         }
+        if ((Keyboard.current.aKey.isPressed
+            || Keyboard.current.leftArrowKey.isPressed
+            || Keyboard.current.dKey.isPressed
+            || Keyboard.current.rightArrowKey.isPressed )&& stateTimer <= 0 && hero.isAttacking == false)
+        {
+            stateMachine.ChangeState(hero.MoveState);
+        }
+
 
         if (stateTimer <= 0 && hero.isAttacking == false)
         {

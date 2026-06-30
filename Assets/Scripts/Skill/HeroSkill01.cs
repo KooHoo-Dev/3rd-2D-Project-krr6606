@@ -117,7 +117,7 @@ public class HeroSkill01 : MonoBehaviour
             Vector2 beamDir = beamEnd - beamStart;
 
             float angle = Mathf.Atan2(beamDir.y, beamDir.x) * Mathf.Rad2Deg;
-            BeamEffectSR.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+            BeamEffectSR.transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // 스프라이트 피벗이 Bottom Center이므로 -90도 회전
 
             float beamLength = beamDir.magnitude;
             BeamEffectSR.transform.localScale = new Vector3(

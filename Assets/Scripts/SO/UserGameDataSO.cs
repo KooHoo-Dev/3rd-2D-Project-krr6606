@@ -11,5 +11,8 @@ public class UserGameDataSO : ScriptableObject
     public int skillCoolDownLevel = 1;
     public int skillRangeLevel = 1;
     public int EXPGetLevel = 1;
+    public int HeroSpeedLevel = 1;
+    public int HeroHealthLevel = 1;
+    public int HeroDamageLevel = 1;
 
 }

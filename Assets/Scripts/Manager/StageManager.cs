@@ -26,7 +26,6 @@ public class StageManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         ResultPanel.SetActive(false);
 

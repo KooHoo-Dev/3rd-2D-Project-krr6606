@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class HeroMove : Hero_State
 {
-    int dir;
     public HeroMove(StateMachin stateMachine, string animBoolName, Hero hero) : base(stateMachine, animBoolName, hero)
     {
     }
@@ -19,7 +18,7 @@ public class HeroMove : Hero_State
         {
             hero.transform.Translate(Vector2.right * Time.deltaTime * hero.useData.speed * hero.multiplier);
         }
-        else if(Keyboard.current.zKey.wasPressedThisFrame && stateTimer <= 0 )
+        else if(Keyboard.current.zKey.wasPressedThisFrame)
         {
             stateMachine.ChangeState(hero.AttackState);
         }

@@ -16,6 +16,7 @@ MonoBehaviour:
     Name: "\uB0E5\uCF54"
     Level: 1
     isCat: 1
+    type: 0
     DefaultHealth: 250
     DefaultDamage: 20
     HitBackMaxCount: 3
@@ -25,7 +26,9 @@ MonoBehaviour:
     AttackRangeEnd: 140
     Cost: 50
     InitColdDown: 6
+    UpgradeCost_1_10: 90010000bc0200004c0400004006000098080000540b0000740e0000f8110000e0150000
     FrontDelay: 1.23
     BackDelay: 0.27
     IsOneTarget: 1
     Money: 0
+  SlotSprite: {fileID: 0}

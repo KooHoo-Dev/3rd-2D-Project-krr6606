@@ -2489,6 +2489,7 @@ GameObject:
   - component: {fileID: 460943793}
   - component: {fileID: 460943792}
   - component: {fileID: 460943791}
+  - component: {fileID: 460943794}
   m_Layer: 5
   m_Name: Image (4)
   m_TagString: Untagged
@@ -2598,6 +2599,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460943789}
   m_CullTransparentMesh: 1
+--- !u!114 &460943794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460943789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &468284304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,6 +2898,7 @@ GameObject:
   - component: {fileID: 488612810}
   - component: {fileID: 488612809}
   - component: {fileID: 488612808}
+  - component: {fileID: 488612811}
   m_Layer: 5
   m_Name: Image (9)
   m_TagString: Untagged
@@ -2993,6 +3008,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488612806}
   m_CullTransparentMesh: 1
+--- !u!114 &488612811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488612806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &507345920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,6 +4798,7 @@ GameObject:
   - component: {fileID: 746602833}
   - component: {fileID: 746602832}
   - component: {fileID: 746602831}
+  - component: {fileID: 746602834}
   m_Layer: 5
   m_Name: Image (6)
   m_TagString: Untagged
@@ -4879,6 +4908,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746602829}
   m_CullTransparentMesh: 1
+--- !u!114 &746602834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746602829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &746938244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,6 +5009,7 @@ GameObject:
   - component: {fileID: 758527994}
   - component: {fileID: 758527993}
   - component: {fileID: 758527992}
+  - component: {fileID: 758527995}
   m_Layer: 5
   m_Name: Image (8)
   m_TagString: Untagged
@@ -5076,6 +5119,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758527990}
   m_CullTransparentMesh: 1
+--- !u!114 &758527995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758527990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &763489170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,6 +6140,7 @@ GameObject:
   - component: {fileID: 867883585}
   - component: {fileID: 867883584}
   - component: {fileID: 867883583}
+  - component: {fileID: 867883586}
   m_Layer: 5
   m_Name: Image (5)
   m_TagString: Untagged
@@ -6193,6 +6250,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867883581}
   m_CullTransparentMesh: 1
+--- !u!114 &867883586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867883581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &871324321
 GameObject:
   m_ObjectHideFlags: 0
@@ -9650,6 +9720,7 @@ GameObject:
   - component: {fileID: 1404910164}
   - component: {fileID: 1404910163}
   - component: {fileID: 1404910162}
+  - component: {fileID: 1404910165}
   m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
@@ -9759,6 +9830,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404910160}
   m_CullTransparentMesh: 1
+--- !u!114 &1404910165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404910160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &1411180895
 GameObject:
   m_ObjectHideFlags: 0
@@ -11359,6 +11443,7 @@ GameObject:
   - component: {fileID: 1760621250}
   - component: {fileID: 1760621249}
   - component: {fileID: 1760621251}
+  - component: {fileID: 1760621252}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -11468,6 +11553,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1760621252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760621247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &1784595707
 GameObject:
   m_ObjectHideFlags: 0
@@ -11727,6 +11825,7 @@ GameObject:
   - component: {fileID: 1818696515}
   - component: {fileID: 1818696514}
   - component: {fileID: 1818696513}
+  - component: {fileID: 1818696516}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -11836,6 +11935,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818696511}
   m_CullTransparentMesh: 1
+--- !u!114 &1818696516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818696511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &1832159919
 GameObject:
   m_ObjectHideFlags: 0
@@ -11848,6 +11960,7 @@ GameObject:
   - component: {fileID: 1832159923}
   - component: {fileID: 1832159922}
   - component: {fileID: 1832159921}
+  - component: {fileID: 1832159924}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -11957,6 +12070,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832159919}
   m_CullTransparentMesh: 1
+--- !u!114 &1832159924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832159919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &1837373306
 GameObject:
   m_ObjectHideFlags: 0
@@ -12290,6 +12416,7 @@ GameObject:
   - component: {fileID: 1934086132}
   - component: {fileID: 1934086131}
   - component: {fileID: 1934086130}
+  - component: {fileID: 1934086133}
   m_Layer: 5
   m_Name: Image (7)
   m_TagString: Untagged
@@ -12399,6 +12526,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934086128}
   m_CullTransparentMesh: 1
+--- !u!114 &1934086133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934086128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotData
+  catName: 1
 --- !u!1 &1946468055
 GameObject:
   m_ObjectHideFlags: 0

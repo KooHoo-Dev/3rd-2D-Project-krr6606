@@ -17,7 +17,7 @@ public class Unitdata
     public float AttackRangeEnd;
     public int Cost;
     public float InitColdDown;
-
+    public int[] UpgradeCost_1_10;
     public float FrontDelay;
     public float BackDelay;
 

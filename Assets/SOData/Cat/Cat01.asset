@@ -26,7 +26,9 @@ MonoBehaviour:
     AttackRangeEnd: 110
     Cost: 100
     InitColdDown: 8
+    UpgradeCost_1_10: bc02000040060000f00a0000cc100000d41700000820000068290000ac3f0000
     FrontDelay: 2.23
     BackDelay: 0.27
     IsOneTarget: 0
     Money: 0
+  SlotSprite: {fileID: 0}

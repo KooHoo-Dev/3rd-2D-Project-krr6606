@@ -42,7 +42,11 @@ public class SlotData : MonoBehaviour
         this.catName = catName;
         image.gameObject.SetActive(true);
         image.sprite = CatSlotSpriteDataManager.Instance.GetCatSpriteOrNull(catName);
-        CostText.text = gameDataManager.CatSOArray[(int)catName].unitdata.Cost.ToString();
+
+        if(CostText != null)
+        {
+            CostText.text = gameDataManager.CatSOArray[(int)catName].unitdata.Cost.ToString();
+        }
         if(catName == CatName.None)
         {
             image.gameObject.SetActive(false);

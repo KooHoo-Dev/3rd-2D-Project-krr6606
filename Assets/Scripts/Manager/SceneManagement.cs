@@ -51,7 +51,7 @@ public class SceneManagement : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Clamp01(elapsedTime / time);
             panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, alpha);
-            Debug.Log($"elapsedTime: {elapsedTime}, alpha: {alpha} , Time.deltaTime: {Time.deltaTime}");
+
             yield return null;
         }
 

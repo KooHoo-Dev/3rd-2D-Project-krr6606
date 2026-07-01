@@ -1943,7 +1943,6 @@ GameObject:
   - component: {fileID: 486313781}
   - component: {fileID: 486313780}
   - component: {fileID: 486313779}
-  - component: {fileID: 486313782}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2027,18 +2026,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &486313782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486313777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164110c7ab25fc445b8b60ce9e2d8989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CatDragInven
 --- !u!1 &517974576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2479,7 @@ MonoBehaviour:
   slotDataArray: []
   currentIndex: 0
   slotPrefab: {fileID: 0}
-  invenType: 0
+  invenType: 1
 --- !u!1 &571077052
 GameObject:
   m_ObjectHideFlags: 0
@@ -8040,10 +8027,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   slotIndex: 0
-  image: {fileID: 0}
-  NameText: {fileID: 0}
-  LevelText: {fileID: 0}
-  upgradeEXP: {fileID: 0}
+  image: {fileID: 1005460218}
+  NameText: {fileID: 400568311}
+  LevelText: {fileID: 1985988668}
+  upgradeEXP: {fileID: 323375091}
   CostText: {fileID: 0}
 --- !u!114 &1899501801
 MonoBehaviour:

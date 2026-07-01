@@ -44,7 +44,7 @@ public class Swipe_Slot : MonoBehaviour
 
     private void Update()
     {
-        if(invenType == InvenType.None) return; invenType = InvenType.None; 
+        if(invenType != InvenType.PickSlots) return; 
         if (Mouse.current.leftButton.isPressed)
         {
             isDragging = true;
@@ -139,6 +139,7 @@ public class Swipe_Slot : MonoBehaviour
                     if (catName != CatName.None)
                     {
                         slotDatas[i].SetResultSlotData(catName);
+                    Debug.Log($"ResultInven Slot {i}: {slotDatas[i].catName}");
                     }
                 }
                 break;

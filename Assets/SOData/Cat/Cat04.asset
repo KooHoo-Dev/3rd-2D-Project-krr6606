@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntitySO
   unitdata:
     Name: "\uD669\uC18C \uACE0\uC591\uC774"
+    Description: "\uBBFC\uCCA9\uD55C \uC6C0\uC9C1\uC784\uC73C\uB85C \uC774\uB3D9\uB825\uC774
+      \uB6F0\uC5B4\uB09C \uCE90\uB9AD\uD130\\n \uACF5\uACA9\uD69F\uC218\uB3C4 \uC7A5\uB09C\uC774
+      \uC544\uB2C8\uB2E4"
     Level: 1
     isCat: 1
     type: 0

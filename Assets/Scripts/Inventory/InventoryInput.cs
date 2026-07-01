@@ -58,7 +58,7 @@ namespace Study_Inventory
                 startSlot.SetResultSlotData(CatName.None);
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = CatName.None;
             }
-            Debug.Log($"드래그 시작: {startSlot.catName}");
+            Debug.Log($"드래그 시작: {startSlot.catName}, 인벤 타입 : {InvenManager.Instance.GetInventoryOrNull(startSlot).invenType}");
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -82,6 +82,12 @@ namespace Study_Inventory
             
             if (endSlot == null)
             {
+                
+                if(InvenManager.Instance.GetInventoryOrNull(startSlot).invenType == InvenType.ResultInven)
+                {
+                    startSlot.SetResultSlotData(cursorSlot.catName);
+                    GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = cursorSlot.catName;
+                }
                 ResetCursor();
                 return; //종료된 위치가 Slot이 아닌 경우
             }
@@ -90,8 +96,18 @@ namespace Study_Inventory
                 && InvenManager.Instance.GetInventoryOrNull(endSlot).invenType == InvenType.ResultInven)
             {
                 
-                endSlot.SetNormalSlotData(cursorSlot.catName);
+                endSlot.SetResultSlotData(cursorSlot.catName);
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
+            }
+            if(endSlot.catName != CatName.None 
+                && InvenManager.Instance.GetInventoryOrNull(endSlot) != null 
+                && InvenManager.Instance.GetInventoryOrNull(endSlot).invenType == InvenType.ResultInven)
+            {
+                CatName tempCatName = endSlot.catName;
+                endSlot.SetResultSlotData(cursorSlot.catName);
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
+                startSlot.SetResultSlotData(tempCatName);
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = tempCatName;
             }
             ResetCursor();
             Debug.Log($"드래그 종료: {endSlot.catName}");

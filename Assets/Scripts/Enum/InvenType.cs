@@ -1,7 +1,8 @@
 ﻿
-    public enum InvenType
-    {
-        ResultInven,
-        PickSlots
+public enum InvenType
+{
+    None,
+    ResultInven,
+    PickSlots
 }
 

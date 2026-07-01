@@ -20,6 +20,6 @@ public class StageDataManager : MonoBehaviour
     }
     public _Stage GetStageData(StageName stageName)
     {
-        return StageList.Find(stage => stage.Stage == stageName);
+        return StageList.Find(stage => stage.stageName == stageName);
     }
 }

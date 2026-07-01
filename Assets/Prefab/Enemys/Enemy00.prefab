@@ -98,6 +98,7 @@ MonoBehaviour:
   entitySOData: {fileID: 11400000, guid: 8a3babe9487995342b103514cdd47ab9, type: 2}
   useData:
     Name: 
+    Description: 
     Level: 0
     isCat: 0
     type: 0
@@ -110,13 +111,14 @@ MonoBehaviour:
     AttackRangeEnd: 0
     Cost: 0
     InitColdDown: 0
+    UpgradeCost_1_10: 
     FrontDelay: 0
     BackDelay: 0
     IsOneTarget: 0
     Money: 0
   TargetLayer:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 584
   originYPosition: -2.245
   animator: {fileID: 3969679940803193295}
   animatorHit: {fileID: 4163172204672644470}

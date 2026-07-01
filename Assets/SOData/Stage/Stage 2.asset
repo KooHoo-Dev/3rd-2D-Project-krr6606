@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72cbe3881bb430246a2b8544aa30d792, type: 3}
-  m_Name: Stage
+  m_Name: Stage 2
   m_EditorClassIdentifier: Assembly-CSharp::_Stage
-  Stage: 0
+  stageName: 1
   IsCleared: 0
-  DefaultEXPReward: 1000
+  DefaultEXPReward: 4000
   BossTriggerHealthPercentage: 0
   waves:
   - <EnemyName>k__BackingField: 1
@@ -25,9 +25,9 @@ MonoBehaviour:
     <MaxLoopCount>k__BackingField: 0
     <NextWaveIndex>k__BackingField: 1
   - <EnemyName>k__BackingField: 1
-    <MinSpawnInterval>k__BackingField: 20
-    <IsRandomTime>k__BackingField: 0
-    <MaxSpawnInterval>k__BackingField: 0
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
     <SpawnCount>k__BackingField: 1
     <MaxLoopCount>k__BackingField: 0
     <NextWaveIndex>k__BackingField: 2
@@ -36,5 +36,12 @@ MonoBehaviour:
     <IsRandomTime>k__BackingField: 1
     <MaxSpawnInterval>k__BackingField: 10
     <SpawnCount>k__BackingField: 1
-    <MaxLoopCount>k__BackingField: 10000
-    <NextWaveIndex>k__BackingField: 2
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 3
+  - <EnemyName>k__BackingField: 2
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 1

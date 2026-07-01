@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class InvenManager : MonoBehaviour
 {
     public static InvenManager Instance { get; private set; }
-    private List<CatDragInven> catDragInventories = new List<CatDragInven>();
+    private List<Swipe_Slot> catDragInventories = new List<Swipe_Slot>();
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -15,7 +15,7 @@ public class InvenManager : MonoBehaviour
             Instance = this;
         }
     }
-    public void Register(CatDragInven inventory)
+    public void Register(Swipe_Slot inventory)
     {
         if (catDragInventories.Contains(inventory))
         {
@@ -24,11 +24,11 @@ public class InvenManager : MonoBehaviour
         }
         catDragInventories.Add(inventory);
     }
-    public void Unregister(CatDragInven inventory)
+    public void Unregister(Swipe_Slot inventory)
     {
         catDragInventories.Remove(inventory);
     }
-    public CatDragInven GetInventoryOrNull(SlotData targetSlot)
+    public Swipe_Slot GetInventoryOrNull(SlotData targetSlot)
     {
         for (int i = 0; i < catDragInventories.Count; i++)
         {

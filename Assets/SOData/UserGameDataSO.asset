@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: UserGameDataSO
   m_EditorClassIdentifier: Assembly-CSharp::UserGameDataSO
   maxclearedStage: 0
-  currentEXP: 0
+  currentEXP: 5000
   goldPerSecLevel: 1
   maxGoldLevel: 1
   skillDamageLevel: 1
+  skillCoolDownLevel: 1
   skillRangeLevel: 1
   EXPGetLevel: 1
+  HeroSpeedLevel: 1
+  HeroHealthLevel: 1
+  HeroDamageLevel: 1
+  UnLockList: 0000000001000000
+  CatSlotArray: 01000000000000000000000000000000000000000000000000000000000000000000000000000000

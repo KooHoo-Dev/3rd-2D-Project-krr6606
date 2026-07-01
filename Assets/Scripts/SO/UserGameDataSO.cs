@@ -17,5 +17,4 @@ public class UserGameDataSO : ScriptableObject
     public int HeroDamageLevel = 1;
     public List<CatName> UnLockList;
     public CatName[] CatSlotArray;
-    public List<int> UnLockCatLevel;
 }

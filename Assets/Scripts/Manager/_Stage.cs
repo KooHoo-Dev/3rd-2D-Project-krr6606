@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Stage", menuName = "ScriptableObjects/Stage", order = 1)]
 public class _Stage : ScriptableObject
 {
-    public StageName Stage;
+    public StageName stageName;
     public bool IsCleared;
 
     public int DefaultEXPReward;

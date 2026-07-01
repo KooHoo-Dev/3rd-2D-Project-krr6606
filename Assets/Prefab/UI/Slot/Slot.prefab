@@ -470,9 +470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -682,9 +682,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -866,10 +866,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9014221654663080572}
-  - {fileID: 3200017868778960835}
   - {fileID: 70152279307186231}
   - {fileID: 2066088711722219336}
   - {fileID: 2796350738095339428}
+  - {fileID: 3200017868778960835}
   m_Father: {fileID: 1627631664370542817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -899,9 +899,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -927,7 +927,6 @@ GameObject:
   - component: {fileID: 9189527499908483112}
   - component: {fileID: 1125225347264399247}
   - component: {fileID: 1920535864050789765}
-  - component: {fileID: 6829234259642398551}
   - component: {fileID: 38313508985928655}
   m_Layer: 5
   m_Name: Slot
@@ -1038,18 +1037,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6829234259642398551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509350384182278768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc2dcbb8372afea45af0538320cd2e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryInput
 --- !u!114 &38313508985928655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,11 +1049,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79e9fe49dff49144b886b5d630863c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
-  catName: 1
+  <catName>k__BackingField: 0
+  slotIndex: 0
   image: {fileID: 2531963019122273211}
   NameText: {fileID: 63503732760397412}
   LevelText: {fileID: 242510363730514416}
   upgradeEXP: {fileID: 5111500254208665403}
+  CostText: {fileID: 0}
 --- !u!1 &7435396404902348258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,9 +1116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

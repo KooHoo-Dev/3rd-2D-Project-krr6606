@@ -27,7 +27,7 @@ public class GameDataManager : MonoBehaviour
             CatLevelDic = new Dictionary<CatName, int>();
             for (int i = 0; i < userGameDataSO.UnLockList.Count; i++)
             {
-                CatLevelDic.Add(userGameDataSO.UnLockList[i], userGameDataSO.UnLockCatLevel[i]);
+                CatLevelDic.Add(userGameDataSO.UnLockList[i], CatSOArray[(int)userGameDataSO.UnLockList[i]].unitdata.Level);
             }
             DontDestroyOnLoad(gameObject);
         }
@@ -50,7 +50,7 @@ public class GameDataManager : MonoBehaviour
         if (!userGameDataSO.UnLockList.Contains(catName))
         {
             userGameDataSO.UnLockList.Add(catName);
-            userGameDataSO.UnLockCatLevel.Add(1);
+            CatSOArray[(int)catName].unitdata.Level = 1;
             CatLevelDic.Add(catName, 1);
         }
     }
@@ -58,6 +58,7 @@ public class GameDataManager : MonoBehaviour
     {
         if (slotIndex >= 0 && slotIndex < MaxCatSlotCount)
         {
+            Debug.Log($"Set Cat {catName} to slot {slotIndex}");
             userGameDataSO.CatSlotArray[slotIndex] = catName;
         }
     }

@@ -26,5 +26,9 @@ public class HeroMove : Hero_State
         {
             stateMachine.ChangeState(hero.IdleState);
         }
+        Vector3 bottomEdge = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
+        Vector3 topEdge = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, Camera.main.nearClipPlane));
+        float clampedX = Mathf.Clamp(hero.transform.position.x, bottomEdge.x, topEdge.x);
+        hero.transform.position = new Vector3(clampedX, hero.transform.position.y, hero.transform.position.z);
     }
 }

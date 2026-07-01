@@ -361,12 +361,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatSpriteDataManager
   CatSlotIngameSpriteArray:
+  - {fileID: 4370752731242122093, guid: b968b1e3310e02b438e3d652e2449746, type: 3}
   - {fileID: -7247676394553336019, guid: e6c40ea87935c00428508f893f01e530, type: 3}
   - {fileID: 2385431815312559135, guid: a68b2cc9cc414f844877360b27b5f21d, type: 3}
   - {fileID: 2021280136645597755, guid: e9655633ebae0bf438ecebdaee7656dc, type: 3}
   - {fileID: -1901341522131240017, guid: b74199e742694284db5a537489a66edc, type: 3}
   - {fileID: 2658368493617619668, guid: 1d7fbef4cff9e234687ed3f70f60b14b, type: 3}
   CatSlotImage:
+  - {fileID: 4370752731242122093, guid: b968b1e3310e02b438e3d652e2449746, type: 3}
   - {fileID: 5434425776469787498, guid: e6f4c8a9358fc6a419f243cc2576d4a8, type: 3}
   - {fileID: 560893750813285641, guid: 2e279004d4e529f468e79e003283e0c9, type: 3}
   - {fileID: -4161754042802104828, guid: c6eafef5cfdbc42489c1465d5799f002, type: 3}
@@ -418,6 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageDataManager
   <StageList>k__BackingField:
   - {fileID: 11400000, guid: cadaf14e3ea0e934e86aed358408b70a, type: 2}
+  - {fileID: 11400000, guid: d6bc0fb05a0d0ad449f270b11d1f4ce8, type: 2}
 --- !u!4 &242504306
 Transform:
   m_ObjectHideFlags: 0
@@ -1228,15 +1231,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameDataManager
   userGameDataSO: {fileID: 11400000, guid: f758bab388ce11c45bd2bb515142be04, type: 2}
   CatSOArray:
+  - {fileID: 11400000, guid: c8fb43bdf854521449c3494c8fa3fde6, type: 2}
   - {fileID: 11400000, guid: 76b66cec56192344d9cdab27b4de7cd1, type: 2}
   - {fileID: 11400000, guid: b7e427800e0dd3544b485054a4ce1de8, type: 2}
   - {fileID: 11400000, guid: b4d66ec88d035f94584cad9a6c636818, type: 2}
   - {fileID: 11400000, guid: b22135ffaaf397d49ac7c222a7b7398c, type: 2}
   - {fileID: 11400000, guid: 7c06b4172eb358944a614784f0372edd, type: 2}
-  UnLockList: 
-  CatSlotArraty: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
   MaxCatSlotCount: 10
-  CatSlotCount: 0
 --- !u!4 &1703256760
 Transform:
   m_ObjectHideFlags: 0
@@ -1656,7 +1657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7529412}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0

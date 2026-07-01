@@ -4,6 +4,7 @@ public class Unitdata
 {
 
     public string Name;
+    public string Description;
     public int Level;
     public bool isCat;
     public ElementalType type;

@@ -1428,6 +1428,8 @@ MonoBehaviour:
   scrollbar: {fileID: 1239193433}
   slotDataArray: []
   currentIndex: 0
+  slotPrefab: {fileID: 6509350384182278768, guid: 8e2c7f60cddf96a45bc78a2bca182abd, type: 3}
+  invenType: 2
 --- !u!1 &1171170282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,6 +1676,7 @@ GameObject:
   - component: {fileID: 1506113701}
   - component: {fileID: 1506113700}
   - component: {fileID: 1506113699}
+  - component: {fileID: 1506113702}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1783,6 +1786,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506113697}
   m_CullTransparentMesh: 1
+--- !u!114 &1506113702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506113697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c4dfe262cd6704fbb4e314e6f77a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpButton
 --- !u!1 &1537582204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,6 +1935,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537582204}
   m_CullTransparentMesh: 1
+--- !u!1 &1608480977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1608480979}
+  - component: {fileID: 1608480978}
+  m_Layer: 0
+  m_Name: InvenManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1608480978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608480977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d09cfd6188fc74583f8d911db89609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InvenManager
+--- !u!4 &1608480979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608480977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 987.3479, y: 447.66312, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1642682887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,6 +2358,7 @@ GameObject:
   - component: {fileID: 1998673210}
   - component: {fileID: 1998673212}
   - component: {fileID: 1998673211}
+  - component: {fileID: 1998673213}
   m_Layer: 5
   m_Name: XPBar
   m_TagString: Untagged
@@ -2365,6 +2425,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998673209}
   m_CullTransparentMesh: 1
+--- !u!114 &1998673213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998673209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e282a301f070c574f889dc6342e73ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EXPUI
+  expText: {fileID: 229075747}
 --- !u!1 &2014697529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,3 +2825,4 @@ SceneRoots:
   - {fileID: 2018888810}
   - {fileID: 1852171121}
   - {fileID: 655146643}
+  - {fileID: 1608480979}

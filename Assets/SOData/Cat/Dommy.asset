@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341cfce0107fe7542aa2b6fa2c7307bf, type: 3}
+  m_Name: Dommy
+  m_EditorClassIdentifier: Assembly-CSharp::EntitySO
+  unitdata:
+    Name: dummy
+    Description: "\uB354\uBBF8"
+    Level: 1
+    isCat: 1
+    type: 0
+    DefaultHealth: 0
+    DefaultDamage: 0
+    HitBackMaxCount: 1
+    speed: 0
+    Range: 0
+    AttackRangeStart: 0
+    AttackRangeEnd: 0
+    Cost: 0
+    InitColdDown: 0
+    UpgradeCost_1_10: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+    FrontDelay: 0
+    BackDelay: 0
+    IsOneTarget: 0
+    Money: 0
+  SlotSprite: {fileID: 0}

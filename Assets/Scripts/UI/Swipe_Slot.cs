@@ -7,6 +7,7 @@ public class Swipe_Slot : MonoBehaviour
 {
     public Scrollbar scrollbar;
     public SlotData[] slotDataArray;
+    public StageSlot[] stageSlots;
     public int currentIndex = 0;
     float[] pos;
     float distance;
@@ -19,19 +20,24 @@ public class Swipe_Slot : MonoBehaviour
     public InvenType invenType;
 
     GameDataManager gameDataManager;
-    void Start()
+    private void Awake()
     {
-
-        gameDataManager = GameDataManager.Instance;
-        CatDatas = new List<SlotData>();
-        Init();
-        // 슬롯 데이터 배열 초기화
+        stageSlots = new StageSlot[transform.childCount];
         slotDataArray = new SlotData[transform.childCount];
-        InvenManager.Instance.Register(this);
-        Debug.Log("Child Count: " + transform.childCount);
+        CatDatas = new List<SlotData>();
         for (int i = 0; i < transform.childCount; i++)
         {
-            slotDataArray[i] = transform.GetChild(i).GetComponent<SlotData>();
+            SlotData slotData = transform.GetChild(i).GetComponent<SlotData>();
+            if(slotData != null)
+            {
+            slotDataArray[i] = slotData;
+ 
+            }
+            else
+            {
+                StageSlot stageSlot = transform.GetChild(i).GetComponent<StageSlot>();
+                stageSlots[i] = stageSlot;
+            }
         }
         pos = new float[transform.childCount];
         distance = 1f / (pos.Length - 1f);
@@ -41,10 +47,20 @@ public class Swipe_Slot : MonoBehaviour
             pos[i] = distance * i;
         }
     }
+    void Start()
+    {
+
+        gameDataManager = GameDataManager.Instance;
+        
+        Init();
+
+        
+
+    }
 
     private void Update()
     {
-        if(invenType != InvenType.PickSlots) return; 
+        if(invenType != InvenType.PickInven && invenType != InvenType.StageInven) return; 
         if (Mouse.current.leftButton.isPressed)
         {
             isDragging = true;
@@ -59,7 +75,6 @@ public class Swipe_Slot : MonoBehaviour
                 isDragging = false;
                 targetIndex = GetNearestIndex(scrollbar.value);
             }
-            Debug.Log($"스크롤 위치: {scrollbar.value}, 목표 인덱스: {targetIndex}, pos 갯수: {pos.Length}");
             // 매 프레임 target 위치로 Lerp
             scrollbar.value = Mathf.Lerp(scrollbar.value, pos[targetIndex], 0.1f);
         }
@@ -75,6 +90,7 @@ public class Swipe_Slot : MonoBehaviour
                 Vector2.Lerp(transform.GetChild(i).localScale, targetScale, 0.1f);
         }
         currentIndex = targetIndex;
+
     }
 
     // 현재 value에서 가장 가까운 pos 인덱스 반환
@@ -93,6 +109,14 @@ public class Swipe_Slot : MonoBehaviour
             }
         }
         return nearest;
+    }
+    public float GetNearestValue(int index)
+    {
+        if(index >= 0 && index < pos.Length)
+        {
+            return pos[index];
+        }
+        return -1f;
     }
     public CatName GetCatName(int index)
     {
@@ -116,7 +140,7 @@ public class Swipe_Slot : MonoBehaviour
             case InvenType.None:
  
                 break;
-            case InvenType.PickSlots:
+            case InvenType.PickInven:
                 int _count = gameDataManager.userGameDataSO.UnLockList.Count;
                 for (int i = 0; i < _count; i++)
                 {
@@ -134,7 +158,7 @@ public class Swipe_Slot : MonoBehaviour
                     {
                         CatDatas[j].gameObject.transform.SetSiblingIndex(j);
                     }
-
+                    InvenManager.Instance.Register(this);
                 }
                 break;
             case InvenType.ResultInven:
@@ -147,6 +171,7 @@ public class Swipe_Slot : MonoBehaviour
                         CatDatas[i].SetResultSlotData(catName);
                     Debug.Log($"ResultInven Slot {i}: {CatDatas[i].catName}");
                     }
+                    InvenManager.Instance.Register(this);
                 }
                 break;
             default:

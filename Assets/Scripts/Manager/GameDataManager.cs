@@ -62,4 +62,31 @@ public class GameDataManager : MonoBehaviour
             userGameDataSO.CatSlotArray[slotIndex] = catName;
         }
     }
+    public int GetLevelData(GameLevelDataName levelName)
+    {
+        switch(levelName)
+        {
+            case GameLevelDataName.goldPerSecLevel:
+                return userGameDataSO.goldPerSecLevel;
+            case GameLevelDataName.maxGoldLevel:
+                return userGameDataSO.maxGoldLevel;
+            case GameLevelDataName.skillDamageLevel:
+                return userGameDataSO.skillDamageLevel;
+            case GameLevelDataName.skillCoolDownLevel:
+                return userGameDataSO.skillCoolDownLevel;
+            case GameLevelDataName.skillRangeLevel:
+                return userGameDataSO.skillRangeLevel;
+            case GameLevelDataName.EXPGetLevel:
+                return userGameDataSO.EXPGetLevel;
+            case GameLevelDataName.HeroSpeedLevel:
+                return userGameDataSO.HeroSpeedLevel;
+            case GameLevelDataName.HeroHealthLevel:
+                return userGameDataSO.HeroHealthLevel;
+            case GameLevelDataName.HeroDamageLevel:
+                return userGameDataSO.HeroDamageLevel;
+            default:
+                Debug.LogWarning($"Unknown level name: {levelName}");
+                return 0;
+        }
+    }
 }

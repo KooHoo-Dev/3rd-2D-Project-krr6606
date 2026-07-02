@@ -23,9 +23,20 @@ public class PowerUpButton : MonoBehaviour
         int currentEXP = gameDataManager.userGameDataSO.currentEXP;
         int index = swipeSlot.currentIndex;
         CatName catName = swipeSlot.slotDataArray[index].catName;
-        if(catName == CatName.None)
+        GameLevelDataName gameLevelDataName = swipeSlot.slotDataArray[index].levelName;
+        if (catName == CatName.None && gameLevelDataName == GameLevelDataName.none)
         {
-            Debug.Log("No cat selected for power-up.");
+            return;
+        }
+        if(catName == CatName.None && gameLevelDataName != GameLevelDataName.none)
+        {
+            int level = gameDataManager.GetLevelData(gameLevelDataName);
+            int EXP = gameDataManager.userGameDataSO.LevelUpCost_1_10[level - 1];
+            if (currentEXP < EXP) return;
+            currentEXP -= EXP;
+            gameDataManager.userGameDataSO.currentEXP = currentEXP;
+            UserDataLevelUp(swipeSlot.slotDataArray[index]);
+            expUI.UpdateEXPUI();
             return;
         }
         int currentLevel = gameDataManager.CatLevelDic[catName];
@@ -36,6 +47,10 @@ public class PowerUpButton : MonoBehaviour
         gameDataManager.CatSOArray[(int)catName].unitdata.Level++;
         swipeSlot.slotDataArray[index].SetNormalSlotData(catName);
         expUI.UpdateEXPUI();
+    }
+    public void UserDataLevelUp(SlotData slotData)
+    {
+        slotData.UserDataLevelUp(slotData.levelName);
     }
 
 }

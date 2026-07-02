@@ -49,7 +49,7 @@ namespace Study_Inventory
 
             if (startSlot == null) return;  //검색된 슬롯이 없거나
             if (startSlot.catName == CatName.None) return;   //검색된 슬롯이 빈 슬롯인 경우
-            if(InvenManager.Instance.GetInventoryOrNull(startSlot).invenType == InvenType.PickSlots)
+            if(InvenManager.Instance.GetInventoryOrNull(startSlot).invenType == InvenType.PickInven)
             {
                 cursorSlot.gameObject.SetActive(true);
                 cursorSlot.SetNormalSlotData(startSlot.catName);
@@ -135,7 +135,7 @@ namespace Study_Inventory
             else if(endSlot.catName != CatName.None
                 && endInven != null
                 && endInven.invenType == InvenType.ResultInven
-                && startInven.invenType == InvenType.PickSlots)
+                && startInven.invenType == InvenType.PickInven)
             {
                 endSlot.SetResultSlotData(cursorSlot.catName);
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;

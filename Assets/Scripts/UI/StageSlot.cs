@@ -6,7 +6,18 @@ public class StageSlot : MonoBehaviour
     public StageName StageName;
     private void Start()
     {
-        if(StageDataManager.Instance.GetStageData(StageName).IsCleared)
+        int maxclearedStage = (int)GameDataManager.Instance.userGameDataSO.maxclearedStage;
+        if((int)StageName > maxclearedStage)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
+
+        if (StageDataManager.Instance.GetStageData(StageName).IsCleared)
         {
             ClearedText.SetActive(true);
         }

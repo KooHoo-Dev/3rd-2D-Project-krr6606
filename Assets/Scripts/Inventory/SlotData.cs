@@ -20,7 +20,13 @@ public class SlotData : MonoBehaviour
         gameDataManager = GameDataManager.Instance;
         rectTransform = GetComponent<RectTransform>();
     }
-
+    public void Start()
+    {
+        if (levelName != GameLevelDataName.none)
+        {
+            SetUserDataUI(levelName);
+        }
+    }
     public void SetNormalSlotData(CatName catName)
     {
         this.catName = catName;
@@ -58,7 +64,7 @@ public class SlotData : MonoBehaviour
     {
         rectTransform.anchoredPosition = inputPos;
     }
-    public void GameDataLevelUp()
+    public void UserDataLevelUp(GameLevelDataName levelName)
     {
         switch (levelName)
         {
@@ -67,35 +73,30 @@ public class SlotData : MonoBehaviour
                 {
                 gameDataManager.userGameDataSO.maxGoldLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.goldPerSecLevel:
                 if (gameDataManager.userGameDataSO.goldPerSecLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
                 {
                 gameDataManager.userGameDataSO.goldPerSecLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.skillDamageLevel:
                 if (gameDataManager.userGameDataSO.skillDamageLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
                 {
                 gameDataManager.userGameDataSO.skillDamageLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.skillCoolDownLevel:
                 if (gameDataManager.userGameDataSO.skillCoolDownLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
                 {
                 gameDataManager.userGameDataSO.skillCoolDownLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.skillRangeLevel:
                 if (gameDataManager.userGameDataSO.skillRangeLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
                 {
                 gameDataManager.userGameDataSO.skillRangeLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.EXPGetLevel:
                 if (gameDataManager.userGameDataSO.EXPGetLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
@@ -103,7 +104,6 @@ public class SlotData : MonoBehaviour
 
                     gameDataManager.userGameDataSO.EXPGetLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.HeroSpeedLevel:
                 if (gameDataManager.userGameDataSO.HeroSpeedLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
@@ -111,7 +111,6 @@ public class SlotData : MonoBehaviour
 
                     gameDataManager.userGameDataSO.HeroSpeedLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.HeroHealthLevel:
                 if (gameDataManager.userGameDataSO.HeroHealthLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
@@ -119,20 +118,20 @@ public class SlotData : MonoBehaviour
 
                     gameDataManager.userGameDataSO.HeroHealthLevel++;
                 }
-                SetGameDataUI();
                 break;
             case GameLevelDataName.HeroDamageLevel:
                 if (gameDataManager.userGameDataSO.HeroDamageLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
                 {
                     gameDataManager.userGameDataSO.HeroDamageLevel++;
                 }
-                SetGameDataUI();
                 break;
             default: break;
         }
+        SetUserDataUI(levelName);
+
 
     }
-    public void SetGameDataUI()
+    public void SetUserDataUI(GameLevelDataName levelName)
     {
         switch (levelName)
         {

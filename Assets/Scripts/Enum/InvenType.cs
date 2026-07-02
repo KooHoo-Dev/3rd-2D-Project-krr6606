@@ -3,6 +3,7 @@ public enum InvenType
 {
     None,
     ResultInven,
-    PickSlots
+    PickInven,
+    StageInven,
 }
 

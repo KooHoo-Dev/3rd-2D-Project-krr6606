@@ -12,12 +12,14 @@ public class GameClearButton : MonoBehaviour
             case 0:
                 if(stageDataManager.GetStageData((StageName)stageIndex).IsCleared == false)
                 {
+                    stageDataManager.GetStageData((StageName)stageIndex).IsCleared = true;
                     GameDataManager.Instance.userGameDataSO.UnLockList.Add(CatName.Cat2);
                 }
                 break;
             case 1:
                 if(stageDataManager.GetStageData((StageName)stageIndex).IsCleared == false)
                 {
+                    stageDataManager.GetStageData((StageName)stageIndex).IsCleared = true;
                     GameDataManager.Instance.userGameDataSO.UnLockList.Add(CatName.Cat3);
                 }
                 break;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1c865c4fffc0246b2de4edcc4e38e4, type: 3}
   m_Name: UserGameDataSO
   m_EditorClassIdentifier: Assembly-CSharp::UserGameDataSO
-  maxclearedStage: 0
+  maxclearedStage: 1
   currentEXP: 5000
   goldPerSecLevel: 1
   maxGoldLevel: 1
@@ -23,5 +23,6 @@ MonoBehaviour:
   HeroSpeedLevel: 1
   HeroHealthLevel: 1
   HeroDamageLevel: 1
+  LevelUpCost_1_10: e8030000d0070000b80b0000a00f00008813000070170000581b0000401f00002823000010270000
   UnLockList: 000000000100000002000000
   CatSlotArray: 01000000000000000000000000000000000000000000000000000000000000000000000000000000

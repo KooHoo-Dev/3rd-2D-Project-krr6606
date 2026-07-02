@@ -9,9 +9,12 @@ namespace Study_Inventory
 {
 
 
-    public class InventoryInput : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class InventoryInput : MonoBehaviour, IPointerUpHandler, IDragHandler, IPointerDownHandler
     {
+
+        public ScrollRect scroll;
         [field: SerializeField] public SlotData cursorSlot { get; private set; }
+
         private GraphicRaycaster raycaster;
         private SlotData startSlot;    //드래그를 시작한 위치의 슬롯
         private SlotData endSlot;      //드래그가 종료된 위치의 슬롯
@@ -19,7 +22,7 @@ namespace Study_Inventory
         private void Awake()
         {
             raycaster = GetComponent<GraphicRaycaster>();
-            Debug.Log($"raycaster 널 여부: {raycaster == null}");
+
         }
         private SlotData GetSlotOrNull(PointerEventData eventData)
         {
@@ -39,26 +42,29 @@ namespace Study_Inventory
             }
             return null;
         }
-        public void OnBeginDrag(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
 
             startSlot = GetSlotOrNull(eventData);
-            Debug.Log($"슬롯 여부: {startSlot == null}, 슬롯 이름: {startSlot?.catName}, 슬롯 고양이 이름: {startSlot?.catName}");
+
             if (startSlot == null) return;  //검색된 슬롯이 없거나
             if (startSlot.catName == CatName.None) return;   //검색된 슬롯이 빈 슬롯인 경우
             if(InvenManager.Instance.GetInventoryOrNull(startSlot).invenType == InvenType.PickSlots)
             {
                 cursorSlot.gameObject.SetActive(true);
                 cursorSlot.SetNormalSlotData(startSlot.catName);
+                
             }
             else if(InvenManager.Instance.GetInventoryOrNull(startSlot).invenType == InvenType.ResultInven)
             {
                 cursorSlot.gameObject.SetActive(true);
                 cursorSlot.SetResultSlotData(startSlot.catName);
                 startSlot.SetResultSlotData(CatName.None);
+        
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = CatName.None;
             }
-            Debug.Log($"드래그 시작: {startSlot.catName}, 인벤 타입 : {InvenManager.Instance.GetInventoryOrNull(startSlot).invenType}");
+            scroll.enabled = false;
+            cursorSlot.SetPosition(eventData.position);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -69,7 +75,7 @@ namespace Study_Inventory
             Debug.Log($"드래그 중: {cursorSlot.catName}");
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public void OnPointerUp(PointerEventData eventData)
         {
             // 3. 드래그가 종료되면 상황에 따라 알맞은 처리를 한다.
             //  3.1 종료된 위치의 Slot이 빈 Slot인 경우 : Cursor의 아이템을 Slot에 Set한다.
@@ -77,47 +83,75 @@ namespace Study_Inventory
             //  3.3 종료된 위치가 Slot이 아닌 경우 : Cursor의 아이템을 원래 Slot에 Set한다.
 
             if (startSlot == null) return;
-            if(startSlot.catName == CatName.None) return;
+            if(cursorSlot.catName == CatName.None) {Debug.Log("드래그 종료: cursorSlot이 빈 슬롯입니다."); return;}
             endSlot = GetSlotOrNull(eventData);
-            
+            Swipe_Slot startInven = InvenManager.Instance.GetInventoryOrNull(startSlot);
+            Swipe_Slot endInven = InvenManager.Instance.GetInventoryOrNull(endSlot);
             if (endSlot == null)
             {
                 
-                if(InvenManager.Instance.GetInventoryOrNull(startSlot).invenType == InvenType.ResultInven)
+                if(startInven.invenType == InvenType.ResultInven)
                 {
                     startSlot.SetResultSlotData(cursorSlot.catName);
                     GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = cursorSlot.catName;
+   
                 }
+
                 ResetCursor();
                 return; //종료된 위치가 Slot이 아닌 경우
             }
-            if (endSlot.catName == CatName.None 
-                && InvenManager.Instance.GetInventoryOrNull(endSlot) != null 
-                && InvenManager.Instance.GetInventoryOrNull(endSlot).invenType == InvenType.ResultInven)
+            else if(endInven.isInList(cursorSlot.catName))
             {
-                
+                if (startInven.invenType == InvenType.ResultInven)
+                {
+                    startSlot.SetResultSlotData(cursorSlot.catName);
+                    GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = cursorSlot.catName;
+
+                }
+
+                ResetCursor();
+                return; //종료된 위치의 인벤토리에 해당 고양이가 없는 경우
+            }
+            else if (endSlot.catName == CatName.None 
+                && endInven != null 
+                && endInven.invenType == InvenType.ResultInven)
+            {
+
                 endSlot.SetResultSlotData(cursorSlot.catName);
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
             }
-            if(endSlot.catName != CatName.None 
-                && InvenManager.Instance.GetInventoryOrNull(endSlot) != null 
-                && InvenManager.Instance.GetInventoryOrNull(endSlot).invenType == InvenType.ResultInven)
+            else if(endSlot.catName != CatName.None 
+                && endInven != null 
+                && endInven.invenType == InvenType.ResultInven
+                && startInven.invenType == InvenType.ResultInven)
             {
+
                 CatName tempCatName = endSlot.catName;
                 endSlot.SetResultSlotData(cursorSlot.catName);
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
                 startSlot.SetResultSlotData(tempCatName);
                 GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = tempCatName;
             }
+            else if(endSlot.catName != CatName.None
+                && endInven != null
+                && endInven.invenType == InvenType.ResultInven
+                && startInven.invenType == InvenType.PickSlots)
+            {
+                endSlot.SetResultSlotData(cursorSlot.catName);
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
+            }
             ResetCursor();
-            Debug.Log($"드래그 종료: {endSlot.catName}");
+
         }
         private void ResetCursor()
         {
+
+            cursorSlot.SetResultSlotData(CatName.None);
             cursorSlot.gameObject.SetActive(false);
-            cursorSlot.SetNormalSlotData(CatName.None);
             startSlot = null;
+            scroll.enabled = true;
         }
+
 
     }
 }

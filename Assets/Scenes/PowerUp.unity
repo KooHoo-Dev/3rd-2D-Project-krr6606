@@ -2831,7 +2831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243d56f050c5508429ace934b9974a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatDescription
-  descriptionText: {fileID: 0}
+  descriptionText: {fileID: 2101703863}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

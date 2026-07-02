@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 public class SlotData : MonoBehaviour
 {
-    private RectTransform rectTransform;
+    public RectTransform rectTransform {  get; private set; }
    [field: SerializeField] public CatName catName { get; set; }
     public int slotIndex;
     public Image image;
@@ -23,6 +23,7 @@ public class SlotData : MonoBehaviour
     public void SetNormalSlotData(CatName catName)
     {
         this.catName = catName;
+        image.gameObject.SetActive(true);
         image.sprite = CatSlotSpriteDataManager.Instance.GetImageOrNull(catName);
         NameText.text = gameDataManager.CatSOArray[(int)catName].unitdata.Name;
         int level = gameDataManager.CatSOArray[(int)catName].unitdata.Level;

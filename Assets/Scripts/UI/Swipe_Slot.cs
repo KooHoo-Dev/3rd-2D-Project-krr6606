@@ -148,7 +148,7 @@ public class Swipe_Slot : MonoBehaviour
         }
 
     }
-    private bool isInList(CatName catName)
+    public bool isInList(CatName catName)
     {
         for (int i = 0; i < slotDatas.Count; i++)
         {
@@ -159,6 +159,7 @@ public class Swipe_Slot : MonoBehaviour
         }
         return false;
     }
+
     public bool IsIn(SlotData slot)
     {
         if (slot == null) return false;

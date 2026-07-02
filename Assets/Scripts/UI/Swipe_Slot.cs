@@ -13,7 +13,7 @@ public class Swipe_Slot : MonoBehaviour
     bool isDragging = false;
     public int targetIndex{ get; private set; }
 
-    List<SlotData> slotDatas;
+    List<SlotData> CatDatas;
 
     public GameObject slotPrefab;
     public InvenType invenType;
@@ -23,7 +23,7 @@ public class Swipe_Slot : MonoBehaviour
     {
 
         gameDataManager = GameDataManager.Instance;
-        slotDatas = new List<SlotData>();
+        CatDatas = new List<SlotData>();
         Init();
         // 슬롯 데이터 배열 초기화
         slotDataArray = new SlotData[transform.childCount];
@@ -96,17 +96,17 @@ public class Swipe_Slot : MonoBehaviour
     }
     public CatName GetCatName(int index)
     {
-        if (index >= 0 && index < slotDatas.Count)
+        if (index >= 0 && index < CatDatas.Count)
         {
-            return slotDatas[index].catName;
+            return CatDatas[index].catName;
         }
         return CatName.None;
     }
     public void SetCatName(int index, CatName catName)
     {
-        if (index >= 0 && index < slotDatas.Count)
+        if (index >= 0 && index < CatDatas.Count)
         {
-            slotDatas[index].catName = catName;
+            CatDatas[index].catName = catName;
         }
     }
     private void Init()
@@ -128,18 +128,24 @@ public class Swipe_Slot : MonoBehaviour
                     SlotData slotData = slotObj.GetComponent<SlotData>();
                     CatName catName = gameDataManager.userGameDataSO.UnLockList[i];
                     slotData.SetNormalSlotData(catName);
-                    slotDatas.Add(slotData);
+                    CatDatas.Add(slotData);
+                    
+                    for(int j = CatDatas.Count - 1; j >= 0; j--)
+                    {
+                        CatDatas[j].gameObject.transform.SetSiblingIndex(j);
+                    }
+
                 }
                 break;
             case InvenType.ResultInven:
-                slotDatas = new List<SlotData>(GetComponentsInChildren<SlotData>());
+                CatDatas = new List<SlotData>(GetComponentsInChildren<SlotData>());
                 for (int i = 0; i < gameDataManager.userGameDataSO.CatSlotArray.Length; i++)
                 {
                     CatName catName = gameDataManager.userGameDataSO.CatSlotArray[i];
                     if (catName != CatName.None)
                     {
-                        slotDatas[i].SetResultSlotData(catName);
-                    Debug.Log($"ResultInven Slot {i}: {slotDatas[i].catName}");
+                        CatDatas[i].SetResultSlotData(catName);
+                    Debug.Log($"ResultInven Slot {i}: {CatDatas[i].catName}");
                     }
                 }
                 break;
@@ -150,9 +156,9 @@ public class Swipe_Slot : MonoBehaviour
     }
     public bool isInList(CatName catName)
     {
-        for (int i = 0; i < slotDatas.Count; i++)
+        for (int i = 0; i < CatDatas.Count; i++)
         {
-            if (slotDatas[i].catName == catName)
+            if (CatDatas[i].catName == catName)
             {
                 return true;
             }
@@ -164,9 +170,9 @@ public class Swipe_Slot : MonoBehaviour
     {
         if (slot == null) return false;
 
-        for (int i = 0; i < slotDatas.Count; i++)
+        for (int i = 0; i < CatDatas.Count; i++)
         {
-            if (slotDatas[i] == slot)
+            if (CatDatas[i] == slot)
             {
                 return true;
             }

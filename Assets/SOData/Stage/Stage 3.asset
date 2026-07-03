@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cbe3881bb430246a2b8544aa30d792, type: 3}
   m_Name: Stage 3
   m_EditorClassIdentifier: Assembly-CSharp::_Stage
-  stageName: 2
+  stageName: 3
   IsCleared: 0
   DefaultEXPReward: 7000
   BossTriggerHealthPercentage: 0
+  BossName: 0
   waves:
   - <EnemyName>k__BackingField: 1
     <MinSpawnInterval>k__BackingField: 0

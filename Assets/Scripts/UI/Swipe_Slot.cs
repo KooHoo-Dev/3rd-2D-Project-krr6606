@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -6,13 +7,13 @@ using UnityEngine.UI;
 public class Swipe_Slot : MonoBehaviour
 {
     public Scrollbar scrollbar;
-    public SlotData[] slotDataArray;
-    public StageSlot[] stageSlots;
+    public List<SlotData> slotDataList;
+    public List<StageSlot> stageSlotList;
     public int currentIndex = 0;
     float[] pos;
     float distance;
     bool isDragging = false;
-    public int targetIndex{ get; private set; }
+    public int targetIndex { get; private set; }
 
     List<SlotData> CatDatas;
 
@@ -22,45 +23,76 @@ public class Swipe_Slot : MonoBehaviour
     GameDataManager gameDataManager;
     private void Awake()
     {
-        stageSlots = new StageSlot[transform.childCount];
-        slotDataArray = new SlotData[transform.childCount];
+
         CatDatas = new List<SlotData>();
         for (int i = 0; i < transform.childCount; i++)
         {
             SlotData slotData = transform.GetChild(i).GetComponent<SlotData>();
-            if(slotData != null)
+            if (slotData != null)
             {
-            slotDataArray[i] = slotData;
- 
+                slotDataList.Add(slotData);
+
             }
             else
             {
                 StageSlot stageSlot = transform.GetChild(i).GetComponent<StageSlot>();
-                stageSlots[i] = stageSlot;
+                stageSlotList.Add(stageSlot);
             }
         }
-        pos = new float[transform.childCount];
+
+    }
+    void Start()
+    {
+
+        gameDataManager = GameDataManager.Instance;
+        int maxclearedStage = (int)gameDataManager.userGameDataSO.maxclearedStage;
+        if (invenType == InvenType.StageInven)
+        {
+            for (int i = 0; i < stageSlotList.Count; i++)
+            {
+                if ((int)stageSlotList[i].StageName >= maxclearedStage)
+                {
+                    stageSlotList[i].gameObject.SetActive(false);
+                }
+                else
+                {
+                    stageSlotList[i].gameObject.SetActive(true);
+                }
+
+
+                if (StageDataManager.Instance.GetStageData(stageSlotList[i].StageName).IsCleared)
+                {
+                    stageSlotList[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    stageSlotList[i].gameObject.SetActive(false);
+                }
+            }
+            if ((int)maxclearedStage < stageSlotList.Count)
+            {
+                stageSlotList[maxclearedStage].gameObject.SetActive(true);
+            }
+        }
+        Init();
+        pos = (invenType == InvenType.StageInven)
+            ? new float[(int)gameDataManager.userGameDataSO.maxclearedStage + 1]
+            : new float[transform.childCount];
         distance = 1f / (pos.Length - 1f);
 
         for (int i = 0; i < pos.Length; i++)
         {
             pos[i] = distance * i;
         }
-    }
-    void Start()
-    {
 
-        gameDataManager = GameDataManager.Instance;
-        
-        Init();
 
-        
+
 
     }
 
     private void Update()
     {
-        if(invenType != InvenType.PickInven && invenType != InvenType.StageInven) return; 
+        if (invenType != InvenType.PickInven && invenType != InvenType.StageInven) return;
         if (Mouse.current.leftButton.isPressed)
         {
             isDragging = true;
@@ -68,7 +100,7 @@ public class Swipe_Slot : MonoBehaviour
         }
         else
         {
-            
+
             // 드래그를 막 놓은 순간 → 가장 가까운 인덱스 1회 계산
             if (isDragging)
             {
@@ -112,7 +144,7 @@ public class Swipe_Slot : MonoBehaviour
     }
     public float GetNearestValue(int index)
     {
-        if(index >= 0 && index < pos.Length)
+        if (index >= 0 && index < pos.Length)
         {
             return pos[index];
         }
@@ -138,7 +170,7 @@ public class Swipe_Slot : MonoBehaviour
         switch (invenType)
         {
             case InvenType.None:
- 
+
                 break;
             case InvenType.PickInven:
                 int _count = gameDataManager.userGameDataSO.UnLockList.Count;
@@ -153,11 +185,13 @@ public class Swipe_Slot : MonoBehaviour
                     CatName catName = gameDataManager.userGameDataSO.UnLockList[i];
                     slotData.SetNormalSlotData(catName);
                     CatDatas.Add(slotData);
-                    
-                    for(int j = CatDatas.Count - 1; j >= 0; j--)
+
+                    for (int j = CatDatas.Count - 1; j >= 0; j--)
                     {
                         CatDatas[j].gameObject.transform.SetSiblingIndex(j);
+                        slotDataList.Insert(0, slotDataList[j]);
                     }
+
                     InvenManager.Instance.Register(this);
                 }
                 break;
@@ -169,7 +203,7 @@ public class Swipe_Slot : MonoBehaviour
                     if (catName != CatName.None)
                     {
                         CatDatas[i].SetResultSlotData(catName);
-                    Debug.Log($"ResultInven Slot {i}: {CatDatas[i].catName}");
+                        Debug.Log($"ResultInven Slot {i}: {CatDatas[i].catName}");
                     }
                     InvenManager.Instance.Register(this);
                 }

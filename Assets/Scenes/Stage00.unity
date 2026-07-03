@@ -4075,6 +4075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   towerData: {fileID: 11400000, guid: 2bb0c3c2f41509947a3a223215f4fdbc, type: 2}
+  MaxHealth: 0
 --- !u!61 &498234270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5493,7 +5494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &679306204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6106,7 +6107,8 @@ MonoBehaviour:
   ResultText: {fileID: 1449157997}
   EXPBar: {fileID: 1723378964}
   EXPText: {fileID: 2129176086}
-  CurrentStageName: 0
+  CurrentStageName: 1
+  catSpawner: {fileID: 0}
   isStageEnd: 0
 --- !u!4 &781296496
 Transform:

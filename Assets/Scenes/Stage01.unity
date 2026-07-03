@@ -3998,6 +3998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   towerData: {fileID: 11400000, guid: 2bb0c3c2f41509947a3a223215f4fdbc, type: 2}
+  MaxHealth: 0
 --- !u!61 &498234270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6029,7 +6030,8 @@ MonoBehaviour:
   ResultText: {fileID: 1449157997}
   EXPBar: {fileID: 1723378964}
   EXPText: {fileID: 2129176086}
-  CurrentStageName: 1
+  CurrentStageName: 2
+  catSpawner: {fileID: 0}
   isStageEnd: 0
 --- !u!4 &781296496
 Transform:
@@ -10307,10 +10309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CatSpawner
   PoolParnt: {fileID: 1640773700}
   isSpawned: []
-  catList:
-  - {fileID: 6985332800938263998, guid: 470ab7eb718180042ba6ce7a5c12dd83, type: 3}
-  - {fileID: 5789662800015426546, guid: 3a74fb44b55939f458522891cbcadf54, type: 3}
-  - {fileID: 1512056450304285884, guid: afea0a4a18c42f949b7c3e1802751057, type: 3}
   catPoolList: []
   MaxSpawnCount: 50
   isSpawnStopped: 0
@@ -13470,6 +13468,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4d66ec88d035f94584cad9a6c636818, type: 2}
   - {fileID: 11400000, guid: b22135ffaaf397d49ac7c222a7b7398c, type: 2}
   - {fileID: 11400000, guid: 7c06b4172eb358944a614784f0372edd, type: 2}
+  CatPrefabList: []
+  EnemyPrefabList: []
   MaxCatSlotCount: 10
 --- !u!4 &1866596985
 Transform:

@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uACE0\uC591\uC774"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
-  m_sharedMaterial: {fileID: 266022702890117651, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 659ceb8947c683b4a9e1216df0a67515, type: 2}
+  m_sharedMaterial: {fileID: 6898141960898469622, guid: 659ceb8947c683b4a9e1216df0a67515, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1005,6 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 0
   image: {fileID: 2531963019122273211}
   NameText: {fileID: 63503732760397412}

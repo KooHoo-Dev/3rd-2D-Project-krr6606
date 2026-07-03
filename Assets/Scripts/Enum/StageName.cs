@@ -1,6 +1,7 @@
 ﻿
 public enum StageName
 {
+    none,
     Stage1,
     Stage2,
     Stage3,

@@ -4,7 +4,7 @@ public class CatSpawner : MonoBehaviour
 {
     public Transform PoolParnt;
     public GameObject[] isSpawned; // 각 y축 위치에 적이 이미 스폰되었는지 여부를 나타내는 배열
-     List<GameObject> catPrefabList;
+    List<GameObject> catPrefabList;
 
     public List<UnitPool> catPoolList;
     public int MaxSpawnCount = 50;
@@ -17,7 +17,7 @@ public class CatSpawner : MonoBehaviour
 
         for (int i = 0; i < GameDataManager.Instance.userGameDataSO.CatSlotArray.Length; i++)
         {
-            if(GameDataManager.Instance.userGameDataSO.CatSlotArray[i] != CatName.None)
+            if (GameDataManager.Instance.userGameDataSO.CatSlotArray[i] != CatName.None)
             {
                 catPrefabList.Add(GameDataManager.Instance.GetCatPrefab(GameDataManager.Instance.userGameDataSO.CatSlotArray[i]));
             }
@@ -43,13 +43,15 @@ public class CatSpawner : MonoBehaviour
     public void Spawn(CatName catName)
     {
         int activeCount = 0;
-        foreach (var pool in PoolParnt.GetComponentsInChildren<GameObject>())
+        for (int i = 0; i < PoolParnt.childCount; i++)
         {
-            if(pool.activeSelf)
+
+            if (PoolParnt.GetChild(i).gameObject.activeSelf)
             {
                 activeCount++;
             }
         }
+
         isSpawnStopped = activeCount >= 50;
         if (isSpawnStopped)
         {
@@ -59,7 +61,7 @@ public class CatSpawner : MonoBehaviour
         cat = catPoolList[(int)catName - 1].Get();
         if (cat == null)
         {
-           return;
+            return;
         }
         SetPositionY(cat);
 

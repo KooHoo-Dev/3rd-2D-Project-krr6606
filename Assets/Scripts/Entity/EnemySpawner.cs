@@ -69,12 +69,17 @@ public class EnemySpawner : MonoBehaviour
             int activeCount = 0;
             for (int i = 0; i < isSpawned.Length; i++)
             {
+                if (isSpawned[i] == null)
+                {
+                    continue;
+                }
                 if (isSpawned[i].activeSelf)
                 {
                     activeCount++;
                 }
             }
             isSpawnStopped = activeCount >= MaxSpawnCount;
+            Debug.Log($"현재 활성화된 적 수: {activeCount}, 최대 스폰 수: {MaxSpawnCount}, 스폰 중지 여부: {isSpawnStopped}");
             // 보스 스폰 조건 확인
             if (BossTriggerHealthPercentage > 0 && isBossSpawned == false)
             {
@@ -97,48 +102,50 @@ public class EnemySpawner : MonoBehaviour
                         Spawn(bossName);
                     }
                 }
-                // 웨이브 스폰이 중지되었는지 확인
-                if (isSpawnStopped)
-                {
-                    yield return null;
-                    continue;
-                }
-                if (CurrentSpawnTime > 0)
-                {
-                    CurrentSpawnTime -= Time.deltaTime;
-
-                }
-                else
-                {
-                    Debug.Log($"웨이브 {currentWaveIndex} 스폰 시작: {waveList[currentWaveIndex].EnemyName}, 스폰 수: {waveList[currentWaveIndex].SpawnCount}");
-
-                    for (int i = 0; i < waveList[currentWaveIndex].SpawnCount; i++)
-                    {
-                        Spawn(waveList[currentWaveIndex].EnemyName);
-                        Debug.Log($"웨이브 {currentWaveIndex} 스폰 중: {waveList[currentWaveIndex].EnemyName}, 스폰 수: {i + 1}/{waveList[currentWaveIndex].SpawnCount}");
-                        yield return WaitSpawnFrameDelay;
-                    }
-                    currentWaveIndex = waveList[currentWaveIndex].NextWaveIndex;
-                    SpawnTime = waveList[currentWaveIndex].IsRandomTime
-                                ? Random.Range(waveList[currentWaveIndex].MinSpawnInterval, waveList[currentWaveIndex].MaxSpawnInterval)
-                                : waveList[currentWaveIndex].MinSpawnInterval;
-                    CurrentSpawnTime = SpawnTime;
-                    if (currentWaveIndex < 0)
-                    {
-                        Debug.LogError($"현재 웨이브 인덱스 {currentWaveIndex}의 NextWaveIndex 값이 0보다 작습니다.");
-                        yield break;
-                    }
-                }
+            }
+            // 웨이브 스폰이 중지되었는지 확인
+            if (isSpawnStopped)
+            {
                 yield return null;
+                continue;
+            }
+            if (CurrentSpawnTime > 0)
+            {
+                CurrentSpawnTime -= Time.deltaTime;
 
             }
+            else
+            {
+                Debug.Log($"웨이브 {currentWaveIndex} 스폰 시작: {waveList[currentWaveIndex].EnemyName}, 스폰 수: {waveList[currentWaveIndex].SpawnCount}");
+
+                for (int i = 0; i < waveList[currentWaveIndex].SpawnCount; i++)
+                {
+                    Spawn(waveList[currentWaveIndex].EnemyName);
+                    Debug.Log($"웨이브 {currentWaveIndex} 스폰 중: {waveList[currentWaveIndex].EnemyName}, 스폰 수: {i + 1}/{waveList[currentWaveIndex].SpawnCount}");
+                    yield return WaitSpawnFrameDelay;
+                }
+                currentWaveIndex = waveList[currentWaveIndex].NextWaveIndex;
+                SpawnTime = waveList[currentWaveIndex].IsRandomTime
+                            ? Random.Range(waveList[currentWaveIndex].MinSpawnInterval, waveList[currentWaveIndex].MaxSpawnInterval)
+                            : waveList[currentWaveIndex].MinSpawnInterval;
+                CurrentSpawnTime = SpawnTime;
+                if (currentWaveIndex < 0)
+                {
+                    Debug.LogError($"현재 웨이브 인덱스 {currentWaveIndex}의 NextWaveIndex 값이 0보다 작습니다.");
+                    yield break;
+                }
+            }
+
+            yield return null;
+
         }
     }
+
     void Spawn(EnemyName enemyName)
     {
         GameObject enemy = null;
         enemy = enemyPoolList[(int)enemyName - 1].Get();
-        if(enemy == null)
+        if (enemy == null)
         {
             return;
         }
@@ -150,7 +157,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (isSpawned[i] == null)
             {
-                enemy.transform.position = new Vector3(transform.position.x,transform.position.y - i * 0.05f, transform.position.z);
+                enemy.transform.position = new Vector3(transform.position.x, transform.position.y - i * 0.05f, transform.position.z);
                 isSpawned[i] = enemy;
                 enemy.GetComponent<SpriteRenderer>().sortingOrder = i;
                 break;

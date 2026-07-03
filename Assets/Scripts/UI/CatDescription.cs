@@ -16,7 +16,7 @@ public class CatDescription : MonoBehaviour
         if (swipe_Slot.currentIndex != currentIndex)
         {
             currentIndex = swipe_Slot.currentIndex;
-            CatName catName = swipe_Slot.slotDataArray[currentIndex].catName;
+            CatName catName = swipe_Slot.slotDataList[currentIndex].catName;
             if (catName != CatName.None)
             {
 
@@ -24,7 +24,7 @@ public class CatDescription : MonoBehaviour
             }
             else
             {
-                GameLevelDataName levelName = swipe_Slot.slotDataArray[currentIndex].levelName;
+                GameLevelDataName levelName = swipe_Slot.slotDataList[currentIndex].levelName;
                 switch (levelName)
                 {
                     case GameLevelDataName.maxGoldLevel:

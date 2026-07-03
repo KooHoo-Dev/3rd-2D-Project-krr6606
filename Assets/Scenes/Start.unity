@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageDataManager
   <StageList>k__BackingField:
+  - {fileID: 11400000, guid: c5930dd5a6e3e114682392af7437662a, type: 2}
   - {fileID: 11400000, guid: cadaf14e3ea0e934e86aed358408b70a, type: 2}
   - {fileID: 11400000, guid: d6bc0fb05a0d0ad449f270b11d1f4ce8, type: 2}
   - {fileID: 11400000, guid: 8e1fce69a50002246bffbe7103cc8738, type: 2}

@@ -26,25 +26,26 @@ public class SpawnManager : MonoBehaviour
     }
     void Update()
     {
-        if(Keyboard.current.digit1Key.wasPressedThisFrame)
+        if(StageManager.Instance.isStageEnd) return;
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            catSpawnSlots[1].Spawn();
+            catSpawnSlots[0].Spawn();
         }
         if(Keyboard.current.digit2Key.wasPressedThisFrame)
         {
-            catSpawnSlots[2].Spawn();
+            catSpawnSlots[1].Spawn();
         }
         if(Keyboard.current.digit3Key.wasPressedThisFrame)
         {
-            catSpawnSlots[3].Spawn();
+            catSpawnSlots[2].Spawn();
         }
         if(Keyboard.current.digit4Key.wasPressedThisFrame)
         {
-            catSpawnSlots[4].Spawn();
+            catSpawnSlots[3].Spawn();
         }
         if(Keyboard.current.digit5Key.wasPressedThisFrame)
         {
-            catSpawnSlots[5].Spawn();
+            catSpawnSlots[4].Spawn();
         }
     }
     void SlotsInit()

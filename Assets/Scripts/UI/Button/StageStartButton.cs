@@ -10,7 +10,8 @@ public class StageStartButton : MonoBehaviour
     }
     public void OnClickStartButton()
     {
-        int targetIndex = swipe_Slot.targetIndex;
+        int targetIndex = swipe_Slot.currentIndex;
+        Debug.Log("StageStartButton: OnClickStartButton: targetIndex = " + targetIndex);
         SceneManagement.Instance.LoadScene( 5 + targetIndex);
     }
 }

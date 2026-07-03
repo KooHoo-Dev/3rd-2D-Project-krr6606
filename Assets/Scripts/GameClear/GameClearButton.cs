@@ -23,6 +23,20 @@ public class GameClearButton : MonoBehaviour
                     GameDataManager.Instance.userGameDataSO.UnLockList.Add(CatName.Cat3);
                 }
                 break;
+            case 2:
+                if (stageDataManager.GetStageData((StageName)stageIndex).IsCleared == false)
+                {
+                    stageDataManager.GetStageData((StageName)stageIndex).IsCleared = true;
+                    GameDataManager.Instance.userGameDataSO.UnLockList.Add(CatName.Cat4);
+                }
+                break;
+            case 3:
+                if(stageDataManager.GetStageData((StageName)stageIndex).IsCleared == false)
+                {
+                    stageDataManager.GetStageData((StageName)stageIndex).IsCleared = true;
+                    GameDataManager.Instance.userGameDataSO.UnLockList.Add(CatName.Cat5);
+                }
+                break;
             default:
                 Debug.LogError("Invalid stage index: " + stageIndex);
                 break;

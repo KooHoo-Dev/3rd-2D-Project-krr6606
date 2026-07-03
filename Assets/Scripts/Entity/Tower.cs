@@ -5,7 +5,7 @@ public class Tower : MonoBehaviour, IDamagable
     Animator animator;
     TMP_Text healthText;
     public TowerSO towerData;
-     private int MaxHealth;
+     public int MaxHealth;
     public const float HealthMultiplier = 0.2f;
     public int CurrentHealth { get; private set; }
 

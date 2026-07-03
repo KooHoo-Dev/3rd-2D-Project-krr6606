@@ -125,7 +125,7 @@ MonoBehaviour:
   isAttacking: 0
   multiplier: 0.005
   catName: 0
-  enemyName: 1
+  enemyName: 2
 --- !u!212 &5204949958168392497
 SpriteRenderer:
   serializedVersion: 2
@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
   entity: {fileID: 4868956112381025358}
-  heroSkill01: {fileID: 0}
 --- !u!1001 &2183884870630055116
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -234,6 +234,17 @@ public class SlotData : MonoBehaviour
                 int index8 = gameDataManager.userGameDataSO.HeroDamageLevel - 1;
                 upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index8].ToString();
                 break;
+            case GameLevelDataName.SpawnCoolDownLevel:
+                if (gameDataManager.userGameDataSO.spawnCoolDownLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
+                {
+                    LevelText.text = "Max";
+                    upgradeEXP.text = "";
+                    return;
+                }
+                LevelText.text = gameDataManager.userGameDataSO.spawnCoolDownLevel.ToString();
+                int index9 = gameDataManager.userGameDataSO.spawnCoolDownLevel - 1;
+                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index9].ToString();
+                break;
             default: break;
         }
     }

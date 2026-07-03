@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpawnManager : MonoBehaviour
 {
     
     public CatSpawner catSpawner;
+    public CatSpawnSlot[] catSpawnSlots;
     public static SpawnManager Instance { get; private set; }
     public CatSpawnSlotParent spawnSlotParent;
 
@@ -20,11 +22,35 @@ public class SpawnManager : MonoBehaviour
     }
     void Start()
     {
-        CatName[] catSlotArray = GameDataManager.Instance.userGameDataSO.CatSlotArray;
-        for(int i = 0; i < catSlotArray.Length; i++)
+        SlotsInit();
+    }
+    void Update()
+    {
+        if(Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            Debug.Log($"스폰 슬롯 초기화 {catSlotArray[i]}, {i}번째");
+            catSpawnSlots[1].Spawn();
         }
+        if(Keyboard.current.digit2Key.wasPressedThisFrame)
+        {
+            catSpawnSlots[2].Spawn();
+        }
+        if(Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            catSpawnSlots[3].Spawn();
+        }
+        if(Keyboard.current.digit4Key.wasPressedThisFrame)
+        {
+            catSpawnSlots[4].Spawn();
+        }
+        if(Keyboard.current.digit5Key.wasPressedThisFrame)
+        {
+            catSpawnSlots[5].Spawn();
+        }
+    }
+    void SlotsInit()
+    {
+        CatName[] catSlotArray = GameDataManager.Instance.userGameDataSO.CatSlotArray;
+
         for (int i = 0; i < catSlotArray.Length; i++)
         {
             CatName catName = catSlotArray[i];
@@ -32,10 +58,15 @@ public class SpawnManager : MonoBehaviour
             {
                 Debug.Log($"스폰 슬롯 초기화 {catName}");
                 float Interval = GameDataManager.Instance.CatSOArray[(int)catName].unitdata.InitColdDown;
+                Interval -= GameDataManager.Instance.userGameDataSO.spawnCoolDownLevel * 0.2f;
+                if (Interval < 2)
+                {
+                    Interval = 2;
+                }
                 int cost = GameDataManager.Instance.CatSOArray[(int)catName].unitdata.Cost;
                 spawnSlotParent.SetSpawnSlot(catName, Interval, cost, i);
             }
         }
+        catSpawnSlots = spawnSlotParent.GetComponentsInChildren<CatSpawnSlot>();
     }
-
 }

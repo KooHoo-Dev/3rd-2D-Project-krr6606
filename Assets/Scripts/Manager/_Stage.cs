@@ -9,7 +9,8 @@ public class _Stage : ScriptableObject
 
     public int DefaultEXPReward;
 
-    public float BossTriggerHealthPercentage;
+    public int BossTriggerHealthPercentage;
+    public EnemyName BossName;
     public List<StageWaveData> waves;
 
 }

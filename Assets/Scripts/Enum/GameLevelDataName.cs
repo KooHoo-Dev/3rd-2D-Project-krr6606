@@ -10,5 +10,6 @@
     HeroSpeedLevel,
     HeroHealthLevel,
     HeroDamageLevel,
+    SpawnCoolDownLevel
 }
 

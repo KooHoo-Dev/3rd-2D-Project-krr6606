@@ -59,6 +59,15 @@ public class Unit : BaseUnit
         }
         animatorHit.gameObject.SetActive(true);
     }
+    public void Kill()
+    {
+        CurrentHealth = 0;
+        stateMachine.ChangeState(DieState);
+    }
+    public void HitBack()
+    {
+        stateMachine.ChangeState(HitBackState);
+    }
     public override void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
         if (IsInvincibility) return;

@@ -15,6 +15,7 @@ public class UserGameDataSO : ScriptableObject
     public int HeroSpeedLevel = 1;
     public int HeroHealthLevel = 1;
     public int HeroDamageLevel = 1;
+    public int spawnCoolDownLevel = 1;
     public int[] LevelUpCost_1_10 = new int[10] { 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 };
     public List<CatName> UnLockList;
     public CatName[] CatSlotArray;

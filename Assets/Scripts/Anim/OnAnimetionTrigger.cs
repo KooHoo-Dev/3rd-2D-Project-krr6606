@@ -5,7 +5,7 @@ public class OnAnimetionTrigger : MonoBehaviour
 {
     public BaseUnit entity;
     private Collider2D attackCollider;
-    public HeroSkill01 heroSkill01;
+    private HeroSkill01 heroSkill01;
 
     private void Awake()
     {

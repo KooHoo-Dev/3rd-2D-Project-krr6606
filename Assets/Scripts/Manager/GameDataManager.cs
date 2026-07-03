@@ -9,7 +9,8 @@ public class GameDataManager : MonoBehaviour
     
     // CatName과 CatSO를 연결하는 배열, CatName을 인덱스로 사용하여 CatSO를 가져올 수 있음
     public EntitySO[] CatSOArray; 
-
+    public List<GameObject> CatPrefabList;
+    public List<GameObject> EnemyPrefabList;
  
     public Dictionary<CatName, int> CatLevelDic;
 
@@ -87,6 +88,19 @@ public class GameDataManager : MonoBehaviour
             default:
                 Debug.LogWarning($"Unknown level name: {levelName}");
                 return 0;
+        }
+    }
+    public GameObject GetCatPrefab(CatName catName)
+    {
+        int index = (int)catName - 1;
+        if (index >= 0 && index < CatPrefabList.Count)
+        {
+            return CatPrefabList[index];
+        }
+        else
+        {
+            Debug.LogWarning($"Cat prefab for {catName} not found.");
+            return null;
         }
     }
 }

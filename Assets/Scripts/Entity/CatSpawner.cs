@@ -4,7 +4,7 @@ public class CatSpawner : MonoBehaviour
 {
     public Transform PoolParnt;
     public GameObject[] isSpawned; // 각 y축 위치에 적이 이미 스폰되었는지 여부를 나타내는 배열
-    [field: SerializeField] public List<Unit> catList;
+     List<GameObject> catPrefabList;
 
     public List<UnitPool> catPoolList;
     public int MaxSpawnCount = 50;
@@ -13,36 +13,50 @@ public class CatSpawner : MonoBehaviour
 
     void Start()
     {
+        catPrefabList = new List<GameObject>();
+
+        for (int i = 0; i < GameDataManager.Instance.userGameDataSO.CatSlotArray.Length; i++)
+        {
+            if(GameDataManager.Instance.userGameDataSO.CatSlotArray[i] != CatName.None)
+            {
+                catPrefabList.Add(GameDataManager.Instance.GetCatPrefab(GameDataManager.Instance.userGameDataSO.CatSlotArray[i]));
+            }
+
+        }
         catPoolList = new List<UnitPool>();
 
         isSpawned = new GameObject[MaxSpawnCount];
-        for (int i = 0; i < catList.Count; i++)
+        for (int i = 0; i < catPrefabList.Count; i++)
         {
-            catPoolList.Add(new UnitPool(catList[i].gameObject, PoolParnt));
+            catPoolList.Add(new UnitPool(catPrefabList[i].gameObject, PoolParnt));
         }
+    }
+    public Unit[] GetAllCats()
+    {
+        List<Unit> allEnemies = new List<Unit>();
+        foreach (var pool in catPoolList)
+        {
+            allEnemies.AddRange(pool.GetAllActiveUnit());
+        }
+        return allEnemies.ToArray();
     }
     public void Spawn(CatName catName)
     {
-        isSpawnStopped = PoolParnt.childCount >= 50;
+        int activeCount = 0;
+        foreach (var pool in PoolParnt.GetComponentsInChildren<GameObject>())
+        {
+            if(pool.activeSelf)
+            {
+                activeCount++;
+            }
+        }
+        isSpawnStopped = activeCount >= 50;
         if (isSpawnStopped)
         {
             return;
         }
         GameObject cat = null;
-        switch (catName)
-        {
-            case CatName.None:
-                break;
-            case CatName.Cat1:
-                cat = catPoolList[0].Get();
-                break;
-            case CatName.Cat2:
-                cat = catPoolList[1].Get();
-                break;
-            case CatName.Cat3:
-                cat = catPoolList[2].Get();
-                break;
-        }
+        cat = catPoolList[(int)catName - 1].Get();
         if (cat == null)
         {
            return;

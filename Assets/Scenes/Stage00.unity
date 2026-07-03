@@ -2744,6 +2744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   catSpawner: {fileID: 1409516509}
+  catSpawnSlots: []
   spawnSlotParent: {fileID: 215424472}
 --- !u!1 &328238403
 GameObject:
@@ -3107,7 +3108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &359049430
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3581,7 +3582,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uBA38\uB2C8\uB97C \uBAA8\uC544 \uCE90\uB9AD\uD130\uB97C \uC0DD\uC0B0\uD574\uC11C
-    \n\uC801\uC758 \uC131\uC744 \uACF5\uB7B5\uD558\uC790\uB0E5!"
+    \n\uC801\uC758 \uC131\uC744 \uACF5\uB7B5\uD558\uC790\uB0E5!(\uBC88\uD638\uD0A4\uB85C\uB3C4
+    \uC18C\uD658\uC774 \uAC00\uB2A5\uD558\uB2E4\uB0E5)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
   m_sharedMaterial: {fileID: 266022702890117651, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
@@ -5491,7 +5493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &679306204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8322,7 +8324,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBC29\uD5A5\uD0A4\uB85C \uAC70\uB300 \uB0E5\uCF54\uB97C \uC88C\uC6B0\uB85C
     \uC6C0\uC9C1\uC77C \uC218 \uC788\uACE0,\nz\uD0A4\uB85C \uADFC\uC811 \uACF5\uACA9\uC744
-    \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4!"
+    \uD560 \uC218 \uC788\uB2E4\uB0E5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
   m_sharedMaterial: {fileID: 266022702890117651, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
@@ -8807,7 +8809,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnEndAnimetionTrigger
   entity: {fileID: 1374168855}
-  heroSkill01: {fileID: 0}
 --- !u!212 &1138985688
 SpriteRenderer:
   serializedVersion: 2
@@ -10416,7 +10417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
   entity: {fileID: 1374168855}
-  heroSkill01: {fileID: 0}
 --- !u!1 &1378654019
 GameObject:
   m_ObjectHideFlags: 0
@@ -10600,10 +10600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CatSpawner
   PoolParnt: {fileID: 1640773700}
   isSpawned: []
-  catList:
-  - {fileID: 6985332800938263998, guid: 470ab7eb718180042ba6ce7a5c12dd83, type: 3}
-  - {fileID: 5789662800015426546, guid: 3a74fb44b55939f458522891cbcadf54, type: 3}
-  - {fileID: 1512056450304285884, guid: afea0a4a18c42f949b7c3e1802751057, type: 3}
   catPoolList: []
   MaxSpawnCount: 50
   isSpawnStopped: 0
@@ -13901,6 +13897,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4d66ec88d035f94584cad9a6c636818, type: 2}
   - {fileID: 11400000, guid: b22135ffaaf397d49ac7c222a7b7398c, type: 2}
   - {fileID: 11400000, guid: 7c06b4172eb358944a614784f0372edd, type: 2}
+  CatPrefabList:
+  - {fileID: 7491315395792864362, guid: 470ab7eb718180042ba6ce7a5c12dd83, type: 3}
+  - {fileID: 2560202295716971309, guid: 3a74fb44b55939f458522891cbcadf54, type: 3}
+  - {fileID: 6162086645420666224, guid: afea0a4a18c42f949b7c3e1802751057, type: 3}
+  - {fileID: 6162086645420666224, guid: 781a30c8ee66435419a4e93fa1b5def8, type: 3}
+  - {fileID: 6162086645420666224, guid: 1ee906301bf41a24e981c4bfcbef8190, type: 3}
+  EnemyPrefabList:
+  - {fileID: 7140789332909440702, guid: a41a3413f507a8847ade52e4948944b1, type: 3}
+  - {fileID: 1404608656550867488, guid: 2aa6b4b0003f35b4a8a6f670edf0e4d0, type: 3}
   MaxCatSlotCount: 10
 --- !u!4 &1866596985
 Transform:

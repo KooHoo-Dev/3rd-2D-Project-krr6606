@@ -16,6 +16,8 @@ public class StageManager : MonoBehaviour
     public StageName CurrentStageName;
     private _Stage currentStage;
 
+    EnemySpawner enemySpawner;
+    public CatSpawner catSpawner;
     public bool isStageEnd = false;
     void Awake()
     {
@@ -27,6 +29,8 @@ public class StageManager : MonoBehaviour
         {
             Instance = this;
         }
+        enemySpawner = FindAnyObjectByType<EnemySpawner>();
+        catSpawner = FindAnyObjectByType<CatSpawner>();
         ResultPanel.SetActive(false);
 
     }
@@ -36,16 +40,46 @@ public class StageManager : MonoBehaviour
     }
     public void GameWin()
     {
+        if(isStageEnd) return;
         ResultPanel.SetActive(true);
         ResultText.text = "완전 승리!";
         EXPBar.SetActive(true);
         EXPText.text = $"{currentStage.DefaultEXPReward}";
+        enemySpawner.isSpawnStopped = true;
+        isStageEnd = true;
+        AllEnemyDie();
+    }
+    private void AllEnemyDie()
+    {
+        for (int i = 0; i < enemySpawner.enemyPoolList.Count; i++)
+        {
+            Unit[] Enemys = enemySpawner.GetAllEnemies();
+            for(int j = 0; j < Enemys.Length; j++)
+            {
+                Enemys[j].Kill();
+            }
+        }
+    }
+    private void AllCatDie()
+    {
+        for (int i = 0; i < catSpawner.catPoolList.Count; i++)
+        {
+            Unit[] Cats = catSpawner.GetAllCats();
+            for (int j = 0; j < Cats.Length; j++)
+            {
+                Cats[j].Kill();
+            }
+        }
     }
     public void GameLose()
     {
+        if(isStageEnd) return;
         ResultPanel.SetActive(true);
         ResultText.text = "패배...";
         EXPBar.SetActive(false);
+        enemySpawner.isSpawnStopped = true;
+        isStageEnd = true;
+        AllCatDie();
     }
     public bool IsStageEnd()
     {

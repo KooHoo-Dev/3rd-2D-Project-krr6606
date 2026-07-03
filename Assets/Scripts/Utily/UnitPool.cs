@@ -38,6 +38,22 @@ public class UnitPool: Component
         newOne.SetActive(true);
         return newOne;
     }
+    public Unit[] GetAllActiveUnit()
+    {
+        List<Unit> activeUnits = new List<Unit>();
+        foreach (var obj in spawned)
+        {
+            if (obj.activeSelf)
+            {
+                Unit unitComponent = obj.GetComponent<Unit>();
+                if (unitComponent != null)
+                {
+                    activeUnits.Add(unitComponent);
+                }
+            }
+        }
+        return activeUnits.ToArray();
+    }
 }
 
 

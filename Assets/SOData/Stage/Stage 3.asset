@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cbe3881bb430246a2b8544aa30d792, type: 3}
+  m_Name: Stage 3
+  m_EditorClassIdentifier: Assembly-CSharp::_Stage
+  stageName: 2
+  IsCleared: 0
+  DefaultEXPReward: 7000
+  BossTriggerHealthPercentage: 0
+  waves:
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 0
+    <IsRandomTime>k__BackingField: 0
+    <MaxSpawnInterval>k__BackingField: 0
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 1
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 2
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 3
+  - <EnemyName>k__BackingField: 2
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 4
+  - <EnemyName>k__BackingField: 3
+    <MinSpawnInterval>k__BackingField: 8
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 12
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 0
+    <NextWaveIndex>k__BackingField: 1

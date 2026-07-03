@@ -421,6 +421,8 @@ MonoBehaviour:
   <StageList>k__BackingField:
   - {fileID: 11400000, guid: cadaf14e3ea0e934e86aed358408b70a, type: 2}
   - {fileID: 11400000, guid: d6bc0fb05a0d0ad449f270b11d1f4ce8, type: 2}
+  - {fileID: 11400000, guid: 8e1fce69a50002246bffbe7103cc8738, type: 2}
+  - {fileID: 11400000, guid: bf75afddd3a43ae4c92897f2f69e5b99, type: 2}
 --- !u!4 &242504306
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,6 +1239,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4d66ec88d035f94584cad9a6c636818, type: 2}
   - {fileID: 11400000, guid: b22135ffaaf397d49ac7c222a7b7398c, type: 2}
   - {fileID: 11400000, guid: 7c06b4172eb358944a614784f0372edd, type: 2}
+  CatPrefabList:
+  - {fileID: 7491315395792864362, guid: 470ab7eb718180042ba6ce7a5c12dd83, type: 3}
+  - {fileID: 2560202295716971309, guid: 3a74fb44b55939f458522891cbcadf54, type: 3}
+  - {fileID: 6162086645420666224, guid: afea0a4a18c42f949b7c3e1802751057, type: 3}
+  - {fileID: 6162086645420666224, guid: 781a30c8ee66435419a4e93fa1b5def8, type: 3}
+  - {fileID: 6162086645420666224, guid: 1ee906301bf41a24e981c4bfcbef8190, type: 3}
+  EnemyPrefabList:
+  - {fileID: 7140789332909440702, guid: a41a3413f507a8847ade52e4948944b1, type: 3}
+  - {fileID: 1404608656550867488, guid: 2aa6b4b0003f35b4a8a6f670edf0e4d0, type: 3}
+  - {fileID: 1404608656550867488, guid: d9342707c149510428a9a7a5e5ad0704, type: 3}
+  - {fileID: 1404608656550867488, guid: 965c3557322404549b9f309ba4a8e963, type: 3}
   MaxCatSlotCount: 10
 --- !u!4 &1703256760
 Transform:

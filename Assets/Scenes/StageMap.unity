@@ -980,15 +980,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 9999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7053518e22d39d84eac736a804702e03, type: 2}
+  m_sharedMaterial: {fileID: -7493050083223081264, guid: 7053518e22d39d84eac736a804702e03, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279884543
+  m_fontColor: {r: 1, g: 0.85573447, b: 0.09748411, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1005,13 +1005,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1397,8 +1397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Swipe_Slot
   scrollbar: {fileID: 1755767590}
-  slotDataArray: []
-  stageSlots: []
+  slotDataList: []
+  stageSlotList: []
   currentIndex: 0
   slotPrefab: {fileID: 6509350384182278768, guid: 8e2c7f60cddf96a45bc78a2bca182abd, type: 3}
   invenType: 3
@@ -1631,7 +1631,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3342109628197831564, guid: 4a53076aa35fe9949b738abb61a42d48, type: 3}
       propertyPath: m_text
-      value: "\uC911\uAD6D\n"
+      value: "\uD0DC\uAD6D "
       objectReference: {fileID: 0}
     - target: {fileID: 5084821263990261912, guid: 4a53076aa35fe9949b738abb61a42d48, type: 3}
       propertyPath: m_Pivot.x

@@ -29,7 +29,7 @@ public class InGameEconomyManager : MonoBehaviour
 
     private void Update()
     {
-        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.goldPerSecLevel) + 1);
+        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.goldPerSecLevel));
         UpdateGoldUI();
     }
     public void UpgradeEconomy()

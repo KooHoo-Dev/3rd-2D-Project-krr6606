@@ -26,6 +26,7 @@ public class CatSpawnSlot : MonoBehaviour
         if (IsReadyToSpawn())
         {
             catSpawner.Spawn(CatName);
+            Debug.Log($"스폰: {CatName}, 스폰된 슬롯 : {this.name}");
             InGameEconomyManager.Instance.SpendGold(Cost);
             SpawnTime = SpawnInterval;
             CatImage.color = LockColor;

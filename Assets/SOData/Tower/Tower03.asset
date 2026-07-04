@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a6b78394ffba9c47ab4a6af30e35fb6, type: 3}
-  m_Name: Tower00
+  m_Name: Tower03
   m_EditorClassIdentifier: Assembly-CSharp::TowerSO
-  towerName: "\uD55C\uAD6D"
+  towerName: "\uC911\uAD6D"
   Level: 1
-  MaxHealth: 1000
+  MaxHealth: 2000

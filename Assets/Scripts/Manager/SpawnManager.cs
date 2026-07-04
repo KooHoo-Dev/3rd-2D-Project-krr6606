@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public CatSpawner catSpawner;
     public CatSpawnSlot[] catSpawnSlots;
     public static SpawnManager Instance { get; private set; }
-    public CatSpawnSlotParent spawnSlotParent;
+    CatSpawnSlotParent spawnSlotParent;
 
     void Awake()
     {
@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
+            spawnSlotParent = FindAnyObjectByType<CatSpawnSlotParent>();
             Instance = this;
         }
     }

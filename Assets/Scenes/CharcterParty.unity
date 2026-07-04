@@ -981,6 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 9
   image: {fileID: 81433299}
   NameText: {fileID: 0}
@@ -1553,6 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 0
   image: {fileID: 378527453}
   NameText: {fileID: 0}
@@ -1649,6 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 6
   image: {fileID: 1216621156}
   NameText: {fileID: 0}
@@ -1996,7 +1999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Swipe_Slot
   scrollbar: {fileID: 571077054}
-  slotDataArray: []
+  slotDataList: []
+  stageSlotList: []
   currentIndex: 0
   slotPrefab: {fileID: 6509350384182278768, guid: 8e2c7f60cddf96a45bc78a2bca182abd, type: 3}
   invenType: 2
@@ -2490,7 +2494,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Swipe_Slot
   scrollbar: {fileID: 0}
-  slotDataArray: []
+  slotDataList: []
+  stageSlotList: []
   currentIndex: 0
   slotPrefab: {fileID: 0}
   invenType: 1
@@ -3090,6 +3095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 4
   image: {fileID: 944967480}
   NameText: {fileID: 0}
@@ -3323,6 +3329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 5
   image: {fileID: 1750025462}
   NameText: {fileID: 0}
@@ -3419,6 +3426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 2
   image: {fileID: 612357407}
   NameText: {fileID: 0}
@@ -3484,15 +3492,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 9999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7053518e22d39d84eac736a804702e03, type: 2}
+  m_sharedMaterial: {fileID: -7493050083223081264, guid: 7053518e22d39d84eac736a804702e03, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279884543
+  m_fontColor: {r: 1, g: 0.85573447, b: 0.09748411, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3509,13 +3517,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4153,6 +4161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 7
   image: {fileID: 76209047}
   NameText: {fileID: 0}
@@ -4634,6 +4643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 3
   image: {fileID: 1996226086}
   NameText: {fileID: 0}
@@ -6156,6 +6166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 8
   image: {fileID: 1549942938}
   NameText: {fileID: 0}
@@ -6892,6 +6903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 1
   image: {fileID: 914705796}
   NameText: {fileID: 0}
@@ -8041,6 +8053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
+  <levelName>k__BackingField: 0
   slotIndex: 0
   image: {fileID: 1005460218}
   NameText: {fileID: 400568311}

@@ -20,6 +20,7 @@ public class CatSpawner : MonoBehaviour
             if (GameDataManager.Instance.userGameDataSO.CatSlotArray[i] != CatName.None)
             {
                 catPrefabList.Add(GameDataManager.Instance.GetCatPrefab(GameDataManager.Instance.userGameDataSO.CatSlotArray[i]));
+
             }
 
         }
@@ -42,6 +43,7 @@ public class CatSpawner : MonoBehaviour
     }
     public void Spawn(CatName catName)
     {
+
         int activeCount = 0;
         for (int i = 0; i < PoolParnt.childCount; i++)
         {
@@ -59,10 +61,12 @@ public class CatSpawner : MonoBehaviour
         }
         GameObject cat = null;
         cat = catPoolList[(int)catName - 1].Get();
+
         if (cat == null)
         {
             return;
         }
+
         SetPositionY(cat);
 
     }

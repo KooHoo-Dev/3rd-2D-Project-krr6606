@@ -31,7 +31,7 @@ public class Unit : BaseUnit
     private void OnEnable()
     {
         stateMachine.Initialize(WalkState);
-
+        collider2d.enabled = true;
     }
     protected override void Attack()
     {

@@ -46,6 +46,10 @@ public class Hero : BaseUnit
         }
 
     }
+    public void HitBack()
+    {
+        stateMachine.ChangeState(hitBackState);
+    }
     protected override void Attack()
     {
 

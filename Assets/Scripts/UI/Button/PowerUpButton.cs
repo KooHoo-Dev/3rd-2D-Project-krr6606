@@ -12,10 +12,7 @@ public class PowerUpButton : MonoBehaviour
         expUI = FindAnyObjectByType<EXPUI>();
         swipeSlot = FindAnyObjectByType<Swipe_Slot>();
     }
-    private void Start()
-    {
-        button.onClick.AddListener(OnPowerUpButtonClicked);
-    }
+
 
     public void OnPowerUpButtonClicked()
     {

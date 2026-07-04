@@ -7,5 +7,5 @@ public enum StageName
     Stage3,
     Stage4,
     Stage5,
-    Stage6,
+    End,
 }

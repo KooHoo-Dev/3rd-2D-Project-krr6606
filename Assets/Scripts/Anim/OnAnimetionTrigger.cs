@@ -34,7 +34,9 @@ public class OnAnimetionTrigger : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.BoxCastAll(box.center, box.size, 0f, Vector2.zero, 1f, heroSkill01.targetLayer);
         for (int i = 0; i < hits.Length; i++)
         {
-           hits[i].collider.GetComponent<IDamagable>()?.TakeDamage(heroSkill01.GetSkillDamage(), ElementalType.normal, transform);
+            int damage = heroSkill01.GetSkillDamage();
+            damage = GameDataManager.Instance.userGameDataSO.skillDamageLevel + (int)(damage * 0.6 * (GameDataManager.Instance.userGameDataSO.skillDamageLevel - 1));
+            hits[i].collider.GetComponent<IDamagable>()?.TakeDamage(damage, ElementalType.normal, transform);
         }
     }
 

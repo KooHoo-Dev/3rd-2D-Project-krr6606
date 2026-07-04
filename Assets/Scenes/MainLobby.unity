@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 348425626}
   - component: {fileID: 348425628}
   - component: {fileID: 348425627}
+  - component: {fileID: 348425629}
   m_Layer: 5
   m_Name: TextBox
   m_TagString: Untagged
@@ -440,6 +441,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348425625}
   m_CullTransparentMesh: 1
+--- !u!114 &348425629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348425625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034610be25733114f84bcc8ff1e73048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainLobbyTextBox
 --- !u!1 &426210148
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,8 +939,8 @@ MonoBehaviour:
     \uC0C8\uB85C\uC6B4 \uB0E5\uCF54\uAC00 \uD574\uAE08\uB41C\uB2E4\uB0E5\n\uAE4C\uBA39\uC9C0
     \uB9D0\uACE0 \uD30C\uC6CC\uC5C5\uD558\uACE0\n\uCE90\uB9AD\uD130\uB97C \uD3B8\uC131\uD558\uB77C\uB0E5!\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
-  m_sharedMaterial: {fileID: 266022702890117651, guid: 6fb3993edadfa2e42ace184489814b44, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 659ceb8947c683b4a9e1216df0a67515, type: 2}
+  m_sharedMaterial: {fileID: 6898141960898469622, guid: 659ceb8947c683b4a9e1216df0a67515, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1142,15 +1155,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 9999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7053518e22d39d84eac736a804702e03, type: 2}
+  m_sharedMaterial: {fileID: -7493050083223081264, guid: 7053518e22d39d84eac736a804702e03, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279884543
+  m_fontColor: {r: 1, g: 0.85573447, b: 0.09748411, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1167,13 +1180,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535

@@ -21,7 +21,7 @@ public class HeroSkill01 : MonoBehaviour
     public float skillCooldown;
     public float currentSkillCooldown = 0f;
 
-    public int DefaultSkillDamage = 500;
+    public int DefaultSkillDamage = 120;
 
     public float DefaultSkillRange = 10f;
     public LayerMask targetLayer;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dummy
   m_EditorClassIdentifier: Assembly-CSharp::_Stage
   stageName: 0
-  IsCleared: 0
+  IsCleared: 1
   DefaultEXPReward: 0
   BossTriggerHealthPercentage: 0
   BossName: 0

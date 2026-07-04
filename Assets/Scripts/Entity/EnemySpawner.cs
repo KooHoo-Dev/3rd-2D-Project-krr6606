@@ -99,6 +99,9 @@ public class EnemySpawner : MonoBehaviour
                         {
                             Cats[i].HitBack();
                         }
+                        Hero hero = StageManager.Instance.hero;
+
+                        hero.HitBack();
                         Spawn(bossName);
                     }
                 }

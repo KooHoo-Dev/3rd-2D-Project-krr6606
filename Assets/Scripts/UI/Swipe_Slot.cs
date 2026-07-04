@@ -50,7 +50,7 @@ public class Swipe_Slot : MonoBehaviour
         {
             for (int i = 0; i < stageSlotList.Count; i++)
             {
-                if ((int)stageSlotList[i].StageName >= maxclearedStage)
+                if ((int)stageSlotList[i].StageName > maxclearedStage)
                 {
                     stageSlotList[i].gameObject.SetActive(false);
                 }
@@ -75,6 +75,10 @@ public class Swipe_Slot : MonoBehaviour
             }
         }
         Init();
+        for(int i = 0; i < slotDataList.Count; i++)
+        {
+            Debug.Log($"½½·Ô °í¾çÀÌ enum: {slotDataList[i].catName},½½·Ô ·¹º§ enum: {slotDataList[i].levelName}");
+        }
         pos = (invenType == InvenType.StageInven)
             ? new float[(int)gameDataManager.userGameDataSO.maxclearedStage + 1]
             : new float[transform.childCount];
@@ -219,7 +223,8 @@ public class Swipe_Slot : MonoBehaviour
                     for (int j = CatDatas.Count - 1; j >= 0; j--)
                     {
                         CatDatas[j].gameObject.transform.SetSiblingIndex(j);
-                        slotDataList.Insert(0, slotDataList[j]);
+                        slotDataList.Insert(0, CatDatas[j]);
+                        Debug.Log($"PowerUpInven Slot {j}: {CatDatas[j].catName}");
                     }
 
                 }

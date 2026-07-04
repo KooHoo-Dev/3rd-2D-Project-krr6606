@@ -40,11 +40,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
         CurrentHealth = useData.DefaultHealth;
 
     }
-    private void OnEnable()
-    {
 
-        collider2d.enabled = true;
-    }
     protected virtual void Update()
     {
         stateMachine.UpdateActiveState();
@@ -58,9 +54,9 @@ public class BaseUnit : MonoBehaviour , IDamagable
         }
         HitBackCount = 1;
         useData.Level = Mathf.Clamp(useData.Level, 1, 10);
-        useData.DefaultHealth = entitySOData.unitdata.DefaultHealth + (useData.Level - 1) * entitySOData.unitdata.DefaultHealth * levelMultiplier;
+        useData.DefaultHealth = entitySOData.unitdata.DefaultHealth + (entitySOData.unitdata.Level - 1) * entitySOData.unitdata.DefaultHealth * levelMultiplier;
         Debug.Log($"기본 체력 : {useData.DefaultHealth}");
-        useData.DefaultDamage = entitySOData.unitdata.DefaultDamage + (useData.Level - 1) * entitySOData.unitdata.DefaultDamage * levelMultiplier;
+        useData.DefaultDamage = entitySOData.unitdata.DefaultDamage + (entitySOData.unitdata.Level - 1) * entitySOData.unitdata.DefaultDamage * levelMultiplier;
         useData.HitBackMaxCount = entitySOData.unitdata.HitBackMaxCount;
         useData.isCat = entitySOData.unitdata.isCat;
         useData.speed = entitySOData.unitdata.speed;

@@ -92,7 +92,7 @@ public class Swipe_Slot : MonoBehaviour
 
     private void Update()
     {
-        if (invenType != InvenType.PickInven && invenType != InvenType.StageInven) return;
+        if (invenType == InvenType.None||invenType == InvenType.ResultInven) return;
         if (Mouse.current.leftButton.isPressed)
         {
             isDragging = true;
@@ -186,11 +186,6 @@ public class Swipe_Slot : MonoBehaviour
                     slotData.SetNormalSlotData(catName);
                     CatDatas.Add(slotData);
 
-                    for (int j = CatDatas.Count - 1; j >= 0; j--)
-                    {
-                        CatDatas[j].gameObject.transform.SetSiblingIndex(j);
-                        slotDataList.Insert(0, slotDataList[j]);
-                    }
 
                     InvenManager.Instance.Register(this);
                 }
@@ -206,6 +201,27 @@ public class Swipe_Slot : MonoBehaviour
                         Debug.Log($"ResultInven Slot {i}: {CatDatas[i].catName}");
                     }
                     InvenManager.Instance.Register(this);
+                }
+                break;
+            case InvenType.PowerUpInven:
+                int __count = gameDataManager.userGameDataSO.UnLockList.Count;
+                for (int i = 0; i < __count; i++)
+                {
+                    if (isInList(gameDataManager.userGameDataSO.UnLockList[i]) || gameDataManager.userGameDataSO.UnLockList[i] == CatName.None)
+                    {
+                        continue;
+                    }
+                    GameObject slotObj = Instantiate(slotPrefab, transform);
+                    SlotData slotData = slotObj.GetComponent<SlotData>();
+                    CatName catName = gameDataManager.userGameDataSO.UnLockList[i];
+                    slotData.SetNormalSlotData(catName);
+                    CatDatas.Add(slotData);
+                    for (int j = CatDatas.Count - 1; j >= 0; j--)
+                    {
+                        CatDatas[j].gameObject.transform.SetSiblingIndex(j);
+                        slotDataList.Insert(0, slotDataList[j]);
+                    }
+
                 }
                 break;
             default:

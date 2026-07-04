@@ -6546,7 +6546,7 @@ MonoBehaviour:
   stageSlotList: []
   currentIndex: 0
   slotPrefab: {fileID: 6509350384182278768, guid: 8e2c7f60cddf96a45bc78a2bca182abd, type: 3}
-  invenType: 2
+  invenType: 4
 --- !u!1 &1138801748
 GameObject:
   m_ObjectHideFlags: 0

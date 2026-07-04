@@ -40,6 +40,11 @@ public class BaseUnit : MonoBehaviour , IDamagable
         CurrentHealth = useData.DefaultHealth;
 
     }
+    private void OnEnable()
+    {
+
+        collider2d.enabled = true;
+    }
     protected virtual void Update()
     {
         stateMachine.UpdateActiveState();
@@ -68,6 +73,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
         useData.BackDelay = entitySOData.unitdata.BackDelay;
         useData.IsOneTarget = entitySOData.unitdata.IsOneTarget;
         useData.Money = entitySOData.unitdata.Money;
+
     }
 
     public virtual void TakeDamage(float damage)

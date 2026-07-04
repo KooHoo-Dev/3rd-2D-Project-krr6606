@@ -5,5 +5,6 @@ public enum InvenType
     ResultInven,
     PickInven,
     StageInven,
+    PowerUpInven
 }
 

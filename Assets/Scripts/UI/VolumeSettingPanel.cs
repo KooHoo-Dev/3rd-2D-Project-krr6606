@@ -8,7 +8,6 @@ public class VolumeSettingPanel : MonoBehaviour,IPointerDownHandler
     private void Awake()
     {
         raycaster = GetComponentInParent<GraphicRaycaster>();
-        Debug.Log($"raycaster널 여부: {raycaster == null}");
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -19,8 +18,7 @@ public class VolumeSettingPanel : MonoBehaviour,IPointerDownHandler
 
             gameObject.SetActive(false);
         }
-        Debug.Log($"패널 객체: {gameObject.name}");
-        Debug.Log($"감지 위치: {eventData.position}");
+
     }
 
 

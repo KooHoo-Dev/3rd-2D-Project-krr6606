@@ -20,7 +20,7 @@ public class Tower : MonoBehaviour, IDamagable
     }
     public void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
-
+        StringSoundManager.Instance.PlaySFX("Snd -타워 공격 성공");
         int damageInt = Mathf.RoundToInt(damage);
         CurrentHealth -= damageInt;
         animator.SetTrigger("IsHurt");

@@ -1,22 +1,23 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class StringSoundManager : MonoBehaviour
 {
-    public static StringSoundManager instance;
+    public static StringSoundManager Instance;
 
     private Dictionary<string, AudioClip> soundDict;  // SFX와 BGM을 저장할 Dictionary
-    private AudioSource sfxPlayer;                   // SFX 재생용 AudioSource
-    private AudioSource bgmPlayer;                   // BGM 재생용 AudioSource
-
+    [field:SerializeField] public AudioSource sfxPlayer { get; private set; }                   // SFX 재생용 AudioSource
+    [field: SerializeField] public AudioSource bgmPlayer { get; private set; }                   // BGM 재생용 AudioSource
+    public AudioClip LastSfxClip;
     [Header("Audio Clips")]
     [SerializeField] private AudioClip[] audioClips; // 오디오 클립 배열
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
             Init();
         }
@@ -25,7 +26,11 @@ public class StringSoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    void Start()
+    {
+        PlayBGM("Bgm-타이틀");
+        bgmPlayer.Play();
+    }
     private void Init()
     {
         soundDict = new Dictionary<string, AudioClip>();
@@ -43,6 +48,7 @@ public class StringSoundManager : MonoBehaviour
     {
         if (soundDict.TryGetValue(soundName, out var clip))
         {
+            LastSfxClip = clip;
             sfxPlayer.PlayOneShot(clip);
         }
         else
@@ -50,7 +56,14 @@ public class StringSoundManager : MonoBehaviour
             Debug.LogWarning("SFX not found.");
         }
     }
-
+    public void StopSFX()
+    {
+        sfxPlayer.Stop();
+    }
+    public void StopBGM()
+    {
+        bgmPlayer.Stop();
+    }
     // BGM 재생
     public void PlayBGM(string bgmName)
     {

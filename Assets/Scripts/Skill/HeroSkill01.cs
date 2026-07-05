@@ -14,7 +14,7 @@ public class HeroSkill01 : MonoBehaviour
 
     public GameObject line;
     public GameObject boomEffectPrefab;
-    private UnitPool BoomEffectPool;
+    private ComponentPool BoomEffectPool;
     GameDataManager gameDataManager;
 
     public float DefaultSkillCooldown = 60f;
@@ -32,7 +32,7 @@ public class HeroSkill01 : MonoBehaviour
     void Start()
     {
         gameDataManager = GameDataManager.Instance;
-        BoomEffectPool = new UnitPool(boomEffectPrefab,transform);
+        BoomEffectPool = new ComponentPool(boomEffectPrefab,transform);
         skillCooldown = Mathf.Max(DefaultSkillCooldown - DefaultSkillCooldown * (gameDataManager.userGameDataSO.skillCoolDownLevel - 1) * 0.08f, 15f);
         currentSkillCooldown = skillCooldown;
         skillIconMask.fillAmount = 1;
@@ -66,7 +66,12 @@ public class HeroSkill01 : MonoBehaviour
 
     public void Fire()
     {
-        if (isSkillReady == false) return;
+        if (isSkillReady == false)
+        {
+            StringSoundManager.Instance.PlaySFX("Snd-사용 불가");
+            return;
+        }
+        StringSoundManager.Instance.PlaySFX("Snd-머니 사용");
         currentSkillCooldown = skillCooldown;
         skillIconMask.fillAmount = 1;
         IconAnimator.SetBool("IsCanFire", false);
@@ -97,7 +102,7 @@ public class HeroSkill01 : MonoBehaviour
         sweepSpeed *= dir;
 
         BeamEffectSR.transform.position = skillEffectPoint.position;
-
+        StringSoundManager.Instance.PlaySFX("Snd-레이저");
         while (true)
         {
             currentEndX += sweepSpeed * Time.deltaTime;
@@ -138,21 +143,24 @@ public class HeroSkill01 : MonoBehaviour
         BeamEffectSR.gameObject.SetActive(false);
         line.gameObject.SetActive(false);
         isSkillReady = false;
+        StringSoundManager.Instance.StopSFX();
         StartCoroutine(BoomEffectCo(new Vector3(startX, groundY, 0f), new Vector3(maxRange, groundY, 0f)));
     }
     private IEnumerator BoomEffectCo(Vector3 StartPos, Vector3 EndPos)
     {
+
         GameObject temp =  BoomEffectPool.Get();
         Bounds box = temp.GetComponent<Collider2D>().bounds;
         int InitCount = Mathf.CeilToInt(Mathf.Abs(StartPos.x - EndPos.x) / box.size.x);
-        Debug.Log($"BoomEffectCo InitCount: {InitCount}, 박스 크기: {box.size.x}, StartPos.x: {StartPos.x}, EndPos.x: {EndPos.x}");
         temp.SetActive(false);
         for (int i = 0; i < InitCount; i++)
         {
             Vector3 spawnPos = new Vector3(StartPos.x + (EndPos.x - StartPos.x) * (i / (float)InitCount), StartPos.y, StartPos.z);
             GameObject boomEffect = BoomEffectPool.Get();
             boomEffect.transform.position = spawnPos;
+            StringSoundManager.Instance.PlaySFX("Snd-레이저 폭발");
             yield return new WaitForSeconds(0.1f);
+
         }
     }
 }

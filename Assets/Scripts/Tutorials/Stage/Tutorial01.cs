@@ -31,12 +31,13 @@ public class Tutorial01 : MonoBehaviour
     public void OnTutorial()
     {
         tutorialPanel01.SetActive(true);
-
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
         TimeManager.Instance.PauseGame();
     }
     public void OffTutorial()
     {
         tutorialPanel01.SetActive(false);
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
         TimeManager.Instance.ResumeGame();
     }
 }

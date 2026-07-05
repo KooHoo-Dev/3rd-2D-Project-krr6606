@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stage 2
   m_EditorClassIdentifier: Assembly-CSharp::_Stage
   stageName: 2
-  IsCleared: 0
+  IsCleared: 1
   DefaultEXPReward: 4000
   BossTriggerHealthPercentage: 0
   BossName: 0

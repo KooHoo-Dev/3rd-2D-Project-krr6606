@@ -6,7 +6,7 @@ public class CatSpawner : MonoBehaviour
     public GameObject[] isSpawned; // 각 y축 위치에 적이 이미 스폰되었는지 여부를 나타내는 배열
     List<GameObject> catPrefabList;
 
-    public List<UnitPool> catPoolList;
+    public List<ComponentPool> catPoolList;
     public int MaxSpawnCount = 50;
     public bool isSpawnStopped = false;
     public float SpawnFrameDelay = 0.2f;
@@ -24,12 +24,12 @@ public class CatSpawner : MonoBehaviour
             }
 
         }
-        catPoolList = new List<UnitPool>();
+        catPoolList = new List<ComponentPool>();
 
         isSpawned = new GameObject[MaxSpawnCount];
         for (int i = 0; i < catPrefabList.Count; i++)
         {
-            catPoolList.Add(new UnitPool(catPrefabList[i].gameObject, PoolParnt));
+            catPoolList.Add(new ComponentPool(catPrefabList[i].gameObject, PoolParnt));
         }
     }
     public Unit[] GetAllCats()

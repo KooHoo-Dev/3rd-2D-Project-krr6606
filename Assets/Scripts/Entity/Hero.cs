@@ -35,6 +35,16 @@ public class Hero : BaseUnit
 
     public override void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
+        int RandomSound = Random.Range(0, 2);
+        switch (RandomSound)
+        {
+            case 0:
+                StringSoundManager.Instance.PlaySFX("Snd-공격 성공-1");
+                break;
+            case 1:
+                StringSoundManager.Instance.PlaySFX("Snd-공격 성공-2");
+                break;
+        }
         damage = Mathf.RoundToInt(damage);
         CurrentHealth -= damage;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);

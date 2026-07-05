@@ -16,6 +16,7 @@ public class SpeedUpButton : MonoBehaviour
     }
     public void ToggleSpeedUpGame()
     {
+        StringSoundManager.Instance.PlaySFX("Snd-Å¬¸¯");
         if (TimeManager.Instance.isSpeedUp)
         {
             NormalSpeedGame();

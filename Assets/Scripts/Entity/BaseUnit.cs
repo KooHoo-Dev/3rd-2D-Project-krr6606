@@ -9,7 +9,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
 
     protected StateMachin stateMachine;
     protected CombatManager combatManager;
-    public float CurrentHealth { get; protected set; }
+    public float CurrentHealth { get;  set; }
     protected int HitBackCount;
     public bool IsInvincibility { get; set; }
     public LayerMask TargetLayer;

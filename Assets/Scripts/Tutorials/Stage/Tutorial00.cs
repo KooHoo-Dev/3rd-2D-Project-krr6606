@@ -24,6 +24,7 @@ public class Tutorial00 : MonoBehaviour
     {
         tutorialPanel01.SetActive(false);
         tutorialPanel02.SetActive(true);
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
     }
     public void OfftutorialArrow()
     {
@@ -46,5 +47,6 @@ public class Tutorial00 : MonoBehaviour
         tutorialPanel01.SetActive(false);
         tutorialPanel02.SetActive(false);   
         TimeManager.Instance.ResumeGame();
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
     }
 }

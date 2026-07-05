@@ -13,7 +13,7 @@ public class InGameEconomyManager : MonoBehaviour
     public int DefaultIncreaseAmountMaxGold { get; private set; } = 50;
     public float DefaultIncreaseAmountGoldPerSec { get; private set; } = 1f;
 
-    public int DefaultEconomyUpgradeCost { get; private set; } = 40;
+    public int DefaultEconomyUpgradeCost = 40;
     public TMP_Text goldText;
     void Awake()
     {
@@ -29,7 +29,7 @@ public class InGameEconomyManager : MonoBehaviour
 
     private void Update()
     {
-        IncreaseGold(goldPerSec * Time.deltaTime + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.goldPerSecLevel));
+        IncreaseGold(goldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.goldPerSecLevel + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime ));
         UpdateGoldUI();
     }
     public void UpgradeEconomy()
@@ -62,19 +62,12 @@ public class InGameEconomyManager : MonoBehaviour
         goldText.text = $"{gold} / {MaxGold}"; 
     }
 
-    public bool SpendGold(int amount)
+    public void SpendGold(int amount)
     {
-        if (gold >= amount)
-        {
+
             gold -= amount;
             UpdateGoldUI();
-            return true;
-        }
-        else
-        {
-            Debug.Log("Not enough gold!");
-            return false;
-        }
+
     }
     public void AddGold(int amount)
     {

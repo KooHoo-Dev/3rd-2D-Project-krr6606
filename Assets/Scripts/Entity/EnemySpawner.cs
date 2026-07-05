@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject[] isSpawned; // 각 y축 위치에 적이 이미 스폰되었는지 여부를 나타내는 배열
     [field: SerializeField] private List<Unit> enemyList = new List<Unit>();
 
-    public List<UnitPool> enemyPoolList = new List<UnitPool>();
+    public List<ComponentPool> enemyPoolList = new List<ComponentPool>();
     _Stage stage;
     List<StageWaveData> waveList;
     private float SpawnTime;
@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < enemyList.Count; i++)
         {
-            enemyPoolList.Add(new UnitPool(enemyList[i].gameObject, PoolParnt));
+            enemyPoolList.Add(new ComponentPool(enemyList[i].gameObject, PoolParnt));
         }
         stageManager = StageManager.Instance;
         BossTriggerHealthPercentage = StageDataManager.Instance.GetStageData(stageManager.CurrentStageName).BossTriggerHealthPercentage;
@@ -84,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
             if (BossTriggerHealthPercentage > 0 && isBossSpawned == false)
             {
                 int currentHealthPercentage = Mathf.RoundToInt((float)stageManager.EnemyTower.CurrentHealth / stageManager.EnemyTower.MaxHealth * 100);
-                if (currentHealthPercentage <= BossTriggerHealthPercentage)
+                if (currentHealthPercentage <= BossTriggerHealthPercentage) // 현재 체력 비율이 보스 스폰 조건 이하인 경우
                 {
                     isBossSpawned = true;
                     EnemyName bossName = stage.BossName;
@@ -102,7 +102,12 @@ public class EnemySpawner : MonoBehaviour
                         Hero hero = StageManager.Instance.hero;
 
                         hero.HitBack();
-                        Spawn(bossName);
+                        Unit boss = Spawn(bossName); // 보스 스폰
+                        boss.useData.DefaultHealth *= 2; // 보스 체력 2배 증가
+                        boss.CurrentHealth = boss.useData.DefaultHealth; // 현재 체력도 최대 체력으로 설정
+                        boss.useData.DefaultDamage *= 1.5f; // 보스 공격력 1.5배 증가
+                        StringSoundManager.Instance.PlaySFX("Snd-보스 등장");
+                        StringSoundManager.Instance.PlayBGM("Bgm-전투-5-보스");
                     }
                 }
             }
@@ -117,7 +122,7 @@ public class EnemySpawner : MonoBehaviour
                 CurrentSpawnTime -= Time.deltaTime;
 
             }
-            else
+            else 
             {
                 Debug.Log($"웨이브 {currentWaveIndex} 스폰 시작: {waveList[currentWaveIndex].EnemyName}, 스폰 수: {waveList[currentWaveIndex].SpawnCount}");
 
@@ -144,15 +149,17 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void Spawn(EnemyName enemyName)
+    Unit Spawn(EnemyName enemyName)
     {
         GameObject enemy = null;
         enemy = enemyPoolList[(int)enemyName - 1].Get();
         if (enemy == null)
         {
-            return;
+            return null;
         }
+        
         SetPositionY(enemy);
+        return enemy.GetComponent<Unit>();
     }
     private void SetPositionY(GameObject enemy)
     {
@@ -160,7 +167,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (isSpawned[i] == null)
             {
-                enemy.transform.position = new Vector3(transform.position.x, transform.position.y - i * 0.05f, transform.position.z);
+                enemy.transform.position = new Vector3(transform.position.x, transform.position.y - i * 0.025f, transform.position.z);
                 isSpawned[i] = enemy;
                 enemy.GetComponent<SpriteRenderer>().sortingOrder = i;
                 break;

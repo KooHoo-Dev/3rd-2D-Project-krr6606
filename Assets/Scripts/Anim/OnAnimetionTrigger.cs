@@ -35,8 +35,9 @@ public class OnAnimetionTrigger : MonoBehaviour
         for (int i = 0; i < hits.Length; i++)
         {
             int damage = heroSkill01.GetSkillDamage();
-            damage = GameDataManager.Instance.userGameDataSO.skillDamageLevel + (int)(damage * 0.6 * (GameDataManager.Instance.userGameDataSO.skillDamageLevel - 1));
+            damage += (int)(damage * 0.6 * (GameDataManager.Instance.userGameDataSO.skillDamageLevel - 1));
             hits[i].collider.GetComponent<IDamagable>()?.TakeDamage(damage, ElementalType.normal, transform);
+            Debug.Log($"È÷Æ® {hits[i].collider.name} for {damage} damage.");
         }
     }
 

@@ -7,8 +7,10 @@ public class SceneManagement : MonoBehaviour
 {
     public static SceneManagement Instance { get; private set; }
     public Canvas loadingCanvas;
-
+    public GameObject BattleStartPanel;
     public Image loadingPanel;
+    public float fadeInTime = 0.6f;
+    public float fadeOutTime = 0.22f;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,17 +31,37 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadScene(int SceneIndex)
     {
-       LoadScene((SceneName)SceneIndex);
+        if (SceneIndex < 5)
+        {
+            LoadScene((SceneName)SceneIndex);
+        }
+        else
+        {
+            EnterBattle(SceneIndex);
+        }
+        
     }
     private void LoadScene(SceneName sceneName)
     {
         
-        Debug.Log($"씬 로드: {sceneName}");
-        StartCoroutine(FadeIn(loadingPanel, 1, sceneName));
-        
+        StartCoroutine(FadeIn(loadingPanel, fadeInTime, sceneName));
+
         
     }
+    public void EnterBattle(int SceneIndex)
+    {
+        StartCoroutine(EnterBattleCoroutine(SceneIndex));
+    }
+    public IEnumerator EnterBattleCoroutine(int SceneIndex)
+    {
+        StringSoundManager.Instance.StopBGM();
+        StringSoundManager.Instance.PlaySFX("Snd-전투시작");
+        BattleStartPanel.SetActive(true);
+        yield return new WaitForSeconds(StringSoundManager.Instance.LastSfxClip.length);
+        BattleStartPanel.SetActive(false);
 
+        LoadScene((SceneName)SceneIndex);
+    }
     IEnumerator FadeIn(Image panel, float time, SceneName sceneName)
     {
         loadingCanvas.enabled = true;
@@ -56,7 +78,40 @@ public class SceneManagement : MonoBehaviour
         }
 
         SceneManager.LoadScene((int)sceneName);
-        StartCoroutine(FadeOut(loadingPanel, 1));
+        StartCoroutine(FadeOut(loadingPanel, fadeOutTime));
+        switch (sceneName)
+        {
+            case SceneName.StartScene:
+                StringSoundManager.Instance.PlayBGM("Bgm-타이틀");
+                break;
+            case SceneName.MainLobbyScene:
+                StringSoundManager.Instance.PlayBGM("Bgm-메인");
+                break;
+            case SceneName.PowerUpScene:
+
+                break;
+            case SceneName.ChapterPertyScene:
+                break;
+            case SceneName.StageMapScene:
+                StringSoundManager.Instance.PlayBGM("Bgm-메인");
+                break;
+            case SceneName.Stage00Scene:
+                StringSoundManager.Instance.PlayBGM("Bgm-전투-2");
+                break;
+            case SceneName.Stage01Scene:
+                StringSoundManager.Instance.PlayBGM("Bgm-전투-2");
+                break;
+            case SceneName.Stage02Scene:
+                StringSoundManager.Instance.PlayBGM("Bgm-전투-2");
+                break;
+            case SceneName.Stage03Scene:
+                StringSoundManager.Instance.PlayBGM("Bgm-전투-2");
+                break;
+            case SceneName.Stage04Scene:
+                StringSoundManager.Instance.PlayBGM("Bgm-전투-2");
+                break;
+        }
+
     }
     IEnumerator FadeOut(Image panel, float time)
     {

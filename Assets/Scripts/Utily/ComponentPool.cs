@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 
-public class UnitPool: Component
+public class ComponentPool: Component
 {
     private readonly GameObject original;       // 복제 원본 (프리팹 또는 씬 개체)
     private readonly Transform parent; // 복제본을 붙일 부모 (null이면 루트)
@@ -11,7 +11,7 @@ public class UnitPool: Component
     // 지금까지 만든 복제본들. 켜짐/꺼짐 여부로 사용 중인지 구분한다.
     private readonly List<GameObject> spawned = new List<GameObject>();
 
-    public UnitPool(GameObject original, Transform parent = null)
+    public ComponentPool(GameObject original, Transform parent = null)
     {
         this.original = original;
         this.parent = parent;

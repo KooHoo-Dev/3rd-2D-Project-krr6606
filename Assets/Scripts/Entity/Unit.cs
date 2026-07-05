@@ -39,7 +39,7 @@ public class Unit : BaseUnit
         float dir = useData.isCat ? -1f : 1f;
         if (useData.IsOneTarget)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.right * dir * (useData.AttackRangeStart* multiplier), Vector2.right * dir, useData.AttackRangeEnd * multiplier, TargetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.right * dir * (useData.AttackRangeStart * multiplier), Vector2.right * dir, useData.AttackRangeEnd * multiplier, TargetLayer);
             if (hit.collider == null) return;
             IDamagable damagable = hit.collider.GetComponent<IDamagable>();
             if (damagable == null) return;
@@ -71,6 +71,17 @@ public class Unit : BaseUnit
     public override void TakeDamage(float damage, ElementalType damageType, Transform attacker)
     {
         if (IsInvincibility) return;
+        int RandomSound = Random.Range(0, 2);
+        switch (RandomSound)
+        {
+            case 0:
+                StringSoundManager.Instance.PlaySFX("Snd-공격 성공-1");
+                break;
+            case 1:
+                StringSoundManager.Instance.PlaySFX("Snd-공격 성공-2");
+                break;
+        }
+
         CurrentHealth -= damage;
         if (CurrentHealth <= 0)
         {

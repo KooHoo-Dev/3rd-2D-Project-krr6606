@@ -59,15 +59,6 @@ public class Swipe_Slot : MonoBehaviour
                     stageSlotList[i].gameObject.SetActive(true);
                 }
 
-
-                if (StageDataManager.Instance.GetStageData(stageSlotList[i].StageName).IsCleared)
-                {
-                    stageSlotList[i].gameObject.SetActive(true);
-                }
-                else
-                {
-                    stageSlotList[i].gameObject.SetActive(false);
-                }
             }
             if ((int)maxclearedStage < stageSlotList.Count)
             {
@@ -79,8 +70,9 @@ public class Swipe_Slot : MonoBehaviour
         {
             Debug.Log($"슬롯 고양이 enum: {slotDataList[i].catName},슬롯 레벨 enum: {slotDataList[i].levelName}");
         }
+        int StageClearMaxCount = Mathf.Min((int)gameDataManager.userGameDataSO.maxclearedStage + 1, stageSlotList.Count);
         pos = (invenType == InvenType.StageInven)
-            ? new float[(int)gameDataManager.userGameDataSO.maxclearedStage + 1]
+            ? new float[StageClearMaxCount]
             : new float[transform.childCount];
         distance = 1f / (pos.Length - 1f);
 
@@ -109,6 +101,7 @@ public class Swipe_Slot : MonoBehaviour
             if (isDragging)
             {
                 isDragging = false;
+                SlotChangeSound();
                 targetIndex = GetNearestIndex(scrollbar.value);
             }
             // 매 프레임 target 위치로 Lerp
@@ -211,7 +204,7 @@ public class Swipe_Slot : MonoBehaviour
                 int __count = gameDataManager.userGameDataSO.UnLockList.Count;
                 for (int i = 0; i < __count; i++)
                 {
-                    if (isInList(gameDataManager.userGameDataSO.UnLockList[i]) || gameDataManager.userGameDataSO.UnLockList[i] == CatName.None)
+                    if (gameDataManager.userGameDataSO.UnLockList[i] == CatName.None)
                     {
                         continue;
                     }
@@ -220,19 +213,25 @@ public class Swipe_Slot : MonoBehaviour
                     CatName catName = gameDataManager.userGameDataSO.UnLockList[i];
                     slotData.SetNormalSlotData(catName);
                     CatDatas.Add(slotData);
-                    for (int j = CatDatas.Count - 1; j >= 0; j--)
-                    {
-                        CatDatas[j].gameObject.transform.SetSiblingIndex(j);
-                        slotDataList.Insert(0, CatDatas[j]);
-                        Debug.Log($"PowerUpInven Slot {j}: {CatDatas[j].catName}");
-                    }
 
+
+                }
+                Debug.Log($"PowerUpInven CatDatas Count: {CatDatas.Count}");
+                for (int j = CatDatas.Count - 1; j >= 0; j--)
+                {
+                    CatDatas[j].gameObject.transform.SetSiblingIndex(0);
+                    slotDataList.Insert(0, CatDatas[j]);
+                    Debug.Log($"PowerUpInven Slot {j}: {CatDatas[j].catName}");
                 }
                 break;
             default:
                 break;
         }
 
+    }
+    public void SlotChangeSound()
+    {
+        StringSoundManager.Instance.PlaySFX("Snd-슬롯 변경");
     }
     public bool isInList(CatName catName)
     {

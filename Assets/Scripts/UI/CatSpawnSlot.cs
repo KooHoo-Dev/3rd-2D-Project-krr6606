@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 public class CatSpawnSlot : MonoBehaviour
 {
@@ -14,19 +14,29 @@ public class CatSpawnSlot : MonoBehaviour
     public float SpawnTime { get; private set; } = 0;
     public int Cost { get; private set; } = 50;
     private Color LockColor = new Color(0.55f, 0.55f, 0.55f, 1f);
-    
+
     private void Awake()
     {
-      
+
         catSpawner = FindAnyObjectByType<CatSpawner>();
     }
-
+    public void Update()
+    {
+        if (CatImage.gameObject.activeSelf == false) return;
+        if (IsReadyToSpawn())
+        {
+            CatImage.color = Color.white;
+        }
+        else
+        {
+            CatImage.color = LockColor;
+        }
+    }
     public void Spawn()
     {
         if (IsReadyToSpawn())
         {
             catSpawner.Spawn(CatName);
-            Debug.Log($"스폰: {CatName}, 스폰된 슬롯 : {this.name}");
             InGameEconomyManager.Instance.SpendGold(Cost);
             SpawnTime = SpawnInterval;
             CatImage.color = LockColor;
@@ -35,7 +45,12 @@ public class CatSpawnSlot : MonoBehaviour
 
             CostText.gameObject.SetActive(false);
             ProgressBar.fillAmount = 0;
+            StringSoundManager.Instance.PlaySFX("Snd-머니 사용");
             StartCoroutine(SpawnIntervalCo());
+        }
+        else
+        {
+            StringSoundManager.Instance.PlaySFX("Snd-사용 불가");
         }
     }
     public IEnumerator SpawnIntervalCo()
@@ -68,8 +83,8 @@ public class CatSpawnSlot : MonoBehaviour
         SpawnInterval = interval;
         SpawnTime = 0;
     }
-    
-    public void InitCatSlot(CatName catName, float spawnInterval ,int cost)
+
+    public void InitCatSlot(CatName catName, float spawnInterval, int cost)
     {
         SetSpawnInterval(spawnInterval);
         CatName = catName;

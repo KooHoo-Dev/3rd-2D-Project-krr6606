@@ -11,7 +11,7 @@ public class StageStartButton : MonoBehaviour
     public void OnClickStartButton()
     {
         int targetIndex = swipe_Slot.currentIndex;
-        Debug.Log("StageStartButton: OnClickStartButton: targetIndex = " + targetIndex);
+        StringSoundManager.Instance.PlaySFX("Snd-Å¬¸¯");
         SceneManagement.Instance.LoadScene( 5 + targetIndex);
     }
 }

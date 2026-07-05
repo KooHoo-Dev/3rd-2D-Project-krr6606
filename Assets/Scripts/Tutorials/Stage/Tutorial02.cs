@@ -37,18 +37,20 @@ public class Tutorial02 : MonoBehaviour
     public void OnTutorial()
     {
         tutorialPanel01.SetActive(true);
-
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
         TimeManager.Instance.PauseGame();
     }
     public void OnNextTutorial()
     {
         tutorialPanel01.SetActive(false);
         tutorialPanel02.SetActive(true);
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
     }
     public void OffTutorial()
     {
         tutorialPanel01.SetActive(false);
         tutorialPanel02.SetActive(false);
         TimeManager.Instance.ResumeGame();
+        StringSoundManager.Instance.PlaySFX("Snd-클릭");
     }
 }

@@ -48,6 +48,7 @@ public class StageManager : MonoBehaviour
         enemySpawner.isSpawnStopped = true;
         isStageEnd = true;
         AllEnemyDie();
+        StringSoundManager.Instance.PlaySFX("Snd-승리");
     }
     private void AllEnemyDie()
     {
@@ -80,6 +81,7 @@ public class StageManager : MonoBehaviour
         enemySpawner.isSpawnStopped = true;
         isStageEnd = true;
         AllCatDie();
+        StringSoundManager.Instance.PlaySFX("Snd-패배");
     }
     public bool IsStageEnd()
     {

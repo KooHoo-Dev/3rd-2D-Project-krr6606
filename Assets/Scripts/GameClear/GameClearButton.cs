@@ -10,7 +10,9 @@ public class GameClearButton : MonoBehaviour
         userGameData.currentEXP += stageData.DefaultEXPReward;
         StageName maxClearedStage = (StageName)Mathf.Max((int)userGameData.maxclearedStage, stageIndex);
         maxClearedStage = (StageName)Mathf.Clamp((int)maxClearedStage, 0, (int)StageName.End);
-
+        TimeManager.Instance.NormalSpeedGame();
+        StringSoundManager.Instance.StopBGM();
+        StringSoundManager.Instance.PlaySFX("Snd-Å¬¸¯");
         switch (stageIndex)
         {
             case 0:

@@ -105,7 +105,7 @@ public class EnemySpawner : MonoBehaviour
                         Unit boss = Spawn(bossName); // 보스 스폰
                         boss.useData.DefaultHealth *= 2; // 보스 체력 2배 증가
                         boss.CurrentHealth = boss.useData.DefaultHealth; // 현재 체력도 최대 체력으로 설정
-                        boss.useData.DefaultDamage *= 1.5f; // 보스 공격력 1.5배 증가
+                        boss.useData.DefaultDamage *= 1.1f; // 보스 공격력 1.1배 증가
                         StringSoundManager.Instance.PlaySFX("Snd-보스 등장");
                         StringSoundManager.Instance.PlayBGM("Bgm-전투-5-보스");
                     }

@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntitySO
   unitdata:
     Name: "\uBA4D\uBA4D\uC774"
+    Description: 
     Level: 1
     isCat: 0
-    DefaultHealth: 90
+    type: 0
+    DefaultHealth: 95
     DefaultDamage: 8
     HitBackMaxCount: 2
     speed: 5
@@ -25,7 +27,9 @@ MonoBehaviour:
     AttackRangeEnd: 110
     Cost: 0
     InitColdDown: 0
+    UpgradeCost_1_10: 
     FrontDelay: 1.57
     BackDelay: 0.27
     IsOneTarget: 1
     Money: 15
+  SlotSprite: {fileID: 0}

@@ -19,13 +19,17 @@ public class Idle : Unit_State
         base.Update();
         stateTimer -= Time.deltaTime;
         RaycastHit2D hit = Physics2D.Raycast(entity.transform.position, Vector2.right * (entity.useData.isCat ? -1f : 1f), entity.useData.Range * entity.multiplier, entity.TargetLayer);
-        if(hit.collider == null)
+        if(hit.collider == null )
         {
             Debug.Log("사정거리 내에 존재하는 적이 없으므로 이동 상태로 전환합니다.");
             stateMachine.ChangeState(entity.WalkState);
             return;
         }
-        if (stateTimer <= 0)
+        else if( hit.collider != null && stateTimer <= 0 )
+        {
+            stateMachine.ChangeState(entity.AttackState);
+        }
+        else if (stateTimer <= 0)
         {
             stateMachine.ChangeState(entity.WalkState);
         }

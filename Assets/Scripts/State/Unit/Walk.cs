@@ -9,6 +9,7 @@ public class Walk : Unit_State
     public override void Enter()
     {
         base.Enter();
+
         dir = entity.useData.isCat ? -1f : 1f;
     }
     public override void Update()
@@ -18,7 +19,7 @@ public class Walk : Unit_State
         RaycastHit2D hit = Physics2D.Raycast(entity.transform.position, Vector3.right * dir , entity.useData.Range * entity.multiplier, entity.TargetLayer);
         if (hit.collider != null)
         {
-            stateMachine.ChangeState(entity.AttackState);
+            stateMachine.ChangeState(entity.IdleState);
 
         }
         entity.transform.Translate(Vector3.right * dir * entity.useData.speed * 0.05f * Time.deltaTime);

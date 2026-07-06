@@ -55,6 +55,9 @@ public class CatDescription : MonoBehaviour
                     case GameLevelDataName.HeroDamageLevel:
                         SetDescription("영웅의 공격력이 상승합니다.");
                         break;
+                    case GameLevelDataName.SpawnCoolDownLevel:
+                        SetDescription("유닛을 소환하는 쿨타임이 감소합니다.");
+                        break;
                     default: break;
                 }
 

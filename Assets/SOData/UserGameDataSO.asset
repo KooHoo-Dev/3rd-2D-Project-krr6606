@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1c865c4fffc0246b2de4edcc4e38e4, type: 3}
   m_Name: UserGameDataSO
   m_EditorClassIdentifier: Assembly-CSharp::UserGameDataSO
-  maxclearedStage: 4
-  currentEXP: 2000
+  maxclearedStage: 0
+  currentEXP: 5000
   goldPerSecLevel: 1
   maxGoldLevel: 1
   skillDamageLevel: 1

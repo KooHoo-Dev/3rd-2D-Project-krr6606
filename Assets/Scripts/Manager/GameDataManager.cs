@@ -85,6 +85,8 @@ public class GameDataManager : MonoBehaviour
                 return userGameDataSO.HeroHealthLevel;
             case GameLevelDataName.HeroDamageLevel:
                 return userGameDataSO.HeroDamageLevel;
+            case GameLevelDataName.SpawnCoolDownLevel:
+                return userGameDataSO.spawnCoolDownLevel;
             default:
                 Debug.LogWarning($"Unknown level name: {levelName}");
                 return 0;

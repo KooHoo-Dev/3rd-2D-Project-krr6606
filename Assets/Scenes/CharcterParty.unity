@@ -982,7 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 9
+  ResultSlotIndex: 9
   image: {fileID: 81433299}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 0
+  ResultSlotIndex: 0
   image: {fileID: 378527453}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 6
+  ResultSlotIndex: 6
   image: {fileID: 1216621156}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 4
+  ResultSlotIndex: 4
   image: {fileID: 944967480}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -3330,7 +3330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 5
+  ResultSlotIndex: 5
   image: {fileID: 1750025462}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -3427,7 +3427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 2
+  ResultSlotIndex: 2
   image: {fileID: 612357407}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -4162,7 +4162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 7
+  ResultSlotIndex: 7
   image: {fileID: 76209047}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -4644,7 +4644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 3
+  ResultSlotIndex: 3
   image: {fileID: 1996226086}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -6167,7 +6167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 8
+  ResultSlotIndex: 8
   image: {fileID: 1549942938}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -6904,7 +6904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 1
+  ResultSlotIndex: 1
   image: {fileID: 914705796}
   NameText: {fileID: 0}
   LevelText: {fileID: 0}
@@ -8054,7 +8054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotData
   <catName>k__BackingField: 0
   <levelName>k__BackingField: 0
-  slotIndex: 0
+  ResultSlotIndex: 0
   image: {fileID: 1005460218}
   NameText: {fileID: 400568311}
   LevelText: {fileID: 1985988668}

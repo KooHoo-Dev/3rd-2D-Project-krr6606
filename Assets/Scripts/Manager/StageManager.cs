@@ -81,6 +81,7 @@ public class StageManager : MonoBehaviour
         enemySpawner.isSpawnStopped = true;
         isStageEnd = true;
         AllCatDie();
+        hero.Kill();
         StringSoundManager.Instance.PlaySFX("Snd-패배");
     }
     public bool IsStageEnd()

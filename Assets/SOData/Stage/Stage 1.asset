@@ -38,4 +38,11 @@ MonoBehaviour:
     <MaxSpawnInterval>k__BackingField: 10
     <SpawnCount>k__BackingField: 1
     <MaxLoopCount>k__BackingField: 10000
+    <NextWaveIndex>k__BackingField: 3
+  - <EnemyName>k__BackingField: 1
+    <MinSpawnInterval>k__BackingField: 6
+    <IsRandomTime>k__BackingField: 1
+    <MaxSpawnInterval>k__BackingField: 10
+    <SpawnCount>k__BackingField: 1
+    <MaxLoopCount>k__BackingField: 10000
     <NextWaveIndex>k__BackingField: 2

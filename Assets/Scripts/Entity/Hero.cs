@@ -60,6 +60,10 @@ public class Hero : BaseUnit
     {
         stateMachine.ChangeState(hitBackState);
     }
+    public void Kill()
+    {
+        stateMachine.ChangeState(DieState);
+    }
     protected override void Attack()
     {
 

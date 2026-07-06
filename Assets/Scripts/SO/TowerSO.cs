@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerSO : ScriptableObject
 {
     public string towerName;
+    public bool isCatTower;
     public int Level = 1;
     public int MaxHealth;
 

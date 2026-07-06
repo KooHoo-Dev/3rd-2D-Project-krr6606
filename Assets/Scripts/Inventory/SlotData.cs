@@ -6,7 +6,7 @@ public class SlotData : MonoBehaviour
     public RectTransform rectTransform { get; private set; }
     [field: SerializeField] public CatName catName { get; set; }
     [field: SerializeField] public GameLevelDataName levelName { get; set; }
-    public int slotIndex;
+    public int ResultSlotIndex;
     public Image image;
     public TMP_Text NameText;
     public TMP_Text LevelText;
@@ -123,6 +123,12 @@ public class SlotData : MonoBehaviour
                 if (gameDataManager.userGameDataSO.HeroDamageLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
                 {
                     gameDataManager.userGameDataSO.HeroDamageLevel++;
+                }
+                break;
+            case GameLevelDataName.SpawnCoolDownLevel:
+                if (gameDataManager.userGameDataSO.spawnCoolDownLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
+                {
+                    gameDataManager.userGameDataSO.spawnCoolDownLevel++;
                 }
                 break;
             default: break;

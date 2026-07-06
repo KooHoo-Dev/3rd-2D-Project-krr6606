@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cbe3881bb430246a2b8544aa30d792, type: 3}
   m_Name: Stage 4
   m_EditorClassIdentifier: Assembly-CSharp::_Stage
-  stageName: 4
+  stageName: 0
   IsCleared: 0
   DefaultEXPReward: 15000
   BossTriggerHealthPercentage: 50

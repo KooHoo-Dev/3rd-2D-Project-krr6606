@@ -61,7 +61,7 @@ namespace Study_Inventory
                 cursorSlot.SetResultSlotData(startSlot.catName);
                 startSlot.SetResultSlotData(CatName.None);
         
-                GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = CatName.None;
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.ResultSlotIndex] = CatName.None;
             }
             scroll.enabled = false;
             cursorSlot.SetPosition(eventData.position);
@@ -93,7 +93,7 @@ namespace Study_Inventory
                 if(startInven.invenType == InvenType.ResultInven)
                 {
                     startSlot.SetResultSlotData(cursorSlot.catName);
-                    GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = cursorSlot.catName;
+                    GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.ResultSlotIndex] = cursorSlot.catName;
    
                 }
 
@@ -105,7 +105,7 @@ namespace Study_Inventory
                 if (startInven.invenType == InvenType.ResultInven)
                 {
                     startSlot.SetResultSlotData(cursorSlot.catName);
-                    GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = cursorSlot.catName;
+                    GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.ResultSlotIndex] = cursorSlot.catName;
 
                 }
 
@@ -118,7 +118,7 @@ namespace Study_Inventory
             {
 
                 endSlot.SetResultSlotData(cursorSlot.catName);
-                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.ResultSlotIndex] = cursorSlot.catName;
             }
             else if(endSlot.catName != CatName.None 
                 && endInven != null 
@@ -128,9 +128,9 @@ namespace Study_Inventory
 
                 CatName tempCatName = endSlot.catName;
                 endSlot.SetResultSlotData(cursorSlot.catName);
-                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.ResultSlotIndex] = cursorSlot.catName;
                 startSlot.SetResultSlotData(tempCatName);
-                GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.slotIndex] = tempCatName;
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[startSlot.ResultSlotIndex] = tempCatName;
             }
             else if(endSlot.catName != CatName.None
                 && endInven != null
@@ -138,7 +138,7 @@ namespace Study_Inventory
                 && startInven.invenType == InvenType.PickInven)
             {
                 endSlot.SetResultSlotData(cursorSlot.catName);
-                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.slotIndex] = cursorSlot.catName;
+                GameDataManager.Instance.userGameDataSO.CatSlotArray[endSlot.ResultSlotIndex] = cursorSlot.catName;
             }
             ResetCursor();
 

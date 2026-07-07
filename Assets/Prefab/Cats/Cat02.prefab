@@ -157,6 +157,7 @@ MonoBehaviour:
   entitySOData: {fileID: 11400000, guid: b4d66ec88d035f94584cad9a6c636818, type: 2}
   useData:
     Name: 
+    Description: 
     Level: 0
     isCat: 0
     type: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
     AttackRangeEnd: 0
     Cost: 0
     InitColdDown: 0
+    UpgradeCost_1_10: 
     FrontDelay: 0
     BackDelay: 0
     IsOneTarget: 0
@@ -218,7 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnAnimetionTrigger
   entity: {fileID: 1512056450304285884}
-  heroSkill01: {fileID: 0}
 --- !u!1001 &9069658769599840540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4374980543240466643, guid: 15f69d20327815f44ac3fc3dbe716a71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 4374980543240466643, guid: 15f69d20327815f44ac3fc3dbe716a71, type: 3}
       propertyPath: m_LocalPosition.y

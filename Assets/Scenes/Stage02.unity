@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bfa16f0b8f71e4e96f9adb6fec0fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
-  catSpawner: {fileID: 0}
+  catSpawner: {fileID: 1999698852}
   catSpawnSlots: []
 --- !u!1 &328238403
 GameObject:
@@ -5275,6 +5275,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 52b8a1c5aedf3c84db4558ccfdd0e75f, type: 3}
+--- !u!114 &1999698852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 612611747308127847, guid: 52b8a1c5aedf3c84db4558ccfdd0e75f, type: 3}
+  m_PrefabInstance: {fileID: 1999698851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beea0c762af753b45a045a81c8c2edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CatSpawner
 --- !u!1 &2033964559
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,7 +5443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5876508100557269387, guid: 63743b8f544582645932d72e6a1f45d4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1080
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5876508100557269387, guid: 63743b8f544582645932d72e6a1f45d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

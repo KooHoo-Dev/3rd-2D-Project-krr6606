@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bfa16f0b8f71e4e96f9adb6fec0fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
-  catSpawner: {fileID: 0}
+  catSpawner: {fileID: 478849009}
   catSpawnSlots: []
 --- !u!1 &328238403
 GameObject:
@@ -2129,6 +2129,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 52b8a1c5aedf3c84db4558ccfdd0e75f, type: 3}
+--- !u!114 &478849009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 612611747308127847, guid: 52b8a1c5aedf3c84db4558ccfdd0e75f, type: 3}
+  m_PrefabInstance: {fileID: 478849008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beea0c762af753b45a045a81c8c2edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CatSpawner
 --- !u!1 &497640330
 GameObject:
   m_ObjectHideFlags: 0

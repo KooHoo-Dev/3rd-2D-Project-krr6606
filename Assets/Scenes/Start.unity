@@ -1035,6 +1035,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f54947a4eadea7645b67d7ec3da756c8, type: 3}
   - {fileID: 8300000, guid: 266a090bdf027e549ba58cd08d923c5c, type: 3}
   - {fileID: 8300000, guid: cf49f7eb0a953004ebe5eab8292b5e0e, type: 3}
+  masterVolume: 1
+  sfxVolume: 1
+  bgmVolume: 1
 --- !u!4 &717984485
 Transform:
   m_ObjectHideFlags: 0
@@ -2249,6 +2252,7 @@ GameObject:
   - component: {fileID: 2083665623}
   - component: {fileID: 2083665622}
   - component: {fileID: 2083665621}
+  - component: {fileID: 2083665624}
   m_Layer: 5
   m_Name: optionButton
   m_TagString: Untagged
@@ -2320,9 +2324,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1431635226}
-        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: GameQuit
+      - m_Target: {fileID: 2083665624}
+        m_TargetAssemblyTypeName: GameQuitButton, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2370,6 +2374,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083665619}
   m_CullTransparentMesh: 1
+--- !u!114 &2083665624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083665619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949aab08455bfb247ba0902e5a08fd8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameQuitButton
 --- !u!114 &2804275594896462826
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,9 +18,8 @@ public class StringSoundManager : MonoBehaviour
     [Range(0f, 1f)] public float sfxVolume = 1f;
     [Range(0f, 1f)] public float bgmVolume = 1f;
 
-    private const string MASTER_KEY = "MasterVolume";
-    private const string SFX_KEY = "SfxVolume";
-    private const string BGM_KEY = "BgmVolume";
+
+    public OptionSO optionSO;
 
     private void Awake()
     {
@@ -120,17 +119,16 @@ public class StringSoundManager : MonoBehaviour
 
     private void SaveVolumeSettings()
     {
-        PlayerPrefs.SetFloat(MASTER_KEY, masterVolume);
-        PlayerPrefs.SetFloat(SFX_KEY, sfxVolume);
-        PlayerPrefs.SetFloat(BGM_KEY, bgmVolume);
-        PlayerPrefs.Save();
+        optionSO.masterVolume = masterVolume;
+        optionSO.SFXVolume = sfxVolume;
+        optionSO.BGMVolume = bgmVolume;
     }
 
     private void LoadVolumeSettings()
     {
-        masterVolume = PlayerPrefs.GetFloat(MASTER_KEY, 1f);
-        sfxVolume = PlayerPrefs.GetFloat(SFX_KEY, 1f);
-        bgmVolume = PlayerPrefs.GetFloat(BGM_KEY, 1f);
+        masterVolume = optionSO.masterVolume;
+        sfxVolume = optionSO.SFXVolume;
+        bgmVolume = optionSO.BGMVolume;
         ApplyVolumes();
     }
 }

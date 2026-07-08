@@ -10,7 +10,10 @@ public class CatSpawner : MonoBehaviour
     public int MaxSpawnCount = 50;
     public bool isSpawnStopped = false;
     public float SpawnFrameDelay = 0.2f;
-
+    void Awake()
+    {
+       PoolParnt = GameObject.Find("CatUnitPool").GetComponent<Transform>();
+    }
     void Start()
     {
         catPrefabList = new List<GameObject>();

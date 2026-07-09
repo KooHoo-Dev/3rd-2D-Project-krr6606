@@ -27,6 +27,7 @@ public class GameDataManager : MonoBehaviour
             Instance = this;
             SetCatSlot(CatName.Cat1, 0);
             CatLevelDic = new Dictionary<CatName, int>();
+            GameDataLevelDic = new Dictionary<GameLevelDataName, int>();
             for (int i = 0; i < userGameDataSO.UnLockList.Count; i++)
             {
                 CatLevelDic.Add(userGameDataSO.UnLockList[i], CatSOArray[(int)userGameDataSO.UnLockList[i]].unitdata.Level);

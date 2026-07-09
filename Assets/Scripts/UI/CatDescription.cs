@@ -27,11 +27,11 @@ public class CatDescription : MonoBehaviour
                 GameLevelDataName levelName = swipe_Slot.slotDataList[currentIndex].levelName;
                 switch (levelName)
                 {
-                    case GameLevelDataName.maxGoldLevel:
+                    case GameLevelDataName.goldPerSecLevel:
                         
                         SetDescription("일 고양이의 일 효율을 올리면\n머니의 증가 스피드가 빨라집니다.");
                         break;
-                    case GameLevelDataName.goldPerSecLevel:
+                    case GameLevelDataName.maxGoldLevel:
                         SetDescription("일 고양이의 지갑 사이즈를 늘립니다\n전투 중에 모을 수 있는 머니가 증가합니다");
                         break;
                     case GameLevelDataName.skillDamageLevel:

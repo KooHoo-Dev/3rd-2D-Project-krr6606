@@ -33,7 +33,7 @@ public class HeroSkill01 : MonoBehaviour
     {
         gameDataManager = GameDataManager.Instance;
         BoomEffectPool = new ComponentPool(boomEffectPrefab,transform);
-        skillCooldown = Mathf.Max(DefaultSkillCooldown - DefaultSkillCooldown * (gameDataManager.userGameDataSO.skillCoolDownLevel - 1) * 0.08f, 15f);
+        skillCooldown = Mathf.Max(DefaultSkillCooldown - DefaultSkillCooldown * (gameDataManager.userGameDataSO.levelDataList[(int)GameLevelDataName.skillCoolDownLevel].level - 1) * 0.08f, 15f);
         currentSkillCooldown = skillCooldown;
         skillIconMask.fillAmount = 1;
         BeamEffectSR.gameObject.SetActive(false);
@@ -57,7 +57,7 @@ public class HeroSkill01 : MonoBehaviour
         {
             line.gameObject.SetActive(true);
             OKIcon.SetActive(true);
-            line.transform.position = new Vector3(skillEffectPoint.position.x + gameDataManager.userGameDataSO.skillRangeLevel * DefaultSkillRange * Multiplier, line.transform.position.y, line.transform.position.z);
+            line.transform.position = new Vector3(skillEffectPoint.position.x + gameDataManager.userGameDataSO.levelDataList[(int)GameLevelDataName.skillRangeLevel].level * DefaultSkillRange * Multiplier, line.transform.position.y, line.transform.position.z);
             currentSkillCooldown = 0;
             IconAnimator.SetBool("IsCanFire", true);
             isSkillReady = true;
@@ -80,7 +80,7 @@ public class HeroSkill01 : MonoBehaviour
     }
     public int GetSkillDamage()
     {
-        return DefaultSkillDamage + Mathf.RoundToInt(DefaultSkillDamage * (gameDataManager.userGameDataSO.skillDamageLevel - 1) * 0.08f);
+        return DefaultSkillDamage + Mathf.RoundToInt(DefaultSkillDamage * (gameDataManager.userGameDataSO.levelDataList[(int)GameLevelDataName.skillDamageLevel].level - 1) * 0.08f);
     }
     private IEnumerator BeamAnimation()
     {
@@ -93,7 +93,7 @@ public class HeroSkill01 : MonoBehaviour
         // ▼ 땅의 Y좌표 (line 오브젝트의 Y를 땅으로 사용)
         float groundY = line.transform.position.y;
 
-        float maxRange = startX + gameDataManager.userGameDataSO.skillRangeLevel
+        float maxRange = startX + gameDataManager.userGameDataSO.levelDataList[(int)GameLevelDataName.skillRangeLevel].level
                          * DefaultSkillRange * Multiplier;
 
         float currentEndX = startX;

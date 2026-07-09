@@ -60,7 +60,7 @@ public class SpawnManager : MonoBehaviour
             {
                 Debug.Log($"스폰 슬롯 초기화 {catName}");
                 float Interval = GameDataManager.Instance.CatSOArray[(int)catName].unitdata.InitColdDown;
-                Interval -= GameDataManager.Instance.userGameDataSO.spawnCoolDownLevel * 0.2f;
+                Interval -= GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.skillCoolDownLevel].level * 0.2f;
                 if (Interval < 2)
                 {
                     Interval = 2;

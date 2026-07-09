@@ -26,9 +26,9 @@ public class Hero : BaseUnit
     protected override void Start()
     {
         base.Start();
-        MaxHealth = (int)useData.DefaultHealth * GameDataManager.Instance.userGameDataSO.HeroHealthLevel;
-        Speed = useData.speed + useData.speed * (GameDataManager.Instance.userGameDataSO.HeroSpeedLevel - 1) * 0.1f;
-        Damage = (int)(useData.DefaultDamage + useData.DefaultDamage * (GameDataManager.Instance.userGameDataSO.HeroDamageLevel - 1) * 0.5f);
+        MaxHealth = (int)useData.DefaultHealth * GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.HeroHealthLevel].level;
+        Speed = useData.speed + useData.speed * (GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.HeroSpeedLevel].level - 1) * 0.1f;
+        Damage = (int)(useData.DefaultDamage + useData.DefaultDamage * (GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.HeroDamageLevel].level - 1) * 0.5f);
         stateMachine.Initialize(IdleState);
         healthText.text = $"{CurrentHealth}/{MaxHealth}";
     }

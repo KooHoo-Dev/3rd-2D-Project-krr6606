@@ -20,7 +20,7 @@ public class EconomyUpgradeButton : MonoBehaviour
         economyManager = InGameEconomyManager.Instance;
         Cost = economyManager.DefaultEconomyUpgradeCost;
         CostText.text = $"{Cost}원";
-        LevelText.text = $"{economyManager.maxGoldLevel}";
+        LevelText.text = $"{economyManager.maxEconomyLevel}";
     }
     private void Update()
     {
@@ -36,7 +36,7 @@ public class EconomyUpgradeButton : MonoBehaviour
     }
     public void UpgradeEconomy()
     {
-        bool isMaxLevel = economyManager.maxGoldLevel == economyManager.maxLevel;
+        bool isMaxLevel = economyManager.maxEconomyLevel == economyManager.maxLevel;
         if (economyManager.gold < Cost || isMaxLevel)
         {
             StringSoundManager.Instance.PlaySFX("Snd-사용 불가");
@@ -46,9 +46,9 @@ public class EconomyUpgradeButton : MonoBehaviour
         economyManager.UpgradeEconomy();
 
         economyManager.SpendGold(Cost);
-        Cost = economyManager.DefaultEconomyUpgradeCost + (economyManager.maxGoldLevel - 1) * economyManager.DefaultEconomyUpgradeCost;
-        CostText.text = economyManager.maxGoldLevel == economyManager.maxLevel ? $"MAX" : $"{Cost}원";
+        Cost = economyManager.DefaultEconomyUpgradeCost + (economyManager.maxEconomyLevel - 1) * economyManager.DefaultEconomyUpgradeCost;
+        CostText.text = economyManager.maxEconomyLevel == economyManager.maxLevel ? $"MAX" : $"{Cost}원";
 
-        LevelText.text =  $"{economyManager.maxGoldLevel}";
+        LevelText.text =  $"{economyManager.maxEconomyLevel}";
     }
 }

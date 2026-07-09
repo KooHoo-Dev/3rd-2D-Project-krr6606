@@ -12,8 +12,9 @@ public class GameDataManager : MonoBehaviour
     public List<GameObject> CatPrefabList;
     public List<GameObject> EnemyPrefabList;
  
-    public Dictionary<CatName, int> CatLevelDic;
+    public Dictionary<CatName, int> CatLevelDic; // 반드시 unlock된 CatName만 포함되어야 함
 
+    public Dictionary<GameLevelDataName, int> GameDataLevelDic;
     public int MaxCatSlotCount = 10;
     void Awake()
     {
@@ -29,6 +30,10 @@ public class GameDataManager : MonoBehaviour
             for (int i = 0; i < userGameDataSO.UnLockList.Count; i++)
             {
                 CatLevelDic.Add(userGameDataSO.UnLockList[i], CatSOArray[(int)userGameDataSO.UnLockList[i]].unitdata.Level);
+            }
+            for(int i = 0; i < userGameDataSO.levelDataList.Count; i++)
+            {
+                GameDataLevelDic.Add(userGameDataSO.levelDataList[i].levelName, userGameDataSO.levelDataList[i].level);
             }
             DontDestroyOnLoad(gameObject);
         }
@@ -65,32 +70,7 @@ public class GameDataManager : MonoBehaviour
     }
     public int GetLevelData(GameLevelDataName levelName)
     {
-        switch(levelName)
-        {
-            case GameLevelDataName.goldPerSecLevel:
-                return userGameDataSO.goldPerSecLevel;
-            case GameLevelDataName.maxGoldLevel:
-                return userGameDataSO.maxGoldLevel;
-            case GameLevelDataName.skillDamageLevel:
-                return userGameDataSO.skillDamageLevel;
-            case GameLevelDataName.skillCoolDownLevel:
-                return userGameDataSO.skillCoolDownLevel;
-            case GameLevelDataName.skillRangeLevel:
-                return userGameDataSO.skillRangeLevel;
-            case GameLevelDataName.EXPGetLevel:
-                return userGameDataSO.EXPGetLevel;
-            case GameLevelDataName.HeroSpeedLevel:
-                return userGameDataSO.HeroSpeedLevel;
-            case GameLevelDataName.HeroHealthLevel:
-                return userGameDataSO.HeroHealthLevel;
-            case GameLevelDataName.HeroDamageLevel:
-                return userGameDataSO.HeroDamageLevel;
-            case GameLevelDataName.SpawnCoolDownLevel:
-                return userGameDataSO.spawnCoolDownLevel;
-            default:
-                Debug.LogWarning($"Unknown level name: {levelName}");
-                return 0;
-        }
+        return GameDataLevelDic.ContainsKey(levelName) ? GameDataLevelDic[levelName] :  -1;
     }
     public GameObject GetCatPrefab(CatName catName)
     {

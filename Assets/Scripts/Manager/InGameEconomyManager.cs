@@ -7,8 +7,7 @@ public class InGameEconomyManager : MonoBehaviour
     private float goldBuffer = 0;
     public int MaxGold { get; private set; } = 1000;
     public float goldPerSec { get; private set; } = 2f;
-    public int goldPerSecLevel { get; private set; } = 1;
-    public int maxGoldLevel { get; private set; } = 1;
+    public int maxEconomyLevel { get; private set; } = 1;
     public int maxLevel { get; private set; } = 10;
     public int DefaultIncreaseAmountMaxGold { get; private set; } = 50;
     public float DefaultIncreaseAmountGoldPerSec { get; private set; } = 1f;
@@ -29,16 +28,15 @@ public class InGameEconomyManager : MonoBehaviour
 
     private void Update()
     {
-        IncreaseGold(goldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.goldPerSecLevel + ((goldPerSecLevel  - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime ));
+        IncreaseGold(goldPerSec * Time.deltaTime * GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.goldPerSecLevel].level + ((maxEconomyLevel - 1) * DefaultIncreaseAmountGoldPerSec * Time.deltaTime ));
         UpdateGoldUI();
     }
     public void UpgradeEconomy()
     {
-        goldPerSecLevel++;
-        maxGoldLevel++;
+        maxEconomyLevel++;
         MaxGold += DefaultIncreaseAmountMaxGold 
-            + (GameDataManager.Instance.userGameDataSO.goldPerSecLevel - 1)* DefaultIncreaseAmountMaxGold
-            + (int)((maxGoldLevel - 1) * DefaultIncreaseAmountMaxGold * 0.5f * GameDataManager.Instance.userGameDataSO.maxGoldLevel);
+            + (GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.goldPerSecLevel].level - 1)* DefaultIncreaseAmountMaxGold
+            + (int)((maxEconomyLevel - 1) * DefaultIncreaseAmountMaxGold * 0.5f * GameDataManager.Instance.userGameDataSO.levelDataList[(int)GameLevelDataName.maxGoldLevel].level);
     }
     public void IncreaseGold(float amount)
     {

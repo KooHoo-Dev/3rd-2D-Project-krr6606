@@ -66,192 +66,22 @@ public class SlotData : MonoBehaviour
     }
     public void UserDataLevelUp(GameLevelDataName levelName)
     {
-        switch (levelName)
-        {
-            case GameLevelDataName.maxGoldLevel:
-                if (gameDataManager.userGameDataSO.maxGoldLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                gameDataManager.userGameDataSO.maxGoldLevel++;
-                }
-                break;
-            case GameLevelDataName.goldPerSecLevel:
-                if (gameDataManager.userGameDataSO.goldPerSecLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                gameDataManager.userGameDataSO.goldPerSecLevel++;
-                }
-                break;
-            case GameLevelDataName.skillDamageLevel:
-                if (gameDataManager.userGameDataSO.skillDamageLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                gameDataManager.userGameDataSO.skillDamageLevel++;
-                }
-                break;
-            case GameLevelDataName.skillCoolDownLevel:
-                if (gameDataManager.userGameDataSO.skillCoolDownLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                gameDataManager.userGameDataSO.skillCoolDownLevel++;
-                }
-                break;
-            case GameLevelDataName.skillRangeLevel:
-                if (gameDataManager.userGameDataSO.skillRangeLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                gameDataManager.userGameDataSO.skillRangeLevel++;
-                }
-                break;
-            case GameLevelDataName.EXPGetLevel:
-                if (gameDataManager.userGameDataSO.EXPGetLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-
-                    gameDataManager.userGameDataSO.EXPGetLevel++;
-                }
-                break;
-            case GameLevelDataName.HeroSpeedLevel:
-                if (gameDataManager.userGameDataSO.HeroSpeedLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-
-                    gameDataManager.userGameDataSO.HeroSpeedLevel++;
-                }
-                break;
-            case GameLevelDataName.HeroHealthLevel:
-                if (gameDataManager.userGameDataSO.HeroHealthLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-
-                    gameDataManager.userGameDataSO.HeroHealthLevel++;
-                }
-                break;
-            case GameLevelDataName.HeroDamageLevel:
-                if (gameDataManager.userGameDataSO.HeroDamageLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    gameDataManager.userGameDataSO.HeroDamageLevel++;
-                }
-                break;
-            case GameLevelDataName.SpawnCoolDownLevel:
-                if (gameDataManager.userGameDataSO.spawnCoolDownLevel < gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    gameDataManager.userGameDataSO.spawnCoolDownLevel++;
-                }
-                break;
-            default: break;
-        }
+        gameDataManager.userGameDataSO.LevelUp(levelName);
         SetUserDataUI(levelName);
 
 
     }
     public void SetUserDataUI(GameLevelDataName levelName)
     {
-        switch (levelName)
+
+        if (gameDataManager.userGameDataSO.levelDataList[(int)levelName].level >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
         {
-            case GameLevelDataName.maxGoldLevel:
-                if (gameDataManager.userGameDataSO.maxGoldLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.maxGoldLevel.ToString();
-                int index = gameDataManager.userGameDataSO.maxGoldLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index].ToString();
-                break;
-            case GameLevelDataName.goldPerSecLevel:
-                if (gameDataManager.userGameDataSO.goldPerSecLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.goldPerSecLevel.ToString();
-                int index1 = gameDataManager.userGameDataSO.goldPerSecLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index1].ToString();
-                break;
-            case GameLevelDataName.skillDamageLevel:
-                if (gameDataManager.userGameDataSO.skillDamageLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.skillDamageLevel.ToString();
-                int index2 = gameDataManager.userGameDataSO.skillDamageLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index2].ToString();
-                break;
-            case GameLevelDataName.skillCoolDownLevel:
-                if (gameDataManager.userGameDataSO.skillCoolDownLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.skillCoolDownLevel.ToString();
-                int index3 = gameDataManager.userGameDataSO.skillCoolDownLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index3].ToString();
-                break;
-            case GameLevelDataName.skillRangeLevel:
-                if (gameDataManager.userGameDataSO.skillRangeLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.skillRangeLevel.ToString();
-                int index4 = gameDataManager.userGameDataSO.skillRangeLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index4].ToString();
-                break;
-            case GameLevelDataName.EXPGetLevel:
-                if (gameDataManager.userGameDataSO.EXPGetLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.EXPGetLevel.ToString();
-                int index5 = gameDataManager.userGameDataSO.EXPGetLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index5].ToString();
-                break;
-            case GameLevelDataName.HeroSpeedLevel:
-                if (gameDataManager.userGameDataSO.HeroSpeedLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.HeroSpeedLevel.ToString();
-                int index6 = gameDataManager.userGameDataSO.HeroSpeedLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index6].ToString();
-                break;
-            case GameLevelDataName.HeroHealthLevel:
-                if (gameDataManager.userGameDataSO.HeroHealthLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.HeroHealthLevel.ToString();
-                int index7 = gameDataManager.userGameDataSO.HeroHealthLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index7].ToString();
-                break;
-            case GameLevelDataName.HeroDamageLevel:
-                if (gameDataManager.userGameDataSO.HeroDamageLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.HeroDamageLevel.ToString();
-                int index8 = gameDataManager.userGameDataSO.HeroDamageLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index8].ToString();
-                break;
-            case GameLevelDataName.SpawnCoolDownLevel:
-                if (gameDataManager.userGameDataSO.spawnCoolDownLevel >= gameDataManager.userGameDataSO.LevelUpCost_1_10.Length)
-                {
-                    LevelText.text = "Max";
-                    upgradeEXP.text = "";
-                    return;
-                }
-                LevelText.text = gameDataManager.userGameDataSO.spawnCoolDownLevel.ToString();
-                int index9 = gameDataManager.userGameDataSO.spawnCoolDownLevel - 1;
-                upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index9].ToString();
-                break;
-            default: break;
+            LevelText.text = "Max";
+            upgradeEXP.text = "";
+            return;
         }
+        LevelText.text = gameDataManager.userGameDataSO.levelDataList[(int)levelName].level.ToString();
+        int index = gameDataManager.userGameDataSO.levelDataList[(int)levelName].level - 1;
+        upgradeEXP.text = gameDataManager.userGameDataSO.LevelUpCost_1_10[index].ToString();
     }
 }

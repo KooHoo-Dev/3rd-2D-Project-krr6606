@@ -1,11 +1,11 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     public Transform PoolParnt;
-    private GameObject[] isSpawned; // ï¿½ï¿½ yï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
+    private GameObject[] isSpawned; // °¢ yÃà À§Ä¡¿¡ ÀûÀÌ ÀÌ¹Ì ½ºÆùµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ³ªÅ¸³»´Â ¹è¿­
     [field: SerializeField] private List<Unit> enemyList = new List<Unit>();
 
     public List<ComponentPool> enemyPoolList = new List<ComponentPool>();
@@ -79,18 +79,18 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
             isSpawnStopped = activeCount >= MaxSpawnCount;
-            Debug.Log($"ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½: {activeCount}, ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: {MaxSpawnCount}, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: {isSpawnStopped}");
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            Debug.Log($"ÇöÀç È°¼ºÈ­µÈ Àû ¼ö: {activeCount}, ÃÖ´ë ½ºÆù ¼ö: {MaxSpawnCount}, ½ºÆù ÁßÁö ¿©ºÎ: {isSpawnStopped}");
+            // º¸½º ½ºÆù Á¶°Ç È®ÀÎ
             if (BossTriggerHealthPercentage > 0 && isBossSpawned == false)
             {
                 int currentHealthPercentage = Mathf.RoundToInt((float)stageManager.EnemyTower.CurrentHealth / stageManager.EnemyTower.MaxHealth * 100);
-                if (currentHealthPercentage <= BossTriggerHealthPercentage) // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+                if (currentHealthPercentage <= BossTriggerHealthPercentage) // ÇöÀç Ã¼·Â ºñÀ²ÀÌ º¸½º ½ºÆù Á¶°Ç ÀÌÇÏÀÎ °æ¿ì
                 {
                     isBossSpawned = true;
                     EnemyName bossName = stage.BossName;
                     if (bossName == EnemyName.None)
                     {
-                        Debug.LogError($"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {stage.name}ï¿½ï¿½ BossNameï¿½ï¿½ Noneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. ï¿½Ã¹Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
+                        Debug.LogError($"½ºÅ×ÀÌÁö {stage.name}ÀÇ BossNameÀÌ NoneÀ¸·Î ¼³Á¤µÇ¾î ÀÖ½À´Ï´Ù. ¿Ã¹Ù¸¥ °ªÀ» ¼³Á¤ÇØÁÖ¼¼¿ä.");
                     }
                     else
                     {
@@ -102,16 +102,16 @@ public class EnemySpawner : MonoBehaviour
                         Hero hero = StageManager.Instance.hero;
 
                         hero.HitBack();
-                        Unit boss = Spawn(bossName); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-                        boss.useData.DefaultHealth *= 2; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-                        boss.CurrentHealth = boss.useData.DefaultHealth; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½Âµï¿½ ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-                        boss.useData.DefaultDamage *= 1.1f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ 1.1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-                        StringSoundManager.Instance.PlaySFX("Snd-ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
-                        StringSoundManager.Instance.PlayBGM("Bgm-ï¿½ï¿½ï¿½ï¿½-5-ï¿½ï¿½ï¿½ï¿½");
+                        Unit boss = Spawn(bossName); // º¸½º ½ºÆù
+                        boss.useData.DefaultHealth *= 2; // º¸½º Ã¼·Â 2¹è Áõ°¡
+                        boss.CurrentHealth = boss.useData.DefaultHealth; // ÇöÀç Ã¼·Âµµ ÃÖ´ë Ã¼·ÂÀ¸·Î ¼³Á¤
+                        boss.useData.DefaultDamage *= 1.1f; // º¸½º °ø°Ý·Â 1.1¹è Áõ°¡
+                        StringSoundManager.Instance.PlaySFX("Snd-º¸½º µîÀå");
+                        StringSoundManager.Instance.PlayBGM("Bgm-ÀüÅõ-5-º¸½º");
                     }
                 }
             }
-            // ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¿þÀÌºê ½ºÆùÀÌ ÁßÁöµÇ¾ú´ÂÁö È®ÀÎ
             if (isSpawnStopped)
             {
                 yield return null;
@@ -124,12 +124,12 @@ public class EnemySpawner : MonoBehaviour
             }
             else 
             {
-                Debug.Log($"ï¿½ï¿½ï¿½Ìºï¿½ {currentWaveIndex} ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: {waveList[currentWaveIndex].EnemyName}, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: {waveList[currentWaveIndex].SpawnCount}");
+                Debug.Log($"¿þÀÌºê {currentWaveIndex} ½ºÆù ½ÃÀÛ: {waveList[currentWaveIndex].EnemyName}, ½ºÆù ¼ö: {waveList[currentWaveIndex].SpawnCount}");
 
                 for (int i = 0; i < waveList[currentWaveIndex].SpawnCount; i++)
                 {
                     Spawn(waveList[currentWaveIndex].EnemyName);
-                    Debug.Log($"ï¿½ï¿½ï¿½Ìºï¿½ {currentWaveIndex} ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: {waveList[currentWaveIndex].EnemyName}, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: {i + 1}/{waveList[currentWaveIndex].SpawnCount}");
+                    Debug.Log($"¿þÀÌºê {currentWaveIndex} ½ºÆù Áß: {waveList[currentWaveIndex].EnemyName}, ½ºÆù ¼ö: {i + 1}/{waveList[currentWaveIndex].SpawnCount}");
                     yield return WaitSpawnFrameDelay;
                 }
                 currentWaveIndex = waveList[currentWaveIndex].NextWaveIndex;
@@ -139,7 +139,7 @@ public class EnemySpawner : MonoBehaviour
                 CurrentSpawnTime = SpawnTime;
                 if (currentWaveIndex < 0)
                 {
-                    Debug.LogError($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Îµï¿½ï¿½ï¿½ {currentWaveIndex}ï¿½ï¿½ NextWaveIndex ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û½ï¿½ï¿½Ï´ï¿½.");
+                    Debug.LogError($"ÇöÀç ¿þÀÌºê ÀÎµ¦½º {currentWaveIndex}ÀÇ NextWaveIndex °ªÀÌ 0º¸´Ù ÀÛ½À´Ï´Ù.");
                     yield break;
                 }
             }

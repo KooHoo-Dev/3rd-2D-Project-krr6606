@@ -35,7 +35,7 @@ MonoBehaviour:
     level: 1
   - levelName: 10
     level: 1
-  maxclearedStage: 0
+  maxclearedStage: 4
   currentEXP: 2000
   LevelUpCost_1_10: e8030000d0070000b80b0000a00f00008813000070170000581b0000401f00002823000010270000
   UnLockList: 0000000001000000

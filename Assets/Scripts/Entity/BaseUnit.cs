@@ -8,7 +8,6 @@ public class BaseUnit : MonoBehaviour , IDamagable
     public Unitdata useData;
 
     protected StateMachin stateMachine;
-    protected CombatManager combatManager;
     public float CurrentHealth { get;  set; }
     protected int HitBackCount;
     public bool IsInvincibility { get; set; }
@@ -31,7 +30,6 @@ public class BaseUnit : MonoBehaviour , IDamagable
         spriteRenderer = GetComponent<SpriteRenderer>();
         stateMachine = new StateMachin();
         collider2d = GetComponent<Collider2D>();
-        combatManager = new CombatManager();
     }
     protected virtual void Start()
     {
@@ -55,7 +53,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
         HitBackCount = 1;
         useData.Level = Mathf.Clamp(useData.Level, 1, 10);
         useData.DefaultHealth = entitySOData.unitdata.DefaultHealth + (entitySOData.unitdata.Level - 1) * entitySOData.unitdata.DefaultHealth * levelMultiplier;
-        Debug.Log($"±âº» Ã¼·Â : {useData.DefaultHealth}");
+        Debug.Log($"ï¿½âº» Ã¼ï¿½ï¿½ : {useData.DefaultHealth}");
         useData.DefaultDamage = entitySOData.unitdata.DefaultDamage + (entitySOData.unitdata.Level - 1) * entitySOData.unitdata.DefaultDamage * levelMultiplier;
         useData.HitBackMaxCount = entitySOData.unitdata.HitBackMaxCount;
         useData.isCat = entitySOData.unitdata.isCat;
@@ -92,7 +90,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
             if (hit.collider == null) return;
             IDamagable damagable = hit.collider.GetComponent<IDamagable>();
             if (damagable == null) return;
-            Debug.Log("°ø°Ý ´ë»ó: " + hit.collider.name + ", ÇöÀç Å¸°Ù·¹ÀÌ¾î: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½: " + hit.collider.name + ", ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ù·ï¿½ï¿½Ì¾ï¿½: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
             damagable.TakeDamage(useData.DefaultDamage, ElementalType.normal, transform);
         }
         else
@@ -102,7 +100,7 @@ public class BaseUnit : MonoBehaviour , IDamagable
             foreach (RaycastHit2D hit in hitList)
             {
                 IDamagable damagable = hit.collider.GetComponent<IDamagable>();
-                Debug.Log("°ø°Ý ´ë»ó: " + hit.collider.name + ", ÇöÀç Å¸°Ù·¹ÀÌ¾î: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½: " + hit.collider.name + ", ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ù·ï¿½ï¿½Ì¾ï¿½: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
                 if (damagable == null) continue;
                 damagable.TakeDamage(useData.DefaultDamage, ElementalType.normal, transform);
             }

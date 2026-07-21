@@ -10,7 +10,11 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b872aa12-8e58-4dc8-9576-d3361132cc02" name="변경" comment="" />
+    <list default="true" id="b872aa12-8e58-4dc8-9576-d3361132cc02" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd-2D-Project-krr6606_Kooho/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd-2D-Project-krr6606_Kooho/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/public/static/Pretendard-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/public/static/Pretendard-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/public/static/Pretendard-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/public/static/Pretendard-Regular SDF.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1783571608670</updated>
       <workItem from="1783903507818" duration="1168000" />
-      <workItem from="1784595597874" duration="526000" />
+      <workItem from="1784595597874" duration="2165000" />
     </task>
     <servers />
   </component>
